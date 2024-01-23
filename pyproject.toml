@@ -8,11 +8,6 @@ version = "0.0.1"
 description = "UBC and DreamLab Yaml formatter"
 authors = ["Jonathan Barnes <jonathanyorkbarnes@gmail.com>"]
 license = "MIT License"
-readme = "README.md"
-packages = [
-    { include = "SiEPIC", from="klayout_dot_config/python"},
-    { include = "gsip", from="klayout_dot_config/tech"}
-]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -20,10 +15,6 @@ numpy = "^1.26.3"
 SciPy = "^1.11.4"
 klayout = "^0.28.14"
 tidy3d = "^2.5.0"
-pyyaml
-matplotlib
-pandas
-
 
 [project.urls]
 
