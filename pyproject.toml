@@ -27,5 +27,5 @@ pandas
 
 [project.urls]
 
-Homepage = "https://github.com/SiEPIC/SiEPIC-Tools"
-Issues = "https://github.com/SiEPIC/SiEPIC-Tools/issues"
+Homepage = "https://github.com/dreamphotonics/DreamCreator"
+Issues = "https://github.com/dreamphotonics/DreamCreator/Issues"
