@@ -30,6 +30,10 @@ import inspect
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from yamlcheck import yaml_check
+import sys
+import logging
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit
+from PyQt5.QtCore import pyqtSignal, QObject
 
 
 class MyApp(QWidget):
@@ -64,14 +68,36 @@ class MyApp(QWidget):
         self.outputtitle = QLabel("Output Log")
         self.layout.addWidget(self.outputtitle)
 
-        self.textEdit = QTextEdit()
-        self.textEdit.setReadOnly(True)
+        # Log Viewer
 
-        # Redirect stdout and stderr
-        sys.stdout = StreamRedirector(self.textEdit)
-        sys.stderr = StreamRedirector(self.textEdit)
+        self.logTextBox = QTextEditLogger(self)
+        self.layout.addWidget(self.logTextBox.widget)
 
-        self.layout.addWidget(self.textEdit)
+        # Set up logging
+        logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
+                            level=logging.INFO)
+        log = logging.getLogger()
+        log.addHandler(self.logTextBox)
+
+        # Test logging
+        logging.info("This is an informational message.")
+
+        # Redirect standard output to logging
+        std_out_logger = logging.getLogger('STDOUT')
+        sl = StreamToLogger(std_out_logger, logging.INFO)
+        sys.stdout = sl
+
+        #self.outputtitle = QLabel("Output Log")
+        # self.layout.addWidget(self.outputtitle)
+
+        # self.textEdit = QTextEdit()
+        # self.textEdit.setReadOnly(True)
+
+        # # Redirect stdout and stderr
+        # sys.stdout = StreamRedirector(self.textEdit)
+        # sys.stderr = StreamRedirector(self.textEdit)
+
+        # self.layout.addWidget(self.textEdit)
 
     def setup_file_selection(self):
         self.file_title = QLabel("Upload coordinates file")
@@ -360,7 +386,6 @@ class MyApp(QWidget):
 
         yaml_check(fname[0])
     
-
     def create_checklist(self, dict, customflag=False):
         checklist = QListWidget()
         for x in dict:
@@ -522,16 +547,19 @@ class MyApp(QWidget):
         elec_coords_data = data[blank_line_index + 2 :]
 
         # Create ElectroOpticDevice objects from device data
-        for line in device_data:
-            x, y, polarization, wavelength, device_type, device_id = line.split(", ")
-            optical_coords = [float(x), float(y)]
-            device = ElectroOpticDevice(
-                device_id, wavelength, polarization, optical_coords, device_type
-            )
-            devices_dict[device_id] = device
+        for count, line in enumerate(device_data):
+            try:
+                x, y, polarization, wavelength, device_type, device_id = line.split(", ")
+                optical_coords = [float(x), float(y)]
+                device = ElectroOpticDevice(
+                    device_id, wavelength, polarization, optical_coords, device_type
+                )
+                devices_dict[device_id] = device
+            except:
+                print("Error in optical coordinate line: " + count + ': '+ line)
 
         # Add electrical coordinates to devices
-        for line in elec_coords_data:
+        for count, line in enumerate(elec_coords_data):
             # Skip blank lines
             if line:
                 try:
@@ -539,7 +567,7 @@ class MyApp(QWidget):
                     elec_coords = (pad_name, float(x), float(y))
                     devices_dict[device_id].add_electrical_coordinates(elec_coords)
                 except:
-                    print("Error in line: " + line)
+                    print("Error in electrical coordinate line: " + str(count) + ': '+ line)
 
         for devicename in devices_dict:
             self.yamldict["Devices"][
@@ -1222,6 +1250,42 @@ class PopupButton(QPushButton):
         msg.setIcon(QMessageBox.Information)
         msg.exec_()
 
+class LogEmitter(QObject):
+    """ Custom signal emitter for log messages. """
+    emitLog = pyqtSignal(str)
+
+class StreamToLogger:
+    """
+    Custom stream object that redirects writes to a logger instance.
+    """
+    def __init__(self, logger, level):
+        self.logger = logger
+        self.level = level
+
+    def write(self, message):
+        # Avoid writing newline characters
+        if message != '\n':
+            self.logger.log(self.level, message)
+
+    def flush(self):
+        pass
+
+class QTextEditLogger(logging.Handler, QObject):
+    """ Custom logging handler sending log messages to a QTextEdit. """
+    def __init__(self, parent):
+        super().__init__()
+        QObject.__init__(self)
+        self.widget = QTextEdit(parent)
+        self.widget.setReadOnly(True)
+        self.logEmitter = LogEmitter()
+        self.logEmitter.emitLog.connect(self.appendLogMessage)
+
+    def emit(self, record):
+        msg = self.format(record)
+        self.logEmitter.emitLog.emit(msg)
+
+    def appendLogMessage(self, message):
+        self.widget.append(message)
 
 class ElectroOpticDevice:
     """Object used to store all information associated with an electro-optic device
