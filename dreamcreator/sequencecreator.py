@@ -334,16 +334,28 @@ class GUI(QWidget):
         select_all_btn.clicked.connect(self.select_all)
         devices_group_layout.addWidget(select_all_btn)
 
-        devices_group_layout.addWidget(QLabel("Group"))
-        devices_group_layout.addWidget(self.listbox1)
+        choice_menu = QHBoxLayout()
 
-        devices_group_layout.addWidget(QLabel("Polarization"))
-        devices_group_layout.addWidget(self.listbox1_2)
 
-        devices_group_layout.addWidget(QLabel("Wavelength"))
-        devices_group_layout.addWidget(self.listbox1_3)
+        grouplayout = QVBoxLayout()
+        grouplayout.addWidget(QLabel("Group"))
+        grouplayout.addWidget(self.listbox1)
+        self.listbox1.setFixedWidth(75)
+        choice_menu.addLayout(grouplayout)
 
-        
+        pollayout = QVBoxLayout()
+        pollayout.addWidget(QLabel("Polarization"))
+        pollayout.addWidget(self.listbox1_2)
+        self.listbox1_2.setFixedWidth(75)
+        choice_menu.addLayout(pollayout)
+
+        wllayout = QVBoxLayout()
+        wllayout.addWidget(QLabel("Wavelength"))
+        wllayout.addWidget(self.listbox1_3)
+        self.listbox1_3.setFixedWidth(75)
+        choice_menu.addLayout(wllayout)
+
+        devices_group_layout.addLayout(choice_menu)
 
         layouth.addLayout(devices_group_layout)
         # layouth.addLayout(devices_layout)
