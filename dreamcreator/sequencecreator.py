@@ -35,8 +35,18 @@ import logging
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit
 from PyQt5.QtCore import pyqtSignal, QObject
 
+class DreamCreator(object):
+    def __init__(self):
+        pass
 
-class MyApp(QWidget):
+    def launch(self):
+        app = QApplication([])
+        ex = GUI()
+        ex.show()
+        app.exec_()
+
+
+class GUI(QWidget):
     def __init__(self):
         super().__init__()
 
@@ -556,7 +566,7 @@ class MyApp(QWidget):
                 )
                 devices_dict[device_id] = device
             except:
-                print("Error in optical coordinate line: " + count + ': '+ line)
+                print("Error in optical coordinate line: " + str(count) + ': '+ line)
 
         # Add electrical coordinates to devices
         for count, line in enumerate(elec_coords_data):
@@ -1445,7 +1455,7 @@ class DirectoryDict:
 
 if __name__ == "__main__":
     app = QApplication([])
-    ex = MyApp()
+    ex = GUI()
     ex.show()
     app.exec_()
 
