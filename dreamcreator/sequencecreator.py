@@ -50,6 +50,7 @@ class GUI(QWidget):
     def __init__(self):
         super().__init__()
 
+        
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
 
@@ -90,7 +91,7 @@ class GUI(QWidget):
         log.addHandler(self.logTextBox)
 
         # Test logging
-        logging.info("This is an informational message.")
+        #logging.info("This is an informational message.")
 
         # Redirect standard output to logging
         std_out_logger = logging.getLogger('STDOUT')
@@ -438,7 +439,7 @@ class GUI(QWidget):
             # Get the path to the sequences directory
             cwd = os.getcwd()
             d = dirname(abspath(__file__))
-            print(d)
+            #print(d)
             d = str(d)
 
             attributes = self.yamldict["Sequences"][self.sequence_name0]
@@ -446,7 +447,7 @@ class GUI(QWidget):
             # class_name = self.find_class_names_in_file(sequence_file)
 
             # attributes = self.find_instance_attributes_in_init(sequence_file, class_name[0])
-            print(attributes)
+            #print(attributes)
 
             # Clear the existing layout
             self.clear_layout(self.parameters_area.layout())
@@ -472,13 +473,32 @@ class GUI(QWidget):
 
     def set_sequence(self, item):
         parameters = self.get_parameters(self.widget_list)
-        self.yamldict["Sequences"][
-            self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
-        ] = parameters
+        if self.edxcheck:
+            parametersdict = {'variables': parameters['variables'], 'results_info': self.resultsinfo}
+
+            self.yamldict["Sequences"][
+                self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
+            ] = parametersdict
+        else:
+            self.yamldict["Sequences"][
+                self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
+            ] = parameters
+
         self.update_custom_sequences(
             self.customsequences_checklist, self.yamldict["Sequences"]
         )
         print("Added Sequence")
+        
+    def to_title_case(self, s):
+        return ''.join(word.capitalize() for word in s.split('_'))
+
+        
+        self.update_custom_sequences(
+            self.customsequences_checklist, self.yamldict["Sequences"]
+        )
+        print("Added Sequence")
+
+    
 
     def choose_coord_file(self):
         fname = QFileDialog.getOpenFileName(self, "Open file")
@@ -1034,6 +1054,7 @@ class GUI(QWidget):
                 del old_layout
 
             layout, self.widget_list = self.set_parameters(attributes)
+            self.resultsinfo = attributes['resultsinfo']
             # self.populate_sequence_variables(sequence_file, class_name[0])
 
             new_layout = self.parameters_area.layout()
@@ -1072,9 +1093,9 @@ class GUI(QWidget):
                     current_sub_dict = {}
                 current_main_key = widget.text()
 
-            elif isinstance(widget, tuple) and len(widget) == 2:
+            elif isinstance(widget, tuple) and len(widget) == 3:
                 # This is a sub-dictionary key-value pair
-                key_widget, value_widget = widget
+                key_widget, value_widget, buttton_widget = widget
                 key = key_widget.text()
                 value = value_widget.text()
                 current_sub_dict[key] = value
