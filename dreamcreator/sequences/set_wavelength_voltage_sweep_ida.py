@@ -1,7 +1,7 @@
 from sequences.core.smu_sweep import SmuSweep
 import time
 
-class SetWavelengthVoltageSweep(SmuSweep):
+class SetWavelengthVoltageSweepIda(SmuSweep):
     """
     Sets the wavelength then performs a voltage sweep.
 
@@ -11,34 +11,25 @@ class SetWavelengthVoltageSweep(SmuSweep):
     def __init__(self, ps):
         self.variables = {
             'Start': 0, 
-            'Start_info': 'Please enter start value',
+            'Start_info': 'Please enter start voltage (V)',
             'Stop': 1, 
-            'Stop_info': 'Please enter stop value',
-            'Step': 0.1, 
-            'Step_info': 'Please enter step value',
-            'Center': '',
-            'Center_info': 'Please enter center value',
-            'Span': '',
-            'Span_info': 'Please enter span value',
-            'Range': '',
-            'Range_info': 'Please enter range value',
-            'Spacing': '',
-            'Spacing_info': 'Please enter spacing value',
-            'Points': '',
-            'Points_info': 'Please enter points value',
-            'Direction': 'UP',
-            'Direction_info': 'Please enter direction value',
-            'Sweeptype': 'voltage',
-            'Sweeptype_info': 'Please enter sweep type',
-            'Upper Limit': 5,
-            'Upper Limit_info': 'Please enter upper limit value',
-            'Trans_col': False,
-            'Trans_col_info': 'Please enter trans_col value',
-            'Wavelengths': [1480, 1500, 1580],
-            'Wavelengths_info': 'Please enter wavelengths value',
-            'Power': 1,
-            'Power_info': 'Please enter power value'
+            'Stop_info': 'Please enter stop voltage (V)',
+            'Res': 0.1, 
+            'Res_info': 'Please enter step voltage (V)',
+            'IV': 'True',
+            'IV_info': 'True if current vs voltage plot needed',
+            'RV': 'True',
+            'RV_info': 'True if ressiatnce vs voltage plot needed',
+            'PV': 'True',
+            'PV_info': 'True if power vs voltage plot needed',
+            'Channel A': 'True',
+            'Channel A_info': 'Please enter True to use Channel A if not enter False',
+            'Channel B': 'False',
+            'Channel B_info': 'Please enter True to use Channel B if not enter False',
+            'Wavelengths': '[1480, 1550, 1580]',
+            'Wavelengths_info': 'Set wavelengths in form [x, x1, x2] with unit nm'
         }
+
         self.resultsinfo = {
             'num_plots': 1,
             'visual': True,

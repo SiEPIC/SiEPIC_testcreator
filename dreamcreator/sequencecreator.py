@@ -73,6 +73,7 @@ class GUI(QWidget):
         self.setup_save_folder()
 
         self.setup_outputlog()
+        self.removed_items = self.remove_non_ida_entries(self.sequences_checklist)
 
     def setup_outputlog(self):
         # Set up the output log
@@ -190,15 +191,72 @@ class GUI(QWidget):
 
         self.hlayout.addLayout(sequence_hlayout)
 
+    def remove_non_ida_entries(self, checklist: QListWidget):
+        """Removes checklist entries not ending with '_ida' and returns the removed items.
+
+        Args:
+            checklist: The PyQt5 QListWidget object to modify.
+
+        Returns:
+            A list of the text labels of the removed items.
+        """
+
+        removed_items = []
+        for i in reversed(range(checklist.count())):
+            item = checklist.item(i)
+            if not item.text().endswith('_ida'):
+                removed_items.append(item.text())  # Store before removing
+                checklist.takeItem(i)
+
+        return removed_items
+    
+    def add_removed_entries(self, checklist: QListWidget, removed_items):
+        """Adds previously removed entries back to the checklist with checkboxes.
+
+        Args:
+            checklist: The PyQt5 QListWidget object to modify.
+            removed_items: A list of the text labels of the removed items.
+        """
+        for item_text in removed_items:
+            item = QListWidgetItem(item_text)  # Create a new QListWidgetItem
+            item.setFlags(item.flags() | Qt.ItemIsUserCheckable)  # Make it checkable
+            item.setCheckState(Qt.Unchecked)  # Set initial state to unchecked
+            checklist.addItem(item)
+
+        self.removed_items = []
+
+    def remove_ida_entries(self, checklist: QListWidget):
+        """Removes checklist entries containing '_ida' and returns the removed items.
+
+        Args:
+            checklist: The PyQt5 QListWidget object to modify.
+
+        Returns:
+            A list of the text labels of the removed items.
+        """
+        removed_items = []
+        for i in reversed(range(checklist.count())):
+            item = checklist.item(i)
+            if '_ida' in item.text():
+                removed_items.append(item.text())  # Store before removing
+                checklist.takeItem(i) 
+
+        return removed_items
+    
+
     def update_checkboxes(self, item):
         sender = self.sender()
         if sender.isChecked():
             if sender == self.checkBox1:
                 self.edxcheck = True
                 self.checkBox2.setChecked(False)
+                self.add_removed_entries(self.sequences_checklist, self.removed_items)
+                self.removed_items = self.remove_non_ida_entries(self.sequences_checklist)
             elif sender == self.checkBox2:
                 self.edxcheck = False
                 self.checkBox1.setChecked(False)
+                self.add_removed_entries(self.sequences_checklist, self.removed_items)
+                self.removed_items = self.remove_ida_entries(self.sequences_checklist)
 
     def button1_clicked(self, item):
         selected_devices = []
@@ -498,8 +556,6 @@ class GUI(QWidget):
         )
         print("Added Sequence")
 
-    
-
     def choose_coord_file(self):
         fname = QFileDialog.getOpenFileName(self, "Open file")
         if fname[0]:
@@ -606,7 +662,7 @@ class GUI(QWidget):
             if line:
                 try:
                     x, y, device_id, pad_name = line.split(", ")
-                    elec_coords = (pad_name, float(x), float(y))
+                    elec_coords = [pad_name, float(x), float(y)]
                     devices_dict[device_id].add_electrical_coordinates(elec_coords)
                 except:
                     print("Error in electrical coordinate line: " + str(count) + ': '+ line)
@@ -1228,8 +1284,8 @@ class GUI(QWidget):
         def handle_expression(expr):
             if isinstance(expr, ast.Str):  # String value
                 return expr.s
-            elif isinstance(expr, ast.Num):  # Numeric value
-                return expr.n
+            elif isinstance(expr, ast.Constant):  # Use ast.Constant for numbers 
+                return expr.value  # Access the value directly
             elif isinstance(expr, ast.Name):  # Variable or other reference
                 return expr.id
             elif isinstance(expr, ast.NameConstant):  # Boolean or None value
@@ -1240,6 +1296,22 @@ class GUI(QWidget):
                 return {key: value for key, value in zip(keys, values)}
             else:
                 return "complex_expression"  # Placeholder for more complex expressions
+
+        # def handle_expression(expr):
+        #     if isinstance(expr, ast.Str):  # String value
+        #         return expr.s
+        #     elif isinstance(expr, ast.Num):  # Numeric value
+        #         return expr.n
+        #     elif isinstance(expr, ast.Name):  # Variable or other reference
+        #         return expr.id
+        #     elif isinstance(expr, ast.NameConstant):  # Boolean or None value
+        #         return expr.value
+        #     elif isinstance(expr, ast.Dict):  # Dictionary
+        #         keys = [handle_expression(k) for k in expr.keys]
+        #         values = [handle_expression(v) for v in expr.values]
+        #         return {key: value for key, value in zip(keys, values)}
+        #     else:
+        #         return "complex_expression"  # Placeholder for more complex expressions
 
         for node in ast.walk(tree):
             if isinstance(node, ast.ClassDef) and node.name == class_name:

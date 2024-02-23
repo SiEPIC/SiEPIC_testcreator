@@ -18,13 +18,20 @@ class WavelengthSweep(LaserSweep):
             'wavl_pts': 601,
             'wavl_pts_info': 'can also use Step, if both filled Step will take priority',
             'Power': 1,
-            'Power_info': 'unit dB',
+            'Power_info': 'unit dBm',
             'Sweep Speed': 20,
             'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this',
             'Upper Limit': 0,
             'Upper Limit_info': 'set to 0',
             'Mode': 'CONT',
-            'Mode_info': 'choose between CONT and STEP'
+            'Mode_info': 'choose between CONT and STEP',
+            'Laser Output': 'High Power',
+            'Laser Output_info': 'choose between CONT and STEP',
+            'Numscans': 1,
+            'Numscans_info': 'choose between CONT and STEP',
+            'RangeDec': '20',
+            'RangeDec_info': 'choose between CONT and STEP'
+        
         }
 
         self.resultsinfo = {

@@ -1,6 +1,6 @@
 from sequences.core.laser_sweep import LaserSweep
 
-class WavelengthSweep(LaserSweep):
+class WavelengthSweepIda(LaserSweep):
     """
     Wavelength sweep sequence class.
 
@@ -9,22 +9,24 @@ class WavelengthSweep(LaserSweep):
     """
     def __init__(self, ps):
         self.variables = {
-            'Start': 1280,
+            'Start': 1480,
             'Start_info': 'unit nm',
-            'Stop': 1370,
+            'Stop': 1580,
             'Stop_info': 'unit nm',
             'Step': 1,
             'Step_info': 'unit nm, can also use wavl_pts, if both filled Step will take priority',
-            'wavl_pts': 601,
-            'wavl_pts_info': 'can also use Step, if both filled Step will take priority',
             'Power': 1,
-            'Power_info': 'unit dB',
-            'Sweep Speed': 20,
-            'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this',
-            'Upper Limit': 0,
-            'Upper Limit_info': 'set to 0',
-            'Mode': 'CONT',
-            'Mode_info': 'choose between CONT and STEP'
+            'Power_info': 'unit dBm',
+            'Sweep Speed': 'auto',
+            'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this, options are 20nm, 10nm, auto',
+            'Laser Output': 'High Power',
+            'Laser Output_info': 'Set to High Power or Low SSE',
+            'Numscans': 1,
+            'Numscans_info': 'choose how many scans for each device, default 1, max 3',
+            'RangeDec': 20,
+            'RangeDec_info': 'default 20',
+            'Initialrange': '-20',
+            'Initialrange_info': 'default -20'
         }
 
         self.resultsinfo = {
@@ -42,7 +44,7 @@ class WavelengthSweep(LaserSweep):
             'csv': True,
             'pdf': True,
             'mat': True,
-            'pkl': True
+            'pkl': False
         }
         super().__init__(ps, variables=self.variables, resultsinfo=self.resultsinfo, mode='CONT')
         

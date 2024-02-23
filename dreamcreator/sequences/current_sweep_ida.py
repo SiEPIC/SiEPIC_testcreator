@@ -1,6 +1,6 @@
 from sequences.core.smu_sweep import SmuSweep
 
-class CurrentSweep(SmuSweep):
+class CurrentSweepIda(SmuSweep):
     """
     Current sweep sequence class.
 
@@ -10,29 +10,21 @@ class CurrentSweep(SmuSweep):
     def __init__(self, ps):
         self.variables = {
             'Start': 0, 
-            'Start_info': 'Please enter the starting current value',
-            'Stop': 1,
-            'Stop_info': 'Please enter the stopping current value', 
-            'Step': 0.1, 
-            'Step_info': 'Please enter the step size',
-            'Center': '',
-            'Center_info': 'Please enter the center current value',
-            'Span': '',
-            'Span_info': 'Please enter the span of the sweep',
-            'Range': '',
-            'Range_info': 'Please enter the range of the sweep',
-            'Spacing': '',
-            'Spacing_info': 'Please enter the spacing of the sweep',
-            'Points': '',
-            'Points_info': 'Please enter the number of points in the sweep',
-            'Direction': 'UP',
-            'Direction_info': 'Please enter the direction of the sweep',
-            'Sweeptype': 'current',
-            'Sweeptype_info': 'Please enter the sweep type should be set to current',
-            'Upper_limit': 5,
-            'Upper_limit_info': 'Please enter the upper limit of the sweep',
-            'Trans_col': False,
-            'Trans_col_info': 'Please enter True or False for the transient column'
+            'Start_info': 'Please enter start voltage',
+            'Stop': 1, 
+            'Stop_info': 'Please enter stop voltage',
+            'Res': 0.1, 
+            'Res_info': 'Please enter step voltage',
+            'IV': 'True',
+            'IV_info': 'Please enter center voltage',
+            'RV': 'True',
+            'RV_info': 'Please enter span voltage',
+            'PV': 'True',
+            'PV_info': 'Please enter range voltage',
+            'Channel A': 'True',
+            'Channel A_info': 'Please enter True to use Channel A if not enter False',
+            'Channel B': 'False',
+            'Channel B_info': 'Please enter True to use Channel B if not enter False'
         }
 
         self.resultsinfo = {

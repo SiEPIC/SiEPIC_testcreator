@@ -1,6 +1,6 @@
 from sequences.core.smu_sweep import SmuSweep
 
-class VoltageSweep(SmuSweep):
+class VoltageSweepIda(SmuSweep):
     """
     Voltage sweep sequence class.
 
@@ -10,29 +10,21 @@ class VoltageSweep(SmuSweep):
     def __init__(self, ps):
         self.variables = {
             'Start': 0, 
-            'Start_info': 'Please enter start voltage',
+            'Start_info': 'Please enter start voltage (V)',
             'Stop': 1, 
-            'Stop_info': 'Please enter stop voltage',
-            'Step': 0.1, 
-            'Step_info': 'Please enter step voltage',
-            'Center': '',
-            'Center_info': 'Please enter center voltage',
-            'Span': '',
-            'Span_info': 'Please enter span voltage',
-            'Range': '',
-            'Range_info': 'Please enter range voltage',
-            'Spacing': '',
-            'Spacing_info': 'Please enter spacing voltage',
-            'Points': '',
-            'Points_info': 'Please enter points voltage',
-            'Direction': 'UP',
-            'Direction_info': 'Please enter direction voltage',
-            'Sweeptype': 'voltage',
-            'Sweeptype_info': 'Please enter sweep type',
-            'Upper Limit': 5,
-            'Upper Limit_info': 'Please enter upper limit voltage',
-            'Trans_col': False,
-            'Trans_col_info': 'Please enter transition eitehr True or False',
+            'Stop_info': 'Please enter stop voltage (V)',
+            'Res': 0.1, 
+            'Res_info': 'Please enter step voltage (V)',
+            'IV': 'True',
+            'IV_info': 'Enter True to receive IV plot',
+            'RV': 'True',
+            'RV_info': 'Enter True to receive RV plot',
+            'PV': 'True',
+            'PV_info': 'Enter True to receive PV plot',
+            'Channel A': 'True',
+            'Channel A_info': 'Please enter True to use Channel A if not enter False',
+            'Channel B': 'False',
+            'Channel B_info': 'Please enter True to use Channel B if not enter False'
         }
 
         self.resultsinfo = {

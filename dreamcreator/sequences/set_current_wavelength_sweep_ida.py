@@ -1,6 +1,6 @@
 from sequences.core.laser_sweep import LaserSweep
 
-class SetCurrentWavelengthSweep(LaserSweep):
+class SetCurrentWavelengthSweepIda(LaserSweep):
     """
     Sets the current and then performs a laser sweep.
 
@@ -20,10 +20,12 @@ class SetCurrentWavelengthSweep(LaserSweep):
             'wavl_pts_info': 'Please enter the number of wavelength points',
             'Power': 1,
             'Power_info': 'Please enter the power in dBm',
-            'Sweep Speed': 20,
-            'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this',
-            'Upper Limit': 0,
-            'Upper Limit_info': 'Set to 0',
+            'Sweep Speed': 'auto',
+            'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this, options are 20nm, 10nm, auto',
+            'Laser Output': 'High Power',
+            'Laser Output_info': 'Set to High Power or Low SSE',
+            'Initialrange': '-20',
+            'Initialrange_info': 'default -20',
             'Mode': 'CONT',
             'Mode_info': 'Choose between CONT and STEP',
             'Currents': '[0,1,2]',

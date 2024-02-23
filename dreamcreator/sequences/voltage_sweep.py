@@ -32,7 +32,7 @@ class VoltageSweep(SmuSweep):
             'Upper Limit': 5,
             'Upper Limit_info': 'Please enter upper limit voltage',
             'Trans_col': False,
-            'Trans_col_info': 'Please enter transition eitehr True or False',
+            'Trans_col_info': 'Please enter transition eitehr True or False'
         }
 
         self.resultsinfo = {
