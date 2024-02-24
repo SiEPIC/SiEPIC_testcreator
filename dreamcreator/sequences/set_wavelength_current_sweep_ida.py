@@ -26,8 +26,8 @@ class SetWavelengthCurrentSweepIda(SmuSweep):
             'Channel A_info': 'Please enter True to use Channel A if not enter False',
             'Channel B': 'False',
             'Channel B_info': 'Please enter True to use Channel B if not enter False',
-            'Wavelengths': '[1480, 1550, 1580]',
-            'Wavelengths_info': 'Set wavelengths in form [x, x1, x2] with unit nm'
+            'Wavelengths': '1480, 1550, 1580',
+            'Wavelengths_info': 'Set wavelengths in form x, x1, x2 with unit nm'
         }
 
         self.resultsinfo = {

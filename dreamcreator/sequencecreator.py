@@ -450,15 +450,15 @@ class GUI(QWidget):
         self.hlayout.addLayout(device_data_sequences_layout)
 
     def setup_save_folder(self):
-        self.save_label = QLineEdit("No Save Folder Selected")
-        self.savefile_button = QPushButton("Choose File")
+        # self.save_label = QLineEdit("No Save Folder Selected")
+        # self.savefile_button = QPushButton("Choose File")
         self.checkyaml_button = QPushButton("Check YAML")
-        self.savefile_button.clicked.connect(self.choose_save_file)
+        # self.savefile_button.clicked.connect(self.choose_save_file)
         self.checkyaml_button.clicked.connect(self.yaml_check_open)
 
         file_layout = QHBoxLayout()
-        file_layout.addWidget(self.save_label)
-        file_layout.addWidget(self.savefile_button)
+        # file_layout.addWidget(self.save_label)
+        # file_layout.addWidget(self.savefile_button)
         file_layout.addWidget(self.checkyaml_button)
         self.layout.addLayout(file_layout)
 
@@ -1350,6 +1350,7 @@ class StreamRedirector(object):
 
     def flush(self):
         pass
+
 class PopupButton(QPushButton):
     def __init__(self, title, popup_message):
         super().__init__(title)

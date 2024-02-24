@@ -28,8 +28,8 @@ class SetCurrentWavelengthSweepIda(LaserSweep):
             'Initialrange_info': 'default -20',
             'Mode': 'CONT',
             'Mode_info': 'Choose between CONT and STEP',
-            'Currents': '[0,1,2]',
-            'Currents_info': 'Please format the currents as a list of integers separated by commas ex. [0,1,2]'
+            'Currents': '0, 1, 2',
+            'Currents_info': 'Please format the currents as a list of integers separated by commas ex. 0, 1, 2'
         }
         self.resultsinfo = {
             'num_plots': 1,
