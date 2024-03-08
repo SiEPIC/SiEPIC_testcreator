@@ -33,7 +33,7 @@ class SetVoltageWavelengthSweepIda(LaserSweep):
             'Channel B': 'False',
             'Channel B_info': 'Please enter True to use Channel B if not enter False',
             'Voltages': '0, 1, 2',
-            'Voltages_info': 'Please enter voltages in the form x1, x2, x3 in (V)',
+            'Voltages_info': 'Please enter voltages in units (V) in the form x1, x2, x3',
         }
         
 

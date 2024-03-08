@@ -14,7 +14,7 @@ class WavelengthSweepIda(LaserSweep):
             'Stop': 1580,
             'Stop_info': 'unit nm',
             'Step': 1,
-            'Step_info': 'unit nm, can also use wavl_pts, if both filled Step will take priority',
+            'Step_info': 'unit nm',
             'Power': 1,
             'Power_info': 'unit dBm',
             'Sweep Speed': 'auto',

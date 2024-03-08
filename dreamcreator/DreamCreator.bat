@@ -1,0 +1,2 @@
+@echo off
+cmd /k "cd /d C:\Users\SiEPIC_Kaiser\Documents\GitHub\DreamCreator\.venv\Scripts & .\activate & cd /d C:\Users\SiEPIC_Kaiser\Documents\GitHub\DreamCreator\dreamcreator & python .\sequencecreator.py"

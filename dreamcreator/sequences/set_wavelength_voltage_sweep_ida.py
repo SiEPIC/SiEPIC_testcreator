@@ -14,7 +14,7 @@ class SetWavelengthVoltageSweepIda(SmuSweep):
             'Start_info': 'Please enter start voltage (V)',
             'Stop': 1, 
             'Stop_info': 'Please enter stop voltage (V)',
-            'Res': 1, 
+            'Res': 100, 
             'Res_info': 'Please enter step voltage (mV)',
             'IV': 'True',
             'IV_info': 'True if current vs voltage plot needed',
