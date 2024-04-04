@@ -7,7 +7,6 @@ setup(
     name = "DreamCreator",
     version = "0.0.3",
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
-    package_dir = {"": "app"},
     packages = find_packages(where="app"),
     long_description = long_description,
     long_description_content_type = "text/markdown",

@@ -1,4 +1,4 @@
-#%%
+# %%
 from PyQt5.QtWidgets import (
     QApplication,
     QTextEdit,
@@ -12,29 +12,22 @@ from PyQt5.QtWidgets import (
     QListWidget,
     QListWidgetItem,
     QMessageBox,
-    QCheckBox
+    QCheckBox,
 )
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPalette, QColor
+from PyQt5.QtCore import Qt, pyqtSignal, QObject
+from PyQt5.QtWidgets import QLabel, QLineEdit, QVBoxLayout, QWidget, QFormLayout
 import os
 from os.path import dirname, abspath
 import sys
 import ast
 import yaml
 import importlib
-# from dreamstest.chip import ElectroOpticDevice
-from PyQt5.QtWidgets import QLabel, QLineEdit, QVBoxLayout, QWidget, QFormLayout
-import os
 import importlib.util
 import inspect
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from dreamcreator.yamlcheck import yaml_check
-import sys
 import logging
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTextEdit
-from PyQt5.QtCore import pyqtSignal, QObject
-
+from dreamcreator.yamlcheck import yaml_check
 
 
 def launch():
@@ -48,7 +41,6 @@ class GUI(QWidget):
     def __init__(self):
         super().__init__()
 
-        
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
 
@@ -84,20 +76,21 @@ class GUI(QWidget):
         self.layout.addWidget(self.logTextBox.widget)
 
         # Set up logging
-        logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
-                            level=logging.INFO)
+        logging.basicConfig(
+            format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO
+        )
         log = logging.getLogger()
         log.addHandler(self.logTextBox)
 
         # Test logging
-        #logging.info("This is an informational message.")
+        # logging.info("This is an informational message.")
 
         # Redirect standard output to logging
-        std_out_logger = logging.getLogger('STDOUT')
+        std_out_logger = logging.getLogger("STDOUT")
         sl = StreamToLogger(std_out_logger, logging.INFO)
         sys.stdout = sl
 
-        #self.outputtitle = QLabel("Output Log")
+        # self.outputtitle = QLabel("Output Log")
         # self.layout.addWidget(self.outputtitle)
 
         # self.textEdit = QTextEdit()
@@ -140,7 +133,7 @@ class GUI(QWidget):
     def setup_sequence_selection(self):
         p = dirname(abspath(__file__))
 
-        sequences_dict = DirectoryDict(os.path.join(p, 'sequences'))
+        sequences_dict = DirectoryDict(os.path.join(p, "sequences"))
 
         self.sequences_checklist = self.create_checklist(sequences_dict.dir_dict)
         self.sequence_versions_checklist = self.create_checklist(
@@ -202,12 +195,12 @@ class GUI(QWidget):
         removed_items = []
         for i in reversed(range(checklist.count())):
             item = checklist.item(i)
-            if not item.text().endswith('_ida'):
+            if not item.text().endswith("_ida"):
                 removed_items.append(item.text())  # Store before removing
                 checklist.takeItem(i)
 
         return removed_items
-    
+
     def add_removed_entries(self, checklist: QListWidget, removed_items):
         """Adds previously removed entries back to the checklist with checkboxes.
 
@@ -235,12 +228,11 @@ class GUI(QWidget):
         removed_items = []
         for i in reversed(range(checklist.count())):
             item = checklist.item(i)
-            if '_ida' in item.text():
+            if "_ida" in item.text():
                 removed_items.append(item.text())  # Store before removing
-                checklist.takeItem(i) 
+                checklist.takeItem(i)
 
         return removed_items
-    
 
     def update_checkboxes(self, item):
         sender = self.sender()
@@ -249,7 +241,9 @@ class GUI(QWidget):
                 self.edxcheck = True
                 self.checkBox2.setChecked(False)
                 self.add_removed_entries(self.sequences_checklist, self.removed_items)
-                self.removed_items = self.remove_non_ida_entries(self.sequences_checklist)
+                self.removed_items = self.remove_non_ida_entries(
+                    self.sequences_checklist
+                )
             elif sender == self.checkBox2:
                 self.edxcheck = False
                 self.checkBox1.setChecked(False)
@@ -304,7 +298,7 @@ class GUI(QWidget):
                 yaml.dump(self.yamldict, file)
             print("Saved to " + filename)
         else:
-            print('Please choose save location to export YAML file.')
+            print("Please choose save location to export YAML file.")
 
     def object_to_dict(self, obj):
         """
@@ -393,7 +387,6 @@ class GUI(QWidget):
 
         choice_menu = QHBoxLayout()
 
-
         grouplayout = QVBoxLayout()
         grouplayout.addWidget(QLabel("Group"))
         grouplayout.addWidget(self.listbox1)
@@ -464,7 +457,7 @@ class GUI(QWidget):
         fname = QFileDialog.getOpenFileName(self, "Open file")
 
         yaml_check(fname[0])
-    
+
     def create_checklist(self, dict, customflag=False):
         checklist = QListWidget()
         for x in dict:
@@ -495,7 +488,7 @@ class GUI(QWidget):
             # Get the path to the sequences directory
             cwd = os.getcwd()
             d = dirname(abspath(__file__))
-            #print(d)
+            # print(d)
             d = str(d)
 
             attributes = self.yamldict["Sequences"][self.sequence_name0]
@@ -503,7 +496,7 @@ class GUI(QWidget):
             # class_name = self.find_class_names_in_file(sequence_file)
 
             # attributes = self.find_instance_attributes_in_init(sequence_file, class_name[0])
-            #print(attributes)
+            # print(attributes)
 
             # Clear the existing layout
             self.clear_layout(self.parameters_area.layout())
@@ -530,7 +523,10 @@ class GUI(QWidget):
     def set_sequence(self, item):
         parameters = self.get_parameters(self.widget_list)
         if self.edxcheck:
-            parametersdict = {'variables': parameters['variables'], 'results_info': self.resultsinfo}
+            parametersdict = {
+                "variables": parameters["variables"],
+                "results_info": self.resultsinfo,
+            }
 
             self.yamldict["Sequences"][
                 self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
@@ -544,11 +540,10 @@ class GUI(QWidget):
             self.customsequences_checklist, self.yamldict["Sequences"]
         )
         print("Added Sequence")
-        
-    def to_title_case(self, s):
-        return ''.join(word.capitalize() for word in s.split('_'))
 
-        
+    def to_title_case(self, s):
+        return "".join(word.capitalize() for word in s.split("_"))
+
         self.update_custom_sequences(
             self.customsequences_checklist, self.yamldict["Sequences"]
         )
@@ -571,7 +566,9 @@ class GUI(QWidget):
                 self.populate_polar_list()
                 self.populate_wavelength_list()
             except:
-                print("Errors found in coordinate file, please remove or edit and upload again")
+                print(
+                    "Errors found in coordinate file, please remove or edit and upload again"
+                )
 
     def choose_yaml_file(self):
         fname = QFileDialog.getOpenFileName(self, "Open file")
@@ -612,7 +609,13 @@ class GUI(QWidget):
         # Dictionary to store the created ElectroOpticDevice objects
         devices_dict = {}
         save_location = dirname(abspath(__file__))
-        save_location = str(save_location) + "\\" + 'File_edits' + "\\" + "coordinate_file_edits.txt"
+        save_location = (
+            str(save_location)
+            + "\\"
+            + "File_edits"
+            + "\\"
+            + "coordinate_file_edits.txt"
+        )
 
         file = self.remove_comments_from_lines(file_path, save_location)
         file = self.account_for_underscores(file, save_location)
@@ -645,14 +648,16 @@ class GUI(QWidget):
         # Create ElectroOpticDevice objects from device data
         for count, line in enumerate(device_data):
             try:
-                x, y, polarization, wavelength, device_type, device_id = line.split(", ")
+                x, y, polarization, wavelength, device_type, device_id = line.split(
+                    ", "
+                )
                 optical_coords = [float(x), float(y)]
                 device = ElectroOpticDevice(
                     device_id, wavelength, polarization, optical_coords, device_type
                 )
                 devices_dict[device_id] = device
             except:
-                print("Error in optical coordinate line: " + str(count) + ': '+ line)
+                print("Error in optical coordinate line: " + str(count) + ": " + line)
 
         # Add electrical coordinates to devices
         for count, line in enumerate(elec_coords_data):
@@ -663,12 +668,17 @@ class GUI(QWidget):
                     elec_coords = [pad_name, float(x), float(y)]
                     devices_dict[device_id].add_electrical_coordinates(elec_coords)
                 except:
-                    print("Error in electrical coordinate line: " + str(count) + ': '+ line)
+                    print(
+                        "Error in electrical coordinate line: "
+                        + str(count)
+                        + ": "
+                        + line
+                    )
 
         for devicename in devices_dict:
-            self.yamldict["Devices"][
-                devices_dict[devicename].device_id
-            ] = self.object_to_dict(devices_dict[devicename])
+            self.yamldict["Devices"][devices_dict[devicename].device_id] = (
+                self.object_to_dict(devices_dict[devicename])
+            )
 
         return list(devices_dict.values())
 
@@ -688,7 +698,7 @@ class GUI(QWidget):
             device_list.append(device)
             self.yamldict["Devices"][device.device_id] = self.object_to_dict(device)
         return device_list
-    
+
     def fix_coord_file(self, item):
         fname = QFileDialog.getOpenFileName(self, "Open file")
         if fname[0]:
@@ -699,7 +709,7 @@ class GUI(QWidget):
             print("Please select a coordinate file not a yaml file")
 
         if fname[0] != "" and fname[0].endswith(".yaml") == False:
-            save_location = fname[0].replace('.txt', '_adjusted.txt')
+            save_location = fname[0].replace(".txt", "_adjusted.txt")
 
             file = self.remove_comments_from_lines(fname[0], save_location)
             file = self.account_for_underscores(file, save_location)
@@ -717,30 +727,30 @@ class GUI(QWidget):
         modified_lines = []
         process_line = False  # Flag to indicate if the line should be processed
 
-        with open(input_file_path, 'r') as file:
+        with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
-            if line == '\n':  # Check for the line with just '\n'
+            if line == "\n":  # Check for the line with just '\n'
                 process_line = True
 
             if process_line:
-                if line.strip().startswith('%'):
+                if line.strip().startswith("%"):
                     modified_lines.append(line)
                     continue
-                elements = line.strip().split(', ')
+                elements = line.strip().split(", ")
                 if len(elements) > 4:
-                     # Keep the first, second, and last elements as they are
+                    # Keep the first, second, and last elements as they are
                     # Combine the middle elements with underscores
-                    combined_middle = '_'.join(elements[2:-1])
+                    combined_middle = "_".join(elements[2:-1])
                     elements = elements[:2] + [combined_middle] + elements[-1:]
-                line = ', '.join(elements) + '\n'
+                line = ", ".join(elements) + "\n"
                 modified_lines.append(line)
             else:
                 # Simply append the line as is, without modification
                 modified_lines.append(line)
 
-        with open(output_file_path, 'w') as file:
+        with open(output_file_path, "w") as file:
             file.writelines(modified_lines)
 
         return output_file_path
@@ -749,69 +759,77 @@ class GUI(QWidget):
         modified_lines = []
         process_line = True  # Flag to indicate if the line should be processed
 
-        with open(input_file_path, 'r') as file:
+        with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
-            if line == '\n':  # Check for the line with just '\n'
+            if line == "\n":  # Check for the line with just '\n'
                 process_line = False
 
             if process_line:
-                if line.strip().startswith('%'):
+                if line.strip().startswith("%"):
                     modified_lines.append(line)
                     continue
-                elements = line.strip().split(', ')
+                elements = line.strip().split(", ")
                 if len(elements) > 6:
-                    elements[5:] = ['_'.join(elements[5:])]
-                line = ', '.join(elements) + '\n'
+                    elements[5:] = ["_".join(elements[5:])]
+                line = ", ".join(elements) + "\n"
                 modified_lines.append(line)
             else:
                 # Simply append the line as is, without modification
                 modified_lines.append(line)
 
-        with open(output_file_path, 'w') as file:
+        with open(output_file_path, "w") as file:
             file.writelines(modified_lines)
 
         return output_file_path
 
-    def check_number_of_columns_optical(self, input_file_path, delimiter=', ', expected_columns=6, comment_char='%'):
-        alerts = []  # List to hold the alerts if any rows have a different number of columns
+    def check_number_of_columns_optical(
+        self, input_file_path, delimiter=", ", expected_columns=6, comment_char="%"
+    ):
+        alerts = (
+            []
+        )  # List to hold the alerts if any rows have a different number of columns
         process_line = True  # Flag to indicate if the line should be processed
-        
-        with open(input_file_path, 'r') as file:
+
+        with open(input_file_path, "r") as file:
             for line_number, line in enumerate(file, start=1):
-                if line == '\n':  # Check for the line with just '\n'
+                if line == "\n":  # Check for the line with just '\n'
                     process_line = False
                 # Skip empty lines and commented lines
                 if process_line:
                     if not line.strip() or line.strip().startswith(comment_char):
                         continue
-                    
+
                     columns = line.strip().split(delimiter)
                     if len(columns) != expected_columns:
                         alerts.append((line_number, line.strip()))
-        
+
         return alerts
 
     def check_coordfile_titles(self, input_file_path, output_file_path):
         # Define the required title lines
-        title_line_1 = '% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params \n'
-        title_line_2 = '% X-coord, Y-coord, deviceID, padName, params \n'
-        
-        with open(input_file_path, 'r') as file:
+        title_line_1 = (
+            "% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params \n"
+        )
+        title_line_2 = "% X-coord, Y-coord, deviceID, padName, params \n"
+
+        with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         # Check if the first line matches the required title line 1
         if lines[0].strip() != title_line_1.strip():
             lines.insert(0, title_line_1)
-        
+
         # Check if the title line 2 exists anywhere in the file
         if title_line_2 not in lines:
-            lines.append('\n')  # Ensure there is a newline before appending the title line 2
+            lines.append(
+                "\n"
+            )  # Ensure there is a newline before appending the title line 2
             lines.append(title_line_2)
 
         # Write the modified lines to the output file
-        with open(output_file_path, 'w') as file:
+        with open(output_file_path, "w") as file:
             file.writelines(lines)
 
         return output_file_path
@@ -820,50 +838,50 @@ class GUI(QWidget):
         # This function will remove the word "comment" from the end of each line
         modified_lines = []
 
-        with open(input_file_path, 'r') as file:
+        with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
             # Check if 'comment' is at the end of the line (considering possible trailing spaces)
-            if 'comment' in line:
+            if "comment" in line:
                 # Remove the word 'comment' (and surrounding whitespace)
-                line = line.replace(', comment', '').rstrip() + '\n'
+                line = line.replace(", comment", "").rstrip() + "\n"
             modified_lines.append(line)
 
         # Write the modified lines to the output file
-        with open(output_file_path, 'w') as file:
+        with open(output_file_path, "w") as file:
             file.writelines(modified_lines)
 
         return output_file_path
-        
+
     def append_number_to_duplicate_device_ids(self, input_file_path, output_file_path):
         device_id_counter = {}
         modified_lines = []
 
-        with open(input_file_path, 'r') as file:
+        with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
-            if not line.startswith('%'):  # ignore comment lines
-                parts = line.split(', ')
-                    
+            if not line.startswith("%"):  # ignore comment lines
+                parts = line.split(", ")
+
                 device_id = parts[-1].strip()  #
                 # Check if the device_id has already been encountered
                 if device_id in device_id_counter:
-                # Increment the count and append it to the device_id
+                    # Increment the count and append it to the device_id
                     device_id_counter[device_id] += 1
                     new_device_id = f"{device_id}_{device_id_counter[device_id]}"
-                    parts[-1] = new_device_id + '\n'  # replace with the new_device_id
+                    parts[-1] = new_device_id + "\n"  # replace with the new_device_id
                 else:
                     # Initialize the count for this device_id
                     device_id_counter[device_id] = 0
                 # Reconstruct the line
-                line = ', '.join(parts)
+                line = ", ".join(parts)
             # Add the (possibly modified) line to the list of modified lines
             modified_lines.append(line)
 
         # Write the modified lines to the output file
-        with open(output_file_path, 'w') as file:
+        with open(output_file_path, "w") as file:
             file.writelines(modified_lines)
 
         return output_file_path
@@ -890,11 +908,13 @@ class GUI(QWidget):
             if self.listbox1_3.item(i).checkState() == Qt.Checked:
                 checked_device_nm.add(self.listbox1_3.item(i).text())
 
-        
-
         # Iterate over all devices and add those of the checked types to the device listbox
         for device in self.deviceobjects:
-            if device.device_type in checked_device_types and device.polarization in checked_device_polarization and device.wavelength in checked_device_nm:
+            if (
+                device.device_type in checked_device_types
+                and device.polarization in checked_device_polarization
+                and device.wavelength in checked_device_nm
+            ):
                 device_item = QListWidgetItem(device.device_id)
                 device_item.setFlags(device_item.flags() | Qt.ItemIsUserCheckable)
                 device_item.setCheckState(Qt.Unchecked)
@@ -987,7 +1007,9 @@ class GUI(QWidget):
 
         # Temporarily store items and detach them from the list
         for index in range(list_widget.count()):
-            item = list_widget.takeItem(0)  # Take the first item (since the list is being shortened each time)
+            item = list_widget.takeItem(
+                0
+            )  # Take the first item (since the list is being shortened each time)
             if search_string.lower() in item.text().lower():
                 matching_items.append(item)
             else:
@@ -1091,7 +1113,7 @@ class GUI(QWidget):
 
             sequence_name = self.sequence_name0 + ".py"
 
-            sequence_file = os.path.join(d, 'sequences', sequence_name)
+            sequence_file = os.path.join(d, "sequences", sequence_name)
 
             class_name = self.find_class_names_in_file(sequence_file)
 
@@ -1108,7 +1130,7 @@ class GUI(QWidget):
                 del old_layout
 
             layout, self.widget_list = self.set_parameters(attributes)
-            self.resultsinfo = attributes['resultsinfo']
+            self.resultsinfo = attributes["resultsinfo"]
             # self.populate_sequence_variables(sequence_file, class_name[0])
 
             new_layout = self.parameters_area.layout()
@@ -1178,22 +1200,23 @@ class GUI(QWidget):
             layout.addRow(dict_label)
             widgets_list.append(dict_label)
 
-    
             # Loop through the keys of the sub-dictionary
             for key in main_dict[name].keys():
                 # Create QLabel and QLineEdit for each key
-                if '_info' not in key:
+                if "_info" not in key:
                     key_label = QLabel(str(key))
                     key_edit = QLineEdit(str(main_dict[name][key]))
-                    if key + '_info' in main_dict[name].keys():
-                        key_info = PopupButton('?', main_dict[name][key + '_info'])
+                    if key + "_info" in main_dict[name].keys():
+                        key_info = PopupButton("?", main_dict[name][key + "_info"])
                     else:
                         key_info = None
 
                     # Create a horizontal layout for the row
                     row_layout = QHBoxLayout()
-                        
-                    if (name == 'resultsinfo' and self.edxcheck == False) or name == 'variables':
+
+                    if (
+                        name == "resultsinfo" and self.edxcheck == False
+                    ) or name == "variables":
                         # Add the label and line edit to the row layout
                         row_layout.addWidget(key_label)
                         row_layout.addWidget(key_edit)
@@ -1204,8 +1227,6 @@ class GUI(QWidget):
 
                         # Add the row layout to the main form layout
                         layout.addRow(row_layout)
-
-                    
 
                     # Add the QLabel and QLineEdit to the layout and widget list
 
@@ -1282,7 +1303,7 @@ class GUI(QWidget):
         def handle_expression(expr):
             if isinstance(expr, ast.Str):  # String value
                 return expr.s
-            elif isinstance(expr, ast.Constant):  # Use ast.Constant for numbers 
+            elif isinstance(expr, ast.Constant):  # Use ast.Constant for numbers
                 return expr.value  # Access the value directly
             elif isinstance(expr, ast.Name):  # Variable or other reference
                 return expr.id
@@ -1330,11 +1351,12 @@ class GUI(QWidget):
                                         attribute_value = handle_expression(
                                             init_node.value
                                         )
-                                        instance_attributes[
-                                            attribute_name
-                                        ] = attribute_value
+                                        instance_attributes[attribute_name] = (
+                                            attribute_value
+                                        )
 
         return instance_attributes
+
 
 class StreamRedirector(object):
     def __init__(self, widget, file=None):
@@ -1348,6 +1370,7 @@ class StreamRedirector(object):
 
     def flush(self):
         pass
+
 
 class PopupButton(QPushButton):
     def __init__(self, title, popup_message):
@@ -1364,28 +1387,34 @@ class PopupButton(QPushButton):
         msg.setIcon(QMessageBox.Information)
         msg.exec_()
 
+
 class LogEmitter(QObject):
-    """ Custom signal emitter for log messages. """
+    """Custom signal emitter for log messages."""
+
     emitLog = pyqtSignal(str)
+
 
 class StreamToLogger:
     """
     Custom stream object that redirects writes to a logger instance.
     """
+
     def __init__(self, logger, level):
         self.logger = logger
         self.level = level
 
     def write(self, message):
         # Avoid writing newline characters
-        if message != '\n':
+        if message != "\n":
             self.logger.log(self.level, message)
 
     def flush(self):
         pass
 
+
 class QTextEditLogger(logging.Handler, QObject):
-    """ Custom logging handler sending log messages to a QTextEdit. """
+    """Custom logging handler sending log messages to a QTextEdit."""
+
     def __init__(self, parent):
         super().__init__()
         QObject.__init__(self)
@@ -1400,6 +1429,7 @@ class QTextEditLogger(logging.Handler, QObject):
 
     def appendLogMessage(self, message):
         self.widget.append(message)
+
 
 class ElectroOpticDevice:
     """Object used to store all information associated with an electro-optic device
@@ -1495,6 +1525,7 @@ class ElectroOpticDevice:
         else:
             return False
 
+
 class DirectoryDict:
     def __init__(self, directory):
         self.directory = directory
@@ -1556,6 +1587,7 @@ class DirectoryDict:
 
         def on_modified(self, event):
             self.dir_dict.dir_dict = self.dir_dict.create_dict_from_dir()
+
 
 if __name__ == "__main__":
     app = QApplication([])
