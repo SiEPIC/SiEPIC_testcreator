@@ -11,12 +11,16 @@ class CurrentSweep(SmuSweep):
         self.variables = {
             'Start': 0, 
             'Start_info': 'Please enter the starting current value',
+            'Start_bounds': [-100, 100],
             'Stop': 1,
             'Stop_info': 'Please enter the stopping current value', 
+            'Stop_bounds': [-100, 100],
             'Step': 0.1, 
             'Step_info': 'Please enter the step size',
+            'Step_bounds': [-100, 100],
             'Center': '',
             'Center_info': 'Please enter the center current value',
+            'Center_bounds': [-100, 100],
             'Span': '',
             'Span_info': 'Please enter the span of the sweep',
             'Range': '',
@@ -27,12 +31,15 @@ class CurrentSweep(SmuSweep):
             'Points_info': 'Please enter the number of points in the sweep',
             'Direction': 'UP',
             'Direction_info': 'Please enter the direction of the sweep',
+            'Direction_options': ['UP', 'DOWN'],
             'Sweeptype': 'current',
             'Sweeptype_info': 'Please enter the sweep type should be set to current',
             'Upper_limit': 5,
             'Upper_limit_info': 'Please enter the upper limit of the sweep',
+            'Upper_limit_bounds': [0, 100],
             'Trans_col': False,
-            'Trans_col_info': 'Please enter True or False for the transient column'
+            'Trans_col_info': 'Please enter True or False for the transient column',
+            'Trans_col_options': [True, False]
         }
 
         self.resultsinfo = {

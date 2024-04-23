@@ -40,9 +40,11 @@ def launch():
 class GUI(QWidget):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("Dream Creator")
 
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
+        self.runtime_journal = dict()
 
         # Set up the layout
         self.layout = QVBoxLayout()
@@ -50,7 +52,7 @@ class GUI(QWidget):
         self.setLayout(self.layout)
 
         # Set up the file selection area
-        self.setup_yaml_selection()
+        #self.setup_yaml_selection()
         self.setup_file_selection()
 
         # Set up the sequence selection area
@@ -60,7 +62,7 @@ class GUI(QWidget):
         self.setup_devices()
 
         self.layout.addLayout(self.hlayout)
-        self.setup_save_folder()
+        #self.setup_save_folder()
 
         self.setup_outputlog()
         self.removed_items = self.remove_non_ida_entries(self.sequences_checklist)
@@ -103,10 +105,10 @@ class GUI(QWidget):
         # self.layout.addWidget(self.textEdit)
 
     def setup_file_selection(self):
-        self.file_title = QLabel("Upload coordinates file")
+        self.file_title = QLabel("Upload coordinates file or Yaml file")
         self.file_label = QLineEdit("No file selected")
         self.file_button = QPushButton("Choose File")
-        self.file_button.clicked.connect(self.choose_coord_file)
+        self.file_button.clicked.connect(self.choose_file)
 
         file_layoutv = QVBoxLayout()
         file_layout = QHBoxLayout()
@@ -269,7 +271,7 @@ class GUI(QWidget):
 
         # selected_sequence = self.customsequences_checklist.selectedItems()
 
-        if selected_sequence != [] or selected_devices != []:
+        if selected_sequence != [] and selected_devices != []:
             for device in selected_devices:
                 self.yamldict["Devices"][device.text()]["sequences"].append(
                     selected_sequence[0].text()
@@ -281,6 +283,13 @@ class GUI(QWidget):
                     + device.text()
                 )
 
+            sequence_item = QListWidgetItem(selected_sequence[0])
+            sequence_item.setFlags(sequence_item.flags() | Qt.ItemIsUserCheckable)
+            sequence_item.setCheckState(Qt.Unchecked) 
+            self.listbox4.addItem(sequence_item)
+        else:
+            print('Please make sure a sequence and device(s) are selected before linking.')
+
     def button2_clicked(self, item):
         options = QFileDialog.Options()
         filename, _ = QFileDialog.getSaveFileName(
@@ -290,15 +299,20 @@ class GUI(QWidget):
             "YAML Files (*.yaml);;All Files (*)",
             options=options,
         )
-
-        if filename:
-            if not filename.endswith(".yaml"):
-                filename += ".yaml"
-            with open(filename, "w") as file:
-                yaml.dump(self.yamldict, file)
-            print("Saved to " + filename)
+        settime = 10000
+        runtime = self.total_runtime_check(self.yamldict)
+        if runtime >= settime:
+            print(f"Total runtime {runtime} exceeds set threshold of {settime}, aborting save.")
         else:
-            print("Please choose save location to export YAML file.")
+            print(f"Total runtime {runtime} is within set threshold of {settime}, proceeding with save.")
+            if filename:
+                if not filename.endswith(".yaml"):
+                    filename += ".yaml"
+                with open(filename, "w") as file:
+                    yaml.dump(self.yamldict, file)
+                print("Saved to " + filename)
+            else:
+                print("Please choose save location to export YAML file.")
 
     def object_to_dict(self, obj):
         """
@@ -353,16 +367,16 @@ class GUI(QWidget):
 
         button1 = QPushButton("Link Sequence")
         button2 = QPushButton("Export Yaml")
-        button3 = QPushButton("Adjust coord file")
+        #button3 = QPushButton("Adjust coord file")
 
         buttons_layout = QHBoxLayout()
         buttons_layout.addWidget(button1)
         buttons_layout.addWidget(button2)
-        buttons_layout.addWidget(button3)
+        #buttons_layout.addWidget(button3)
 
         button1.clicked.connect(self.button1_clicked)
         button2.clicked.connect(self.button2_clicked)
-        button3.clicked.connect(self.fix_coord_file)
+        #button3.clicked.connect(self.fix_coord_file)
 
         layoutv.addLayout(buttons_layout)
 
@@ -374,16 +388,34 @@ class GUI(QWidget):
         self.listbox2.setSelectionMode(QListWidget.ExtendedSelection)
 
         devices_group_layout = QVBoxLayout()
-        device_search = QLineEdit()
-        device_search.textChanged.connect(self.search_devices)
+        self.device_search = QLineEdit()
+        self.device_search.setPlaceholderText("Search for devices here...")
+        self.device_search.textChanged.connect(self.search_devices)
 
-        devices_group_layout.addWidget(device_search)
+        devices_group_layout.addWidget(self.device_search)
         devices_group_layout.addWidget(QLabel("Devices"))
         devices_group_layout.addWidget(self.listbox2)
 
+        button_h_layout = QHBoxLayout()
+
         select_all_btn = QPushButton("Select All")
         select_all_btn.clicked.connect(self.select_all)
-        devices_group_layout.addWidget(select_all_btn)
+
+        button_h_layout.addWidget(select_all_btn)
+
+        unselect_all_btn = QPushButton("Unselect All")
+        unselect_all_btn.clicked.connect(self.unselect_all)
+
+        button_h_layout.addWidget(unselect_all_btn)
+
+        selectkw_btn = QPushButton("Select Keyword")
+        selectkw_btn.clicked.connect(self.select_keyword)
+
+        button_h_layout.addWidget(selectkw_btn)
+
+        devices_group_layout.addLayout(button_h_layout)
+
+
 
         choice_menu = QHBoxLayout()
 
@@ -418,15 +450,67 @@ class GUI(QWidget):
         device_data_sequences_layout.addWidget(self.listbox3)
         device_data_sequences_layout.addWidget(QLabel("Associated Sequences"))
         device_data_sequences_layout.addWidget(self.listbox4)
+        self.listbox4.itemChanged.connect(self.on_itembox4_checked)
+
+        remove_sequence_btn = QPushButton("Remove Sequence")
+        remove_sequence_btn.clicked.connect(self.remove_sequence)
+        device_data_sequences_layout.addWidget(remove_sequence_btn)
 
         layoutv.addLayout(device_data_sequences_layout)
         layouth.addLayout(layoutv)
 
         self.hlayout.addLayout(layouth)
 
+    def on_itembox4_checked(self):
+        checked_items = self.find_checked_items(self.listbox4)
+        if len(checked_items) == 1:
+
+            for i in range(self.customsequences_checklist.count()):
+                if self.customsequences_checklist.item(i).text() != checked_items[0].text():
+                    self.customsequences_checklist.item(i).setCheckState(Qt.Unchecked)
+                else:
+                    self.customsequences_checklist.item(i).setCheckState(Qt.Checked)
+            
+            self.reset_parameters(checked_items[0].text())
+            self.sequence_namer.setText(''.join(self.extract_text_outside_brackets(checked_items[0].text())))
+        else:
+            self.remove_layout_from_widget(self.parameters_area)
+            
+    def find_checked_items(self, box):
+        checked_items = []
+        for i in range(box.count()):
+            item = box.item(i)
+            if item.checkState() == Qt.Checked:
+                checked_items.append(item)
+        return checked_items
+
+    def remove_sequence(self):
+        selected_sequences = self.find_checked_items(self.listbox4)
+        selected_devices = self.find_checked_items(self.listbox2)
+        # selected_sequences = self.listbox4.selectedItems()
+        # selected_devices = self.listbox2.selectedItems()
+        for item in selected_sequences:
+            row = self.listbox4.row(item)  # Get the row of the item
+            self.listbox4.takeItem(row)
+
+        for device in selected_devices:
+            for sequence in selected_sequences:
+                self.yamldict['Devices'][device.text()]['sequences'].remove(sequence.text())
+                print('Removed sequence '+sequence.text()+' from device '+device.text())
+
+    def select_keyword(self, item):
+        keyword = self.device_search.text()
+        for i in range(self.listbox2.count()):
+            if keyword in self.listbox2.item(i).text() and keyword != '':
+                self.listbox2.item(i).setCheckState(Qt.Checked)
+
     def select_all(self, item):
         for i in range(self.listbox2.count()):
             self.listbox2.item(i).setCheckState(Qt.Checked)
+
+    def unselect_all(self, item):
+        for i in range(self.listbox2.count()):
+            self.listbox2.item(i).setCheckState(Qt.Unchecked)
 
     def setup_device_data_sequences(self):
         listbox3 = QListWidget()
@@ -485,6 +569,49 @@ class GUI(QWidget):
         if item.checkState() == Qt.Checked:
             # Get the sequence name
             self.sequence_name0 = item.text()
+            self.custom_reset_parameters(self.sequence_name0)
+            # Get the path to the sequences directory
+            # cwd = os.getcwd()
+            # d = dirname(abspath(__file__))
+            # # print(d)
+            # d = str(d)
+
+            # attributes = self.yamldict["Sequences"][self.sequence_name0]
+
+            # # class_name = self.find_class_names_in_file(sequence_file)
+
+            # # attributes = self.find_instance_attributes_in_init(sequence_file, class_name[0])
+            # # print(attributes)
+
+            # # Clear the existing layout
+            # self.clear_layout(self.parameters_area.layout())
+
+            # # Delete the existing layout
+            # old_layout = self.parameters_area.layout()
+            # if old_layout is not None:
+            #     del old_layout
+
+            # layout, self.widget_list = self.set_parameters(attributes)
+            # # self.populate_sequence_variables(sequence_file, class_name[0])
+
+            # new_layout = self.parameters_area.layout()
+            # if new_layout is None:  # Only set the new layout if there isn't one already
+            #     self.parameters_area.setLayout(layout)
+
+            # # Set the new layout
+            # self.parameters_area.setLayout(layout)
+
+        else:
+            # Clear the text editor
+            self.remove_layout_from_widget(self.parameters_area)
+
+    def custom_reset_parameters(self, sequenceName):
+        # Get the sequence name
+            if 'ida' in sequenceName:
+                showresults = False
+            else:
+                showresults = True
+            self.sequence_name0 = sequenceName
             # Get the path to the sequences directory
             cwd = os.getcwd()
             d = dirname(abspath(__file__))
@@ -506,7 +633,7 @@ class GUI(QWidget):
             if old_layout is not None:
                 del old_layout
 
-            layout, self.widget_list = self.set_parameters(attributes)
+            layout, self.widget_list = self.set_parameters(attributes, showresults=showresults)
             # self.populate_sequence_variables(sequence_file, class_name[0])
 
             new_layout = self.parameters_area.layout()
@@ -516,12 +643,90 @@ class GUI(QWidget):
             # Set the new layout
             self.parameters_area.setLayout(layout)
 
+    def reset_parameters(self, sequenceName):
+
+        if 'ida' in sequenceName:
+            showresults = False
         else:
-            # Clear the text editor
-            self.remove_layout_from_widget(self.parameters_area)
+            showresults = True
+        cwd = os.getcwd()
+        d = str(dirname(abspath(__file__)))
+
+        sequence_name = sequenceName + ".py"
+
+        sequence_file = os.path.join(d, "sequences", sequence_name)
+
+        class_name = self.find_class_names_in_file(sequence_file)
+
+        attributes = self.find_instance_attributes_in_init(
+            sequence_file, class_name[0]
+        )
+
+        # Clear the existing layout
+        self.clear_layout(self.parameters_area.layout())
+
+        # Delete the existing layout
+        old_layout = self.parameters_area.layout()
+        if old_layout is not None:
+            del old_layout
+
+        layout, self.widget_list = self.set_parameters(attributes, showresults=showresults)
+        self.resultsinfo = attributes["resultsinfo"]
+        # self.populate_sequence_variables(sequence_file, class_name[0])
+
+        new_layout = self.parameters_area.layout()
+        if new_layout is None:  # Only set the new layout if there isn't one already
+            self.parameters_area.setLayout(layout)
+
+        # Set the new layout
+        self.parameters_area.setLayout(layout)
+
+    def extract_text_in_brackets(self, text):
+        results = []
+        start_index = None
+        for i, char in enumerate(text):
+            if char == '(':
+                start_index = i + 1  # Record the index after the opening bracket
+            elif char == ')':
+                if start_index is not None:  
+                    results.append(text[start_index:i])
+                    start_index = None
+        return results
+    
+    def extract_text_outside_brackets(self, text):
+        results = []
+        current_word = ""
+        in_brackets = False
+        for char in text:
+            if char == '(':
+                in_brackets = True
+            elif char == ')':
+                in_brackets = False
+            elif not in_brackets:
+                current_word += char
+            else:  # char is inside the brackets
+                if current_word:
+                    results.append(current_word)
+                    current_word = ""
+        if current_word:  # Add the last word if it wasn't terminated by a bracket
+            results.append(current_word)
+        return results  
 
     def set_sequence(self, item):
+        if self.check_for_multiple_sequence_types(self.sequence_name0):
+            print('Please do not choose sequence types from different stages')
+            return
         parameters = self.get_parameters(self.widget_list)
+
+        if '(' in self.sequence_namer.text() or ')' in self.sequence_namer.text():
+            print('Please remove brackets from sequence name and try again')
+            return
+
+        a = self.extract_text_in_brackets(self.sequence_name0)
+        if a != []:
+            self.sequence_name0 = a[0]
+
+        name = self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
         if self.edxcheck:
             parametersdict = {
                 "variables": parameters["variables"],
@@ -540,6 +745,179 @@ class GUI(QWidget):
             self.customsequences_checklist, self.yamldict["Sequences"]
         )
         print("Added Sequence")
+        runtime = self.sequence_runtime_check(self.sequence_name0, parameters, name)
+        print(f'This sequence will take approximately {runtime} seconds to run')
+
+    def sequence_runtime_check(self, sequenceName, parameters, name):
+        wavelength_constant = 0.5
+        smu_constant = 0.5
+
+        sequencetypes = [
+            "wavelength_sweep",
+            "current_sweep",
+            "voltage_sweep",
+            "set_current_wavelength_sweep",
+            "set_voltage_wavelength_sweep",
+            "set_wavelength_current_sweep",
+            "set_wavelength_voltage_sweep",
+            "wavelength_sweep_ida",
+            "current_sweep_ida",
+            "voltage_sweep_ida",
+            "set_current_wavelength_sweep_ida",
+            "set_voltage_wavelength_sweep_ida",
+            "set_wavelength_current_sweep_ida",
+            "set_wavelength_voltage_sweep_ida",
+        ]
+
+        sequence = sequenceName
+        variables = parameters['variables']
+        # print(variables)
+        if sequencetypes[6] in sequence or sequencetypes[13] in sequence:
+
+            runtime = (
+                (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                )
+                * smu_constant
+                * (variables["Wavelengths"].count(",") + 1)
+            )
+        elif sequencetypes[5] in sequence or sequencetypes[12] in sequence:
+            runtime = (
+                (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                )
+                * smu_constant
+                * (variables["Wavelengths"].count(",") + 1)
+            )
+        elif sequencetypes[4] in sequence or sequencetypes[11] in sequence:
+            runtime = (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
+                * wavelength_constant
+                * (variables["Voltages"].count(",") + 1)
+            )
+        elif sequencetypes[3] in sequence or sequencetypes[10] in sequence:
+            runtime = (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
+                * wavelength_constant
+                * (variables["Currents"].count(",") + 1)
+            )
+        elif sequencetypes[2] in sequence or sequencetypes[9] in sequence:
+            runtime = (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
+            ) * smu_constant
+        elif sequencetypes[1] in sequence or sequencetypes[8] in sequence:
+            runtime = (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
+            ) * smu_constant
+        elif sequencetypes[0] in sequence or sequencetypes[7] in sequence:
+            runtime = (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
+                * wavelength_constant
+            )
+        else:
+            print("Error in predicting runtime. Please check sequence type and parameters.")
+            return None
+        self.runtime_journal[name] = [runtime, 0]
+        return runtime
+
+    def total_runtime_check(self, yamldict):
+        """
+        Checks the runtime of all the sequences on all specified devices.
+        """
+
+        sequences = yamldict["Sequences"]
+        devices = yamldict['Devices']
+
+        for device in devices:
+            for sequence in devices[device]['sequences']:
+                print(self.runtime_journal[sequence][1])
+                self.runtime_journal[sequence][1] = self.runtime_journal[sequence][1] + 1
+
+        wavelength_constant = 10
+        smu_constant = 10
+        total_runtime = 0
+
+        sequencetypes = [
+            "wavelength_sweep",
+            "current_sweep",
+            "voltage_sweep",
+            "set_current_wavelength_sweep",
+            "set_voltage_wavelength_sweep",
+            "set_wavelength_current_sweep",
+            "set_wavelength_voltage_sweep",
+            "wavelength_sweep_ida",
+            "current_sweep_ida",
+            "voltage_sweep_ida",
+            "set_current_wavelength_sweep_ida",
+            "set_voltage_wavelength_sweep_ida",
+            "set_wavelength_current_sweep_ida",
+            "set_wavelength_voltage_sweep_ida",
+        ]
+
+        # print(variables)
+        for sequence in sequences:
+            variables = sequences[sequence]['variables']
+            if sequencetypes[6] in sequence or sequencetypes[13] in sequence:
+
+                runtime = (
+                    (
+                        (float(variables["Stop"]) - float(variables["Start"]))
+                        / float(variables["Step"])
+                    )
+                    * smu_constant
+                    * (variables["Wavelengths"].count(",") + 1)
+                )
+            elif sequencetypes[5] in sequence or sequencetypes[12] in sequence:
+                runtime = (
+                    (
+                        (float(variables["Stop"]) - float(variables["Start"]))
+                        / float(variables["Step"])
+                    )
+                    * smu_constant
+                    * (variables["Wavelengths"].count(",") + 1)
+                )
+            elif sequencetypes[4] in sequence or sequencetypes[11] in sequence:
+                runtime = (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                    * wavelength_constant
+                    * (variables["Voltages"].count(",") + 1)
+                )
+            elif sequencetypes[3] in sequence or sequencetypes[10] in sequence:
+                runtime = (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                    * wavelength_constant
+                    * (variables["Currents"].count(",") + 1)
+                )
+            elif sequencetypes[2] in sequence or sequencetypes[9] in sequence:
+                runtime = (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                ) * smu_constant
+            elif sequencetypes[1] in sequence or sequencetypes[8] in sequence:
+                runtime = (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                ) * smu_constant
+            elif sequencetypes[0] in sequence or sequencetypes[7] in sequence:
+                runtime = (
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
+                    * wavelength_constant
+                )
+            else:
+                print("Error in predicting runtime. Please check sequence type and parameters.")
+                runtime = 0
+            total_runtime = total_runtime + runtime
+        return total_runtime
 
     def to_title_case(self, s):
         return "".join(word.capitalize() for word in s.split("_"))
@@ -549,16 +927,35 @@ class GUI(QWidget):
         )
         print("Added Sequence")
 
-    def choose_coord_file(self):
+    def choose_file(self):
         fname = QFileDialog.getOpenFileName(self, "Open file")
         if fname[0]:
             self.file_label.setText(fname[0])
-            self.yfile_label.setText("No file selected")
+            #self.file_label.setText("No file selected")
 
-        if fname[0].endswith(".yaml") == True:
-            print("Please select a coordinate file not a yaml file")
+        if fname[0] != "" and fname[0].endswith(".yaml") == True:
+            with open(fname[0], "r") as file:
+                inputfile = yaml.safe_load(file)
 
-        if fname[0] != "" and fname[0].endswith(".yaml") == False:
+
+            self.yamldict = inputfile
+            self.devicedict = inputfile["Devices"]
+            self.routinedict = inputfile["Sequences"]
+            self.update_custom_sequences(self.customsequences_checklist, inputfile["Sequences"])
+
+            self.deviceobjects = self.create_device_list(self.devicedict)
+
+            self.populate_device_list()
+            self.populate_group_list()
+            self.populate_polar_list()
+            self.populate_wavelength_list()
+        elif fname[0] != "" and fname[0].endswith(".txt") == True:
+            with open(fname[0], "r") as file:
+                lines = file.readlines()
+            if lines[0] != '% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params \n':
+                print("Incorrect format for coordinate file, please reupload with correct format")
+                self.file_label.setText('No file selected')
+                return
             try:
                 self.deviceobjects = self.create_devices_from_file(fname[0])
                 self.populate_device_list()
@@ -569,29 +966,15 @@ class GUI(QWidget):
                 print(
                     "Errors found in coordinate file, please remove or edit and upload again"
                 )
+        else:
+            print("Please select either a valid yaml file or coordinate text file")
 
-    def choose_yaml_file(self):
-        fname = QFileDialog.getOpenFileName(self, "Open file")
-        if fname[0]:
-            self.yfile_label.setText(fname[0])
-            self.file_label.setText("No file selected")
-
-        if fname[0].endswith(".yaml") == False:
-            print("Please select a yaml file not a coordinate file")
-
-        if fname[0] != "" and fname[0].endswith(".yaml") == True:
-            with open(fname[0], "r") as file:
-                inputfile = yaml.safe_load(file)
-
-            self.devicedict = inputfile["Devices"]
-            self.routinedict = inputfile["Sequences"]
-
-            self.deviceobjects = self.create_device_list(self.devicedict)
-
-            self.populate_device_list()
-            self.populate_group_list()
-            self.populate_polar_list()
-            self.populate_wavelength_list()
+    def populateCustomSequences(self, inputfile):
+        self.customsequences_checklist = []
+        if "CustomSequences" in inputfile:
+            custom_sequences = inputfile["CustomSequences"]
+            for sequence in custom_sequences:
+                self.customsequences_checklist.append(sequence["Name"])
 
     # Redefining the function create_devices_from_file with handling blank lines in electrical coordinates data
     def create_devices_from_file(self, file_path):
@@ -616,6 +999,8 @@ class GUI(QWidget):
             + "\\"
             + "coordinate_file_edits.txt"
         )
+
+        optLines, ElecLines = self.countLines(file_path)
 
         file = self.remove_comments_from_lines(file_path, save_location)
         file = self.account_for_underscores(file, save_location)
@@ -657,7 +1042,7 @@ class GUI(QWidget):
                 )
                 devices_dict[device_id] = device
             except:
-                print("Error in optical coordinate line: " + str(count) + ": " + line)
+                print("Error in optical coordinate line: " + str(count + 2) + ": " + line)
 
         # Add electrical coordinates to devices
         for count, line in enumerate(elec_coords_data):
@@ -670,7 +1055,7 @@ class GUI(QWidget):
                 except:
                     print(
                         "Error in electrical coordinate line: "
-                        + str(count)
+                        + str(count + optLines + 3)
                         + ": "
                         + line
                     )
@@ -681,20 +1066,43 @@ class GUI(QWidget):
             )
 
         return list(devices_dict.values())
+    
+    def countLines(self, file_path):
+        """
+        This function counts the number of lines in the optical and electrical coordinate files.
+        It also counts the number of optical coordinate lines and the number of electrical coordinate lines.
+        """
+
+        optLines = 0
+        ElecLines = 0
+        optcheck = True
+
+        with open(file_path, "r") as file:
+            lines = file.readlines()
+
+        for line in lines:
+            if line == "\n":  # Check for the line with just '\n'
+                optcheck = False
+            if optcheck == True:
+                optLines += 1
+            else:
+                ElecLines += 1
+    
+        return optLines, ElecLines
 
     def create_device_list(self, devicedict):
         device_list = []
         for device_info in devicedict.values():
             device = ElectroOpticDevice(
-                device_id=device_info["DeviceID"],
-                opticalCoords=device_info["Optical Coordinates"],
-                polarization=device_info["Polarization"],
-                device_type=device_info["Type"],
-                wavelength=device_info["Wavelength"],
+                device_id=device_info["device_id"],
+                opticalCoords=device_info["opticalCoordinates"],
+                polarization=device_info["polarization"],
+                device_type=device_info["device_type"],
+                wavelength=device_info["wavelength"],
             )
-            if device_info["Electrical Coordinates"] != []:
-                device.add_electrical_coordinates(device_info["Electrical Coordinates"])
-            device.add_sequences(device_info["Sequences"])
+            if device_info["electricalCoordinates"] != []:
+                device.add_electrical_coordinates(device_info["electricalCoordinates"])
+            device.add_sequences(device_info["sequences"])
             device_list.append(device)
             self.yamldict["Devices"][device.device_id] = self.object_to_dict(device)
         return device_list
@@ -900,9 +1308,11 @@ class GUI(QWidget):
             if self.listbox1.item(i).checkState() == Qt.Checked:
                 checked_device_types.add(self.listbox1.item(i).text())
 
+
         for i in range(self.listbox1_2.count()):
             if self.listbox1_2.item(i).checkState() == Qt.Checked:
                 checked_device_polarization.add(self.listbox1_2.item(i).text())
+
 
         for i in range(self.listbox1_3.count()):
             if self.listbox1_3.item(i).checkState() == Qt.Checked:
@@ -910,15 +1320,22 @@ class GUI(QWidget):
 
         # Iterate over all devices and add those of the checked types to the device listbox
         for device in self.deviceobjects:
-            if (
-                device.device_type in checked_device_types
-                and device.polarization in checked_device_polarization
-                and device.wavelength in checked_device_nm
-            ):
+            check = True
+                
+            if checked_device_types and device.device_type not in checked_device_types:
+                check = False 
+
+            if checked_device_polarization and device.polarization not in checked_device_polarization:
+                check = False
+
+            if checked_device_nm and device.wavelength not in checked_device_nm:
+                check = False
+
+            if check == True:
                 device_item = QListWidgetItem(device.device_id)
                 device_item.setFlags(device_item.flags() | Qt.ItemIsUserCheckable)
                 device_item.setCheckState(Qt.Unchecked)
-                self.listbox2.addItem(device_item)
+                self.listbox2.addItem(device_item) 
 
         # Connect the itemChanged signal to the update_device_data slot
         self.listbox2.itemChanged.connect(self.update_device_data)
@@ -1056,9 +1473,10 @@ class GUI(QWidget):
                     self.listbox3.addItem(device_data_item)
 
                     # Populate the associated sequences listbox with the sequences associated with the device
-                    for sequence in device.sequences:
+                    for i, sequence in enumerate(device.sequences):
                         sequence_item = QListWidgetItem(sequence)
                         self.listbox4.addItem(sequence_item)
+                        self.listbox4.item(i).setCheckState(Qt.Unchecked)
 
     def choose_save_file(self):
         fname = QFileDialog.getOpenFileName(self, "Open file")
@@ -1108,38 +1526,8 @@ class GUI(QWidget):
             # Get the sequence name
             self.sequence_name0 = item.text()
             # Get the path to the sequences directory
-            cwd = os.getcwd()
-            d = str(dirname(abspath(__file__)))
-
-            sequence_name = self.sequence_name0 + ".py"
-
-            sequence_file = os.path.join(d, "sequences", sequence_name)
-
-            class_name = self.find_class_names_in_file(sequence_file)
-
-            attributes = self.find_instance_attributes_in_init(
-                sequence_file, class_name[0]
-            )
-
-            # Clear the existing layout
-            self.clear_layout(self.parameters_area.layout())
-
-            # Delete the existing layout
-            old_layout = self.parameters_area.layout()
-            if old_layout is not None:
-                del old_layout
-
-            layout, self.widget_list = self.set_parameters(attributes)
-            self.resultsinfo = attributes["resultsinfo"]
-            # self.populate_sequence_variables(sequence_file, class_name[0])
-
-            new_layout = self.parameters_area.layout()
-            if new_layout is None:  # Only set the new layout if there isn't one already
-                self.parameters_area.setLayout(layout)
-
-            # Set the new layout
-            self.parameters_area.setLayout(layout)
-
+            self.reset_parameters(self.sequence_name0)
+            
         else:
             # Clear the text editor
             self.remove_layout_from_widget(self.parameters_area)
@@ -1182,7 +1570,17 @@ class GUI(QWidget):
 
         return result_dict
 
-    def set_parameters(self, main_dict):
+    def check_for_multiple_sequence_types(self, name):
+
+        for i in range(self.customsequences_checklist.count()):
+            if 'ida' in self.customsequences_checklist.item(i).text() and 'ida' not in name:
+                return True
+            else:
+                return False
+        return False
+
+
+    def set_parameters(self, main_dict, showresults=True):
         # Initialize a list to hold the created QLabel and QLineEdit widgets
         widgets_list = []
 
@@ -1197,7 +1595,8 @@ class GUI(QWidget):
             dict_label = QLabel(name)
 
             # Add the QLabel to the layout and widget list
-            layout.addRow(dict_label)
+            if showresults:# and dict_label.text() != "resultsinfo":
+                layout.addRow(dict_label)
             widgets_list.append(dict_label)
 
             # Loop through the keys of the sub-dictionary
