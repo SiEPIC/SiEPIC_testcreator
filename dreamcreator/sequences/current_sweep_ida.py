@@ -11,20 +11,28 @@ class CurrentSweepIda(SmuSweep):
         self.variables = {
             'Start': 0, 
             'Start_info': 'Please enter start current (mA)',
+            'Start_bounds': [-100, 100],
             'Stop': 1, 
             'Stop_info': 'Please enter stop current (mA)',
+            'Stop_bounds': [-100, 100],
             'Step': 0.1, 
             'Step_info': 'Please enter stepsize (mA)',
+            'Step_bounds': [-100, 100],
             'IV': 'True',
             'IV_info': 'Please enter True if you want an IV curve if not enter False',
+            'IV_info_options': ['True', 'False'],
             'RV': 'True',
             'RV_info': 'Please enter True if you want an RV curve if not enter False',
+            'RV_info_options': ['True', 'False'],
             'PV': 'True',
             'PV_info': 'Please enter True if you want a PV curve if not enter False',
+            'PV_info_options': ['True', 'False'],
             'Channel A': 'True',
             'Channel A_info': 'Please enter True to use Channel A if not enter False',
+            'Channel A_options': ['True', 'False'],
             'Channel B': 'False',
-            'Channel B_info': 'Please enter True to use Channel B if not enter False'
+            'Channel B_info': 'Please enter True to use Channel B if not enter False',
+            'Channel B_options': ['True', 'False']
         }
 
         self.resultsinfo = {

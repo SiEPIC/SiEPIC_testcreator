@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import (
     QListWidgetItem,
     QMessageBox,
     QCheckBox,
+    QComboBox,
 )
 from PyQt5.QtCore import Qt, pyqtSignal, QObject
 from PyQt5.QtWidgets import QLabel, QLineEdit, QVBoxLayout, QWidget, QFormLayout
@@ -658,7 +659,7 @@ class GUI(QWidget):
 
         class_name = self.find_class_names_in_file(sequence_file)
 
-        attributes = self.find_instance_attributes_in_init(
+        self.attributes = self.find_instance_attributes_in_init(
             sequence_file, class_name[0]
         )
 
@@ -670,8 +671,8 @@ class GUI(QWidget):
         if old_layout is not None:
             del old_layout
 
-        layout, self.widget_list = self.set_parameters(attributes, showresults=showresults)
-        self.resultsinfo = attributes["resultsinfo"]
+        layout, self.widget_list = self.set_parameters(self.attributes, showresults=showresults)
+        self.resultsinfo = self.attributes["resultsinfo"]
         # self.populate_sequence_variables(sequence_file, class_name[0])
 
         new_layout = self.parameters_area.layout()
@@ -716,7 +717,11 @@ class GUI(QWidget):
         if self.check_for_multiple_sequence_types(self.sequence_name0):
             print('Please do not choose sequence types from different stages')
             return
+        
         parameters = self.get_parameters(self.widget_list)
+
+        if self.check_bounds(parameters):
+            return
 
         if '(' in self.sequence_namer.text() or ')' in self.sequence_namer.text():
             print('Please remove brackets from sequence name and try again')
@@ -747,6 +752,31 @@ class GUI(QWidget):
         print("Added Sequence")
         runtime = self.sequence_runtime_check(self.sequence_name0, parameters, name)
         print(f'This sequence will take approximately {runtime} seconds to run')
+
+    def check_bounds(self, parameters):
+        variables = parameters['variables']
+        check = False
+
+        for variable in variables:
+            if variable + '_bounds' in self.attributes['variables']:
+                try:
+                    a = variables[variable]
+                    b = self.attributes['variables'][variable + '_bounds'][1]
+
+                    if ',' in variables[variable]:
+                        readings = variables[variable].split(',')
+                        for i in range(len(readings)):
+                            if float(readings[i]) >= float(self.attributes['variables'][variable + '_bounds'][1]) or float(readings[i]) <= float(self.attributes['variables'][variable + '_bounds'][0]):
+                                print('Variable {} reading {} is out of bounds'.format(variable, readings[i]))
+                                check = True
+                    else:
+                        if float(variables[variable]) >= float(self.attributes['variables'][variable + '_bounds'][1]) or float(variables[variable]) <= float(self.attributes['variables'][variable + '_bounds'][0]):
+                            print('Variable {} is out of bounds'.format(variable))
+                            check = True
+                except:
+                    print('Bounds check failed for variable {}'.format(variable))
+                    check = True
+        return check
 
     def sequence_runtime_check(self, sequenceName, parameters, name):
         wavelength_constant = 0.5
@@ -1561,7 +1591,10 @@ class GUI(QWidget):
                 # This is a sub-dictionary key-value pair
                 key_widget, value_widget, buttton_widget = widget
                 key = key_widget.text()
-                value = value_widget.text()
+                if isinstance(value_widget, QLineEdit):
+                    value = value_widget.text()
+                elif isinstance(value_widget, QComboBox):
+                    value = value_widget.currentText()
                 current_sub_dict[key] = value
 
         # Add the last sub-dictionary
@@ -1602,13 +1635,20 @@ class GUI(QWidget):
             # Loop through the keys of the sub-dictionary
             for key in main_dict[name].keys():
                 # Create QLabel and QLineEdit for each key
-                if "_info" not in key:
+                if "_info" not in key and "_bounds" not in key and "_options" not in key:
                     key_label = QLabel(str(key))
-                    key_edit = QLineEdit(str(main_dict[name][key]))
                     if key + "_info" in main_dict[name].keys():
                         key_info = PopupButton("?", main_dict[name][key + "_info"])
                     else:
                         key_info = None
+
+                    if key + "_options" in main_dict[name].keys():
+                        key_edit = QComboBox()
+                        key_edit.addItems(main_dict[name][key + "_options"])
+                        key_edit.setCurrentText(main_dict[name][key]) 
+
+                    else:
+                        key_edit = QLineEdit(str(main_dict[name][key]))
 
                     # Create a horizontal layout for the row
                     row_layout = QHBoxLayout()
@@ -1703,7 +1743,8 @@ class GUI(QWidget):
             if isinstance(expr, ast.Str):  # String value
                 return expr.s
             elif isinstance(expr, ast.Constant):  # Use ast.Constant for numbers
-                return expr.value  # Access the value directly
+                if isinstance(expr.value, int) or isinstance(expr.value, float):  # Check for numbers
+                    return expr.value 
             elif isinstance(expr, ast.Name):  # Variable or other reference
                 return expr.id
             elif isinstance(expr, ast.NameConstant):  # Boolean or None value
@@ -1712,6 +1753,11 @@ class GUI(QWidget):
                 keys = [handle_expression(k) for k in expr.keys]
                 values = [handle_expression(v) for v in expr.values]
                 return {key: value for key, value in zip(keys, values)}
+            elif isinstance(expr, ast.List): # List
+                return [handle_expression(element) for element in expr.elts]
+            elif isinstance(expr, ast.UnaryOp) and isinstance(expr.op, ast.USub):  # Negative sign
+                if isinstance(expr.operand, ast.Constant):  # Check if operand is a number
+                    return -expr.operand.value     # Return negative of the constant
             else:
                 return "complex_expression"  # Placeholder for more complex expressions
 
@@ -1968,7 +2014,6 @@ class DirectoryDict:
                         module_name, module_path
                     )
                     module = importlib.util.module_from_spec(spec)
-                    spec.loader.exec_module(module)
                     classes = [
                         m[1]
                         for m in inspect.getmembers(

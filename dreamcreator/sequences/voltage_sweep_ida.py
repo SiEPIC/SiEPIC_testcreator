@@ -11,20 +11,28 @@ class VoltageSweepIda(SmuSweep):
         self.variables = {
             'Start': 0, 
             'Start_info': 'Please enter start voltage (V)',
+            'Start_bounds': [-10, 10],
             'Stop': 1, 
             'Stop_info': 'Please enter stop voltage (V)',
+            'Stop_bounds': [-10, 10],
             'Step': 0.1, 
             'Step_info': 'Please enter stepsize (V)',
+            'Step_bounds': [-10, 10],
             'IV': 'True',
             'IV_info': 'Enter True to receive IV plot',
+            'IV_options': ['True', 'False'],
             'RV': 'True',
             'RV_info': 'Enter True to receive RV plot',
+            'RV_options': ['True', 'False'],
             'PV': 'True',
             'PV_info': 'Enter True to receive PV plot',
+            'PV_options': ['True', 'False'],
             'Channel A': 'True',
             'Channel A_info': 'Please enter True to use Channel A if not enter False',
+            'Channel A_options': ['True', 'False'],
             'Channel B': 'False',
-            'Channel B_info': 'Please enter True to use Channel B if not enter False'
+            'Channel B_info': 'Please enter True to use Channel B if not enter False',
+            'Channel B_options': ['True', 'False']
         }
 
         self.resultsinfo = {

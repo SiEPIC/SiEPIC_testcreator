@@ -39,7 +39,7 @@ class CurrentSweep(SmuSweep):
             'Upper_limit_bounds': [0, 100],
             'Trans_col': False,
             'Trans_col_info': 'Please enter True or False for the transient column',
-            'Trans_col_options': [True, False]
+            'Trans_col_options': ['True', 'False']
         }
 
         self.resultsinfo = {
