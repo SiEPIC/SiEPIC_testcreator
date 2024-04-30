@@ -39,7 +39,7 @@ class SetWavelengthVoltageSweepIda(SmuSweep):
             'Wavelengths_bounds': [1400, 1600]
         }
 
-        self.resultsinfo = {
+        self.results_info = {
             'num_plots': 1,
             'visual': True,
             'saveplot': True,

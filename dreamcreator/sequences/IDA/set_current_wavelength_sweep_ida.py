@@ -47,7 +47,7 @@ class SetCurrentWavelengthSweepIda(LaserSweep):
             'Currents_info': 'Please format the currents in units (A) as a list of integers separated by commas ex. 0, 1, 2',
             'Currents_bounds': [-100, 100],
         }
-        self.resultsinfo = {
+        self.results_info = {
             'num_plots': 1,
             'visual': True,
             'saveplot': True,

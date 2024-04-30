@@ -1,23 +1,22 @@
 from dreamcreator.sequences.core.laser_sweep import LaserSweep
 
-class SetVoltageWavelengthSweepIda(LaserSweep):
+class WavelengthSweepIda(LaserSweep):
     """
-    Sets the voltage and then performs a laser sweep.
+    Wavelength sweep sequence class.
 
     Args:
         ps (Dreams Lab probe station object): the probe station performing the sweep.
     """
     def __init__(self, ps):
-
         self.variables = {
             'Start': 1480,
             'Start_info': 'unit nm',
-            'Start_bounds': [1470, 1590],   
+            'Start_bounds': [1470, 1590],
             'Stop': 1580,
             'Stop_info': 'unit nm',
             'Stop_bounds': [1470, 1590],
             'Step': 1,
-            'Step_info': 'unit nm, can also use wavl_pts, if both filled Step will take priority',
+            'Step_info': 'unit nm',
             'Step_bounds': [0.1, 10],
             'Power': 1,
             'Power_info': 'unit dBm',
@@ -36,22 +35,14 @@ class SetVoltageWavelengthSweepIda(LaserSweep):
             'RangeDec_bounds': [0, 100],
             'Initialrange': '-20',
             'Initialrange_info': 'default -20',
-            'Initialrange_bounds': [-100, 100],
-            'Channel A': 'True',
-            'Channel A_info': 'Please enter True to use Channel A if not enter False',
-            'Channel A_options': ['True','False'],
-            'Channel B': 'False',
-            'Channel B_info': 'Please enter True to use Channel B if not enter False',
-            'Channel B_options': ['True','False'],
-            'Voltages': '0, 1, 2',
-            'Voltages_info': 'Please enter voltages in units (V) in the form x1, x2, x3',
-            'Voltages_bounds': [-5, 5]
+            'Initialrange_bounds': [-100, 100]
         }
-        self.resultsinfo = {
+
+        self.results_info = {
             'num_plots': 1,
             'visual': True,
             'saveplot': True,
-            'plottitle': 'Set Voltage Wavelength Sweep',
+            'plottitle': 'WavelengthSweep',
             'save_location': '',
             'foldername': '',
             'xtitle': 'Wavelength (nm)',
@@ -64,23 +55,14 @@ class SetVoltageWavelengthSweepIda(LaserSweep):
             'mat': True,
             'pkl': False
         }
-        super().__init__(variables=self.variables, resultsinfo=self.resultsinfo, ps=ps)
-
+        super().__init__(ps, variables=self.variables, resultsinfo=self.resultsinfo, mode='CONT')
+        
     def run(self, routine=False):
         self.set_results(variables=self.variables, resultsinfo = self.resultsinfo, routine=routine)
-        """Executes a wavelength sweep for each given voltage."""
-
         settings = self.ps.get_settings(self.verbose)
-        
-        for volt in self.variables['voltages']:
-            self.ps.elecprobe.smuchannels[0].set_current_mode()
-            self.ps.elecprobe.smuchannels[0].set_voltage(volt)
-            self.ps.elecprobe.smuchannels[0].set_output(True)
-        
-            self.external_parameters = volt
-            self.external_unit = 'V'
-            self.execute()
-
-            self.ps.elecprobe.smuchannels[0].set_output(False)
+        self.execute()
 
         self.ps.set_settings(settings)
+
+
+    

@@ -1,6 +1,6 @@
 from dreamcreator.sequences.core.smu_sweep import SmuSweep
 
-class SetWavelengthCurrentSweepIda(SmuSweep):
+class SetWavelengthCurrentSweep(SmuSweep):
     """
     Sets the wavelength then performs a current sweep.
 
@@ -11,35 +11,40 @@ class SetWavelengthCurrentSweepIda(SmuSweep):
 
         self.variables = {
             'Start': 0, 
-            'Start_info': 'Please enter start current (V)',
+            'Start_info': 'Please enter start voltage (V)',
             'Start_bounds': [-10, 10],
             'Stop': 1, 
-            'Stop_info': 'Please enter stop current (V)',
+            'Stop_info': 'Please enter stop voltage (V)',
             'Stop_bounds': [-10, 10],
             'Step': 0.1, 
-            'Step_info': 'Please enter step current (V)',
+            'Step_info': 'Please enter stepsize (V)',
             'Step_bounds': [-10, 10],
-            'IV': 'True',
-            'IV_info': 'True if current vs voltage plot needed',
-            'IV_options': ['True', 'False'],
-            'RV': 'True',
-            'RV_info': 'True if resistance vs voltage plot needed',
-            'RV_options': ['True', 'False'],
-            'PV': 'True',
-            'PV_info': 'True if power vs voltage plot needed',
-            'PV_options': ['True', 'False'],
-            'Channel A': 'True',
-            'Channel A_info': 'Please enter True to use Channel A if not enter False',
-            'Channel A_options': ['True', 'False'],
-            'Channel B': 'False',
-            'Channel B_info': 'Please enter True to use Channel B if not enter False',
-            'Channel B_options': ['True', 'False'],
-            'Wavelengths': '1480, 1550, 1580',
-            'Wavelengths_info': 'Set wavelengths in form x, x1, x2 with unit nm',
-            'Wavelengths_bounds': [1400, 1600]
+            'Center': '',
+            'Center_info': 'Please enter center voltage',
+            'Center_bounds': [0, 100],
+            'Span': '',
+            'Span_info': 'Please enter span voltage',
+            'Span_bounds': [0, 100],
+            'Range': '',
+            'Range_info': 'Please enter range voltage',
+            'Range_bounds': [0, 100],
+            'Spacing': '',
+            'Spacing_info': 'Please enter spacing voltage',
+            'Spacing_bounds': [0, 100],
+            'Points': '',
+            'Points_info': 'Please enter points voltage',
+            'Points_bounds': [0, 1000],
+            'Direction': 'UP',
+            'Direction_info': 'Please enter direction voltage',
+            'Direction_options': ['UP', 'DOWN'],
+            'Sweeptype': 'current',
+            'Sweeptype_info': 'Please enter sweep type',
+            'Sweeptype_options': ['current'],
+            'Wavelengths': [1480, 1500, 1580],
+            'Wavelengths_info': 'Please enter wavelengths value',
+            'Wavelengths_bounds': [1000, 2000]
         }
-
-        self.resultsinfo = {
+        self.results_info = {
             'num_plots': 1,
             'visual': True,
             'saveplot': True,

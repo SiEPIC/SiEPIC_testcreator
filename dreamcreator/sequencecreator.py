@@ -42,6 +42,8 @@ class GUI(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Dream Creator")
+        self.custom_sequences_store = dict()
+        self.branch = 'IDA'
 
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
@@ -133,10 +135,13 @@ class GUI(QWidget):
         file_layoutv.addLayout(file_layout)
         self.layout.addLayout(file_layoutv)
 
-    def setup_sequence_selection(self):
+    def place_sequence_options(self):
+        #if self.branch:
         p = dirname(abspath(__file__))
 
-        sequences_dict = DirectoryDict(os.path.join(p, "sequences"))
+        p = os.path.join(p, "sequences")
+        p = os.path.join(p, self.branch)
+        sequences_dict = DirectoryDict(p)
 
         self.sequences_checklist = self.create_checklist(sequences_dict.dir_dict)
         self.sequence_versions_checklist = self.create_checklist(
@@ -146,25 +151,34 @@ class GUI(QWidget):
         self.customsequences_checklist = self.create_checklist(
             custom_sequences_dict, customflag=True
         )
+
+    def setup_sequence_selection(self, branch='IDA'):
+
+        self.place_sequence_options()
+        
         sequence_hlayout = QHBoxLayout()
-        sequence_layout = QVBoxLayout()
+        self.sequence_layout = QVBoxLayout()
         edxchoicelayout = QHBoxLayout()
 
-        self.checkBox1 = QCheckBox("edx course")
-        self.checkBox1.setChecked(True)
-        self.edxcheck = True
-        self.checkBox2 = QCheckBox("Internal Use")
 
-        edxchoicelayout.addWidget(self.checkBox1)
-        edxchoicelayout.addWidget(self.checkBox2)
-        self.checkBox1.stateChanged.connect(self.update_checkboxes)
-        self.checkBox2.stateChanged.connect(self.update_checkboxes)
-        sequence_layout.addLayout(edxchoicelayout)
+        self.create_checkboxes(edxchoicelayout)
 
-        sequence_layout.addWidget(QLabel("Sequences"))
-        sequence_layout.addWidget(self.sequences_checklist)
-        sequence_layout.addWidget(QLabel("Custom Sequences"))
-        sequence_layout.addWidget(self.customsequences_checklist)
+        # self.checkBox1 = QCheckBox("IDA")
+        # self.checkBox1.setChecked(True)
+        # self.IDAcheck = True
+        # self.checkBox2 = QCheckBox("DREAM")
+        # self.checkbox3 = QCheckBox("BIO")
+
+        #edxchoicelayout.addWidget(self.checkBox1)
+        #edxchoicelayout.addWidget(self.checkBox2)
+        #self.checkBox1.stateChanged.connect(self.update_checkboxes)
+        #self.checkBox2.stateChanged.connect(self.update_checkboxes)
+        self.sequence_layout.addLayout(edxchoicelayout)
+
+        self.sequence_layout.addWidget(QLabel("Sequences"))
+        self.sequence_layout.addWidget(self.sequences_checklist)
+        self.sequence_layout.addWidget(QLabel("Custom Sequences"))
+        self.sequence_layout.addWidget(self.customsequences_checklist)
 
         self.parameters_area = QWidget()
 
@@ -180,10 +194,53 @@ class GUI(QWidget):
         buttonhlayout.addWidget(self.SetButton)
 
         sequence_variables_layout.addLayout(buttonhlayout)
-        sequence_hlayout.addLayout(sequence_layout)
+        sequence_hlayout.addLayout(self.sequence_layout)
         sequence_hlayout.addLayout(sequence_variables_layout)
 
         self.hlayout.addLayout(sequence_hlayout)
+
+    def replace_widget(self, layout, widget_to_replace, custom_widget_to_replace, custom=False):
+        #self.custom_sequences_store[self.branch] = widget_to_replace
+        index = layout.indexOf(widget_to_replace)
+        custom_index = layout.indexOf(custom_widget_to_replace)
+        widget_to_replace.hide()       
+        custom_widget_to_replace.hide()  
+        # if not custom: 
+        widget_to_replace.deleteLater()
+        custom_widget_to_replace.deleteLater()
+        self.place_sequence_options() 
+        # if custom:
+        #     layout.insertWidget(self.custom_sequences_store[self.old_branch], self.customsequences_checklist)
+        # else:
+        
+        layout.insertWidget(index, self.sequences_checklist)
+        layout.insertWidget(custom_index, self.customsequences_checklist)
+        
+
+        #self.replace_custom_widget(layout)
+
+    def create_checkboxes(self, layout):
+        """Finds the names of folders in the current working directory.
+
+        Returns:
+            A list of folder names.
+        """
+
+        folder_names = []
+        dir_path = os.getcwd()
+        dir_path = os.path.join(dir_path, "dreamcreator", "sequences")
+        self.checkboxes = []
+
+        for entry in os.listdir(dir_path):  # Iterate over entries in the directory
+            
+            if entry != 'core' and entry != '__pycache__' and entry != 'template' and entry != '__init__.py':
+                self.checkBox = QCheckBox(entry)
+                self.checkBox.setObjectName(entry)
+                self.checkboxes.append(self.checkBox)
+                self.checkBox.clicked.connect(self.update_checkboxes)
+                if entry == 'IDA':
+                    self.checkBox.setChecked(True)
+                layout.addWidget(self.checkBox)
 
     def remove_non_ida_entries(self, checklist: QListWidget):
         """Removes checklist entries not ending with '_ida' and returns the removed items.
@@ -239,19 +296,60 @@ class GUI(QWidget):
 
     def update_checkboxes(self, item):
         sender = self.sender()
-        if sender.isChecked():
-            if sender == self.checkBox1:
-                self.edxcheck = True
-                self.checkBox2.setChecked(False)
-                self.add_removed_entries(self.sequences_checklist, self.removed_items)
-                self.removed_items = self.remove_non_ida_entries(
-                    self.sequences_checklist
-                )
-            elif sender == self.checkBox2:
-                self.edxcheck = False
-                self.checkBox1.setChecked(False)
-                self.add_removed_entries(self.sequences_checklist, self.removed_items)
-                self.removed_items = self.remove_ida_entries(self.sequences_checklist)
+        name = sender.objectName()
+        checkbox = self.findChild(QCheckBox, name)
+
+        check = self.warning_popup()
+
+        if check:
+            if checkbox:
+                for box in self.checkboxes:
+                    if box.objectName() != checkbox.objectName():
+                        if box.isChecked():
+                            box.setChecked(False)
+
+            #self.custom_sequences_store[self.branch] = self.customsequences_checklist
+            self.old_branch = self.branch
+            self.branch = name
+            #if checkbox:
+            # self.replace_widget(self.sequence_layout, self.customsequences_checklist, custom=True)
+            self.yamldict['Sequences'] = {}
+            #self.place_sequence_options()
+
+            if checkbox:
+                self.replace_widget(self.sequence_layout, self.sequences_checklist, self.customsequences_checklist)
+        else:
+            checkbox.setChecked(False)
+
+        # checkbox.setChecked(True)
+
+        # if sender.isChecked():
+        #     if sender == self.checkBox1:
+        #         self.IDAcheck = True
+        #         self.checkBox2.setChecked(False)
+        #         self.add_removed_entries(self.sequences_checklist, self.removed_items)
+        #         self.removed_items = self.remove_non_ida_entries(
+        #             self.sequences_checklist
+        #         )
+        #     elif sender == self.checkBox2:
+        #         self.IDAcheck = False
+        #         self.checkBox1.setChecked(False)
+        #         self.add_removed_entries(self.sequences_checklist, self.removed_items)
+        #         self.removed_items = self.remove_ida_entries(self.sequences_checklist)
+
+    def warning_popup(self):
+        popup = QMessageBox()
+        popup.setWindowTitle("Warning")
+        popup.setText('Warning: if you change stage all custom sequences will be erased')
+        popup.addButton('Continue', QMessageBox.AcceptRole)
+        popup.addButton('Cancel', QMessageBox.RejectRole)
+
+        result = popup.exec()
+
+        if result == QMessageBox.AcceptRole:
+            return True
+        else:
+            return False
 
     def button1_clicked(self, item):
         selected_devices = []
@@ -621,6 +719,20 @@ class GUI(QWidget):
 
             attributes = self.yamldict["Sequences"][self.sequence_name0]
 
+            sequence_name_og = self.extract_text_in_brackets(sequenceName)[0] + ".py"
+
+            sequence_file = os.path.join(d, "sequences", self.branch, sequence_name_og)
+
+            class_name = self.find_class_names_in_file(sequence_file)
+
+            attributes2 = self.find_instance_attributes_in_init(sequence_file, class_name[0])
+
+            for entry in attributes:
+                for entry2 in attributes[entry]:
+                    attributes2[entry][entry2] = attributes[entry][entry2]
+
+            self.attributes = attributes2
+
             # class_name = self.find_class_names_in_file(sequence_file)
 
             # attributes = self.find_instance_attributes_in_init(sequence_file, class_name[0])
@@ -634,7 +746,7 @@ class GUI(QWidget):
             if old_layout is not None:
                 del old_layout
 
-            layout, self.widget_list = self.set_parameters(attributes, showresults=showresults)
+            layout, self.widget_list = self.set_parameters(attributes2, showresults=showresults)
             # self.populate_sequence_variables(sequence_file, class_name[0])
 
             new_layout = self.parameters_area.layout()
@@ -655,7 +767,7 @@ class GUI(QWidget):
 
         sequence_name = sequenceName + ".py"
 
-        sequence_file = os.path.join(d, "sequences", sequence_name)
+        sequence_file = os.path.join(d, "sequences", self.branch, sequence_name)
 
         class_name = self.find_class_names_in_file(sequence_file)
 
@@ -672,7 +784,7 @@ class GUI(QWidget):
             del old_layout
 
         layout, self.widget_list = self.set_parameters(self.attributes, showresults=showresults)
-        self.resultsinfo = self.attributes["resultsinfo"]
+        self.results_info = self.attributes["results_info"]
         # self.populate_sequence_variables(sequence_file, class_name[0])
 
         new_layout = self.parameters_area.layout()
@@ -732,10 +844,10 @@ class GUI(QWidget):
             self.sequence_name0 = a[0]
 
         name = self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
-        if self.edxcheck:
+        if self.branch == 'IDA':
             parametersdict = {
                 "variables": parameters["variables"],
-                "results_info": self.resultsinfo,
+                "results_info": self.results_info,
             }
 
             self.yamldict["Sequences"][
@@ -766,11 +878,11 @@ class GUI(QWidget):
                     if ',' in variables[variable]:
                         readings = variables[variable].split(',')
                         for i in range(len(readings)):
-                            if float(readings[i]) >= float(self.attributes['variables'][variable + '_bounds'][1]) or float(readings[i]) <= float(self.attributes['variables'][variable + '_bounds'][0]):
+                            if float(readings[i]) > float(self.attributes['variables'][variable + '_bounds'][1]) or float(readings[i]) < float(self.attributes['variables'][variable + '_bounds'][0]):
                                 print('Variable {} reading {} is out of bounds'.format(variable, readings[i]))
                                 check = True
                     else:
-                        if float(variables[variable]) >= float(self.attributes['variables'][variable + '_bounds'][1]) or float(variables[variable]) <= float(self.attributes['variables'][variable + '_bounds'][0]):
+                        if float(variables[variable]) > float(self.attributes['variables'][variable + '_bounds'][1]) or float(variables[variable]) < float(self.attributes['variables'][variable + '_bounds'][0]):
                             print('Variable {} is out of bounds'.format(variable))
                             check = True
                 except:
@@ -1612,7 +1724,6 @@ class GUI(QWidget):
                 return False
         return False
 
-
     def set_parameters(self, main_dict, showresults=True):
         # Initialize a list to hold the created QLabel and QLineEdit widgets
         widgets_list = []
@@ -1628,7 +1739,7 @@ class GUI(QWidget):
             dict_label = QLabel(name)
 
             # Add the QLabel to the layout and widget list
-            if showresults:# and dict_label.text() != "resultsinfo":
+            if showresults:# and dict_label.text() != "results_info":
                 layout.addRow(dict_label)
             widgets_list.append(dict_label)
 
@@ -1646,7 +1757,6 @@ class GUI(QWidget):
                         key_edit = QComboBox()
                         key_edit.addItems(main_dict[name][key + "_options"])
                         key_edit.setCurrentText(main_dict[name][key]) 
-
                     else:
                         key_edit = QLineEdit(str(main_dict[name][key]))
 
@@ -1654,7 +1764,7 @@ class GUI(QWidget):
                     row_layout = QHBoxLayout()
 
                     if (
-                        name == "resultsinfo" and self.edxcheck == False
+                        name == "results_info" and self.branch != 'IDA'
                     ) or name == "variables":
                         # Add the label and line edit to the row layout
                         row_layout.addWidget(key_label)
@@ -1690,12 +1800,12 @@ class GUI(QWidget):
         sequence_class = getattr(sequence_module, class_name)
         sequence_class1 = sequence_module.VoltageSweep()
 
-        # Accessing the variables and resultsInfo dictionaries
+        # Accessing the variables and results_Info dictionaries
         variables = (
             sequence_class.variables if hasattr(sequence_class, "variables") else {}
         )
-        resultsInfo = (
-            sequence_class.resultsInfo if hasattr(sequence_class, "resultsInfo") else {}
+        results_Info = (
+            sequence_class.results_Info if hasattr(sequence_class, "results_Info") else {}
         )
 
         # Updating the QTextEdit area for sequence variables
@@ -1704,7 +1814,7 @@ class GUI(QWidget):
         for key, value in variables.items():
             self.sequence_variables_textedit.append(f"{key}: {value}")
         self.sequence_variables_textedit.append("\\nResults Info:")
-        for key, value in resultsInfo.items():
+        for key, value in results_Info.items():
             self.sequence_variables_textedit.append(f"{key}: {value}")
 
     def clear_layout(self, layout):

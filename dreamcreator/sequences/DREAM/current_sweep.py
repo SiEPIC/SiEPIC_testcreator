@@ -37,12 +37,12 @@ class CurrentSweep(SmuSweep):
             'Upper_limit': 5,
             'Upper_limit_info': 'Please enter the upper limit of the sweep',
             'Upper_limit_bounds': [0, 100],
-            'Trans_col': False,
+            'Trans_col': 'False',
             'Trans_col_info': 'Please enter True or False for the transient column',
             'Trans_col_options': ['True', 'False']
         }
 
-        self.resultsinfo = {
+        self.results_info = {
             'num_plots': 1,
             'visual': True,
             'saveplot': True,
