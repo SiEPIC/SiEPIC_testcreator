@@ -139,9 +139,8 @@ class GUI(QWidget):
     def place_sequence_options(self):
         #if self.branch:
         p = dirname(abspath(__file__))
-
-        p = os.path.join(p, "sequences")
-        p = os.path.join(p, self.branch)
+        p = Path('./app/dreamcreator/sequences') / self.branch
+        p = str(p.resolve())
         sequences_dict = DirectoryDict(p)
 
         self.sequences_checklist = self.create_checklist(sequences_dict.dir_dict)
