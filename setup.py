@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name = "DreamCreator",
-    version = "0.0.4",
+    version = "0.0.5",
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
     packages = find_packages(where="app"),
     long_description = long_description,

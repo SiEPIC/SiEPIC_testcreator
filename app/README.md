@@ -1,10 +1,11 @@
 # Project Title
 
-Simple overview of use/purpose.
+This package is for use in Dream Photonics or the UBC Photonics edx course, and contains utilities for creating
+yaml files which act as guides for tests on the probe stations throughout UBC.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This software contains a User Interface that easily allows users to create custom YAML files to guide tests on probe stations throughout UBC. It is built using PyQt and leverages the dreamcreator and sequencecreator modules for functionality. To add a new stage setup simply add an additional folder in the sequences directory and populate with formatted sequence files, then reload the UI.
 
 ## Getting Started
 
@@ -12,6 +13,9 @@ An in-depth paragraph about your project and overview of use.
 
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * ex. Windows 10
+python: 3.11
+Windows: 10 or greater
+
 
 ### Installing
 
@@ -21,9 +25,10 @@ An in-depth paragraph about your project and overview of use.
 ### Executing program
 
 * How to run the program
-* Step-by-step bullets
 ```
-code blocks for commands
+import dreamcreator
+from dreamcreator import sequencecreator as sc
+sc.launch()
 ```
 
 ## Help
@@ -37,8 +42,7 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Jon Barnes [@JonBarnes](https://twitter.com/JonBarnes)
 
 ## Version History
 
@@ -50,7 +54,7 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
 

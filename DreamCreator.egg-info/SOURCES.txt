@@ -1,7 +1,0 @@
-LICENSE
-setup.py
-DreamCreator.egg-info/PKG-INFO
-DreamCreator.egg-info/SOURCES.txt
-DreamCreator.egg-info/dependency_links.txt
-DreamCreator.egg-info/requires.txt
-DreamCreator.egg-info/top_level.txt
