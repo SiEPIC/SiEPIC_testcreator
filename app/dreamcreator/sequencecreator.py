@@ -1,4 +1,5 @@
 # %%
+from pathlib import Path
 from PyQt5.QtWidgets import (
     QApplication,
     QTextEdit,
@@ -227,8 +228,10 @@ class GUI(QWidget):
         """
 
         folder_names = []
-        dir_path = os.getcwd()
-        dir_path = os.path.join(dir_path, "dreamcreator", "sequences")
+
+        mypath = Path("./app/dreamcreator/sequences") # Creates a relative path
+        dir_path = str(mypath.resolve()) # Attempts to resolve the full path on the system then converts this path to string
+        
         self.checkboxes = []
 
         for entry in os.listdir(dir_path):  # Iterate over entries in the directory
