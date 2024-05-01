@@ -12,16 +12,16 @@ class SetVoltageWavelengthSweepIda(LaserSweep):
         self.variables = {
             'Start': 1480,
             'Start_info': 'unit nm',
-            'Start_bounds': [1470, 1590],   
+            'Start_bounds': [[1270, 1480], [1350, 1580]],   
             'Stop': 1580,
             'Stop_info': 'unit nm',
-            'Stop_bounds': [1470, 1590],
+            'Stop_bounds': [[1270, 1480], [1350, 1580]],
             'Step': 1,
             'Step_info': 'unit nm, can also use wavl_pts, if both filled Step will take priority',
-            'Step_bounds': [0.1, 10],
+            'Step_bounds': [0.01, 10],
             'Power': 1,
             'Power_info': 'unit dBm',
-            'Power_bounds': [0, 10],
+            'Power_bounds': [-70, 10],
             'Sweep Speed': 'auto',
             'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this, options are 20nm, 10nm, auto',
             'Sweep Speed_options': ['20nm', '10nm', 'auto'],
@@ -45,7 +45,7 @@ class SetVoltageWavelengthSweepIda(LaserSweep):
             'Channel B_options': ['True','False'],
             'Voltages': '0, 1, 2',
             'Voltages_info': 'Please enter voltages in units (V) in the form x1, x2, x3',
-            'Voltages_bounds': [-5, 5]
+            'Voltages_bounds': [-50, 50]
         }
         self.results_info = {
             'num_plots': 1,

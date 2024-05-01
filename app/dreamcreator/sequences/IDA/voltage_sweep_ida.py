@@ -17,7 +17,7 @@ class VoltageSweepIda(SmuSweep):
             'Stop_bounds': [-10, 10],
             'Step': 0.1, 
             'Step_info': 'Please enter stepsize (V)',
-            'Step_bounds': [-10, 10],
+            'Step_bounds': [0.01, 100],
             'IV': 'True',
             'IV_info': 'Enter True to receive IV plot',
             'IV_options': ['True', 'False'],

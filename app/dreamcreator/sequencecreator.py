@@ -136,11 +136,29 @@ class GUI(QWidget):
         file_layoutv.addLayout(file_layout)
         self.layout.addLayout(file_layoutv)
 
+    def get_sequences_path(self, branch=None):
+    # Determine if running from executable or regular script
+        if getattr(sys, 'frozen', False):  
+            # Running from executable
+            data_dir = Path(sys._MEIPASS)  # Temporary extraction directory
+        else:
+            # Running as a regular script
+            data_dir = Path(__file__).parent.resolve() 
+
+        if branch:
+            sequences_path = data_dir / "sequences" / branch
+        else:
+            sequences_path = data_dir / "sequences"
+        return str(sequences_path.resolve())
+
     def place_sequence_options(self):
         #if self.branch:
-        p = dirname(abspath(__file__))
-        p = Path('./app/dreamcreator/sequences') / self.branch
-        p = str(p.resolve())
+        #p = dirname(abspath(__file__))
+
+        p = self.get_sequences_path(self.branch)
+
+        #print(p)
+
         sequences_dict = DirectoryDict(p)
 
         self.sequences_checklist = self.create_checklist(sequences_dict.dir_dict)
@@ -228,10 +246,18 @@ class GUI(QWidget):
 
         folder_names = []
 
-        mypath = Path("./app/dreamcreator/sequences") # Creates a relative path
-        dir_path = str(mypath.resolve()) # Attempts to resolve the full path on the system then converts this path to string
-        
+        script_dir = Path(__file__).parent.resolve()  # Ensure absolute path
+        # Define the relative path *within your project*
+        rel_path = Path("sequences")
+        # Combine the script directory with the relative path to get the full path
+        mypath = script_dir / rel_path
+        # Resolve the full path on the system
+        dir_path = str(mypath.resolve())
+
+        dir_path = self.get_sequences_path()
         self.checkboxes = []
+
+        #print(dir_path)
 
         for entry in os.listdir(dir_path):  # Iterate over entries in the directory
             
@@ -375,7 +401,7 @@ class GUI(QWidget):
         if selected_sequence != [] and selected_devices != []:
             for device in selected_devices:
                 self.yamldict["Devices"][device.text()]["sequences"].append(
-                    selected_sequence[0].text()
+                    selected_sequence[0].text().split(' ')[0]
                 )
                 print(
                     "Linked sequence: "
@@ -384,7 +410,7 @@ class GUI(QWidget):
                     + device.text()
                 )
 
-            sequence_item = QListWidgetItem(selected_sequence[0])
+            sequence_item = QListWidgetItem(selected_sequence[0].text().split(' ')[0])
             sequence_item.setFlags(sequence_item.flags() | Qt.ItemIsUserCheckable)
             sequence_item.setCheckState(Qt.Unchecked) 
             self.listbox4.addItem(sequence_item)
@@ -442,10 +468,13 @@ class GUI(QWidget):
         checklist.clear()  # Clear existing items
 
         for key in data_dict:
-            item = QListWidgetItem(key)
-            item.setFlags(
-                item.flags() | Qt.ItemIsUserCheckable
-            )  # Allow user to check/uncheck the item
+            if 'Runtime' in data_dict[key]:
+                item = QListWidgetItem(key + ' [' + str(data_dict[key]['Runtime']) + ' secs' ']')
+                self.runtime_journal[key] = [data_dict[key]['Runtime'], 0]
+            else:
+                self.sequence_runtime_check(self.extract_text_in_brackets(key), data_dict[key], key)
+                item = QListWidgetItem(key + ' [' + str(data_dict[key]['Runtime']) + ' secs' ']')
+            item.setFlags(item.flags() | Qt.ItemIsUserCheckable)  # Allow user to check/uncheck the item
             item.setCheckState(Qt.Unchecked)  # Initially set the item to unchecked
             checklist.addItem(item)
 
@@ -514,6 +543,11 @@ class GUI(QWidget):
 
         button_h_layout.addWidget(selectkw_btn)
 
+        select_highlighted_btn = QPushButton("Select Highlighted")
+        select_highlighted_btn.clicked.connect(self.select_highlighted)
+
+        button_h_layout.addWidget(select_highlighted_btn)
+
         devices_group_layout.addLayout(button_h_layout)
 
 
@@ -562,19 +596,35 @@ class GUI(QWidget):
 
         self.hlayout.addLayout(layouth)
 
+    def select_items(self, sequence_name):
+        for i in range(self.listbox2.count()):
+            item = self.listbox2.item(i)
+            if sequence_name in self.devicedict[item.text()]['sequences']:
+                item.setSelected(True)
+
+    def unselect_items(self):
+        for i in range(self.listbox2.count()):
+            item = self.listbox2.item(i)
+            item.setSelected(False)
+
     def on_itembox4_checked(self):
         checked_items = self.find_checked_items(self.listbox4)
         if len(checked_items) == 1:
+
+            self.select_items(checked_items[0].text())
 
             for i in range(self.customsequences_checklist.count()):
                 if self.customsequences_checklist.item(i).text() != checked_items[0].text():
                     self.customsequences_checklist.item(i).setCheckState(Qt.Unchecked)
                 else:
                     self.customsequences_checklist.item(i).setCheckState(Qt.Checked)
+
+
             
-            self.reset_parameters(checked_items[0].text())
-            self.sequence_namer.setText(''.join(self.extract_text_outside_brackets(checked_items[0].text())))
+            self.custom_reset_parameters(checked_items[0].text().split(' ')[0])
+            self.sequence_namer.setText(self.extract_text_before_brackets(checked_items[0].text()))
         else:
+            self.unselect_items()
             self.remove_layout_from_widget(self.parameters_area)
             
     def find_checked_items(self, box):
@@ -603,6 +653,12 @@ class GUI(QWidget):
         keyword = self.device_search.text()
         for i in range(self.listbox2.count()):
             if keyword in self.listbox2.item(i).text() and keyword != '':
+                self.listbox2.item(i).setCheckState(Qt.Checked)
+
+    def select_highlighted(self, item):
+
+        for i in range(self.listbox2.count()):
+            if self.listbox2.item(i).isSelected():
                 self.listbox2.item(i).setCheckState(Qt.Checked)
 
     def select_all(self, item):
@@ -667,9 +723,14 @@ class GUI(QWidget):
             if self.customsequences_checklist.item(i) != item:
                 self.customsequences_checklist.item(i).setCheckState(Qt.Unchecked)
 
+        self.select_items(item.text().split(' ')[0])
+
         if item.checkState() == Qt.Checked:
             # Get the sequence name
             self.sequence_name0 = item.text()
+
+            self.sequence_name0 = self.sequence_name0.split(' ')[0]
+
             self.custom_reset_parameters(self.sequence_name0)
             # Get the path to the sequences directory
             # cwd = os.getcwd()
@@ -704,6 +765,7 @@ class GUI(QWidget):
 
         else:
             # Clear the text editor
+            self.unselect_items()
             self.remove_layout_from_widget(self.parameters_area)
 
     def custom_reset_parameters(self, sequenceName):
@@ -723,15 +785,22 @@ class GUI(QWidget):
 
             sequence_name_og = self.extract_text_in_brackets(sequenceName)[0] + ".py"
 
-            sequence_file = os.path.join(d, "sequences", self.branch, sequence_name_og)
+            script_dir = Path(__file__).parent.resolve()  # Ensure absolute path
+            # Define the relative path *within your project*
+            rel_path = Path("sequences", self.branch, sequence_name_og)
+            # Combine the script directory with the relative path to get the full path
+            mypath = script_dir / rel_path
+            # Resolve the full path on the system
+            sequence_file = str(mypath.resolve())
 
             class_name = self.find_class_names_in_file(sequence_file)
 
             attributes2 = self.find_instance_attributes_in_init(sequence_file, class_name[0])
 
             for entry in attributes:
-                for entry2 in attributes[entry]:
-                    attributes2[entry][entry2] = attributes[entry][entry2]
+                if entry != 'Runtime':
+                    for entry2 in attributes[entry]:
+                        attributes2[entry][entry2] = attributes[entry][entry2]
 
             self.attributes = attributes2
 
@@ -769,7 +838,15 @@ class GUI(QWidget):
 
         sequence_name = sequenceName + ".py"
 
-        sequence_file = os.path.join(d, "sequences", self.branch, sequence_name)
+        script_dir = Path(__file__).parent.resolve()  # Ensure absolute path
+        # Define the relative path *within your project*
+        rel_path = Path("sequences", self.branch, sequence_name)
+        # Combine the script directory with the relative path to get the full path
+        mypath = script_dir / rel_path
+        # Resolve the full path on the system
+        sequence_file = str(mypath.resolve())
+
+        #sequence_file = os.path.join(d, "sequences", self.branch, sequence_name)
 
         class_name = self.find_class_names_in_file(sequence_file)
 
@@ -808,24 +885,16 @@ class GUI(QWidget):
                     start_index = None
         return results
     
-    def extract_text_outside_brackets(self, text):
-        results = []
+    def extract_text_before_brackets(self, text):
         current_word = ""
         in_brackets = False
         for char in text:
-            if char == '(':
-                in_brackets = True
-            elif char == ')':
-                in_brackets = False
-            elif not in_brackets:
-                current_word += char
-            else:  # char is inside the brackets
-                if current_word:
-                    results.append(current_word)
-                    current_word = ""
-        if current_word:  # Add the last word if it wasn't terminated by a bracket
-            results.append(current_word)
-        return results  
+            if not in_brackets:
+                if char == '(':
+                    in_brackets = True
+                else:
+                    current_word += char
+        return current_word 
 
     def set_sequence(self, item):
         if self.check_for_multiple_sequence_types(self.sequence_name0):
@@ -846,25 +915,23 @@ class GUI(QWidget):
             self.sequence_name0 = a[0]
 
         name = self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
-        if self.branch == 'IDA':
-            parametersdict = {
-                "variables": parameters["variables"],
-                "results_info": self.results_info,
-            }
+        # if self.branch == 'IDA':
+        #     parametersdict = {
+        #         "variables": parameters["variables"],
+        #         "results_info": self.results_info,
+        #     }
 
-            self.yamldict["Sequences"][
-                self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
-            ] = parametersdict
-        else:
-            self.yamldict["Sequences"][
+        #     self.yamldict["Sequences"][
+        #         self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
+        #     ] = parametersdict
+        # else:
+        self.yamldict["Sequences"][
                 self.sequence_namer.text() + "(" + self.sequence_name0 + ")"
             ] = parameters
 
-        self.update_custom_sequences(
-            self.customsequences_checklist, self.yamldict["Sequences"]
-        )
-        print("Added Sequence")
         runtime = self.sequence_runtime_check(self.sequence_name0, parameters, name)
+        self.update_custom_sequences(self.customsequences_checklist, self.yamldict["Sequences"])
+        print("Added Sequence")
         print(f'This sequence will take approximately {runtime} seconds to run')
 
     def check_bounds(self, parameters):
@@ -876,17 +943,44 @@ class GUI(QWidget):
                 try:
                     a = variables[variable]
                     b = self.attributes['variables'][variable + '_bounds'][1]
+                    subcheck = 0
 
                     if ',' in variables[variable]:
                         readings = variables[variable].split(',')
                         for i in range(len(readings)):
-                            if float(readings[i]) > float(self.attributes['variables'][variable + '_bounds'][1]) or float(readings[i]) < float(self.attributes['variables'][variable + '_bounds'][0]):
-                                print('Variable {} reading {} is out of bounds'.format(variable, readings[i]))
-                                check = True
+                            subcheck = 0
+                            if isinstance(self.attributes['variables'][variable + '_bounds'][0], list):
+                                for j in range(len(self.attributes['variables'][variable + '_bounds'][0])):
+                                    if float(readings[i]) > float(self.attributes['variables'][variable + '_bounds'][1][j]) or float(readings[i]) < float(self.attributes['variables'][variable + '_bounds'][0][j]):
+                                        subcheck += 1
+                                if subcheck == len(self.attributes['variables'][variable + '_bounds'][0]):
+                                    print('Variable {} entry {} is out of bounds'.format(variable, readings[i]))
+                                    print('Ensure variable is within {} and {} or {} and {}'.format(self.attributes['variables'][variable + '_bounds'][0][0], self.attributes['variables'][variable + '_bounds'][1][0], self.attributes['variables'][variable + '_bounds'][0][1], self.attributes['variables'][variable + '_bounds'][1][1] ))
+
+                                    check = True
+                                    subcheck = 0
+                            else:
+                                if float(readings[i]) > float(self.attributes['variables'][variable + '_bounds'][1]) or float(readings[i]) < float(self.attributes['variables'][variable + '_bounds'][0]):
+                                    print('Variable {} entry {} is out of bounds'.format(variable, readings[i]))
+                                    print('Ensure variable is within {} and {}'.format(self.attributes['variables'][variable + '_bounds'][0], self.attributes['variables'][variable + '_bounds'][1]))
+                                    check = True
                     else:
-                        if float(variables[variable]) > float(self.attributes['variables'][variable + '_bounds'][1]) or float(variables[variable]) < float(self.attributes['variables'][variable + '_bounds'][0]):
-                            print('Variable {} is out of bounds'.format(variable))
-                            check = True
+                        if isinstance(self.attributes['variables'][variable + '_bounds'][0], list):
+                            for i in range(len(self.attributes['variables'][variable + '_bounds'][0])):
+                                if float(variables[variable]) > float(self.attributes['variables'][variable + '_bounds'][1][i]) or float(variables[variable]) < float(self.attributes['variables'][variable + '_bounds'][0][i]):
+                                    subcheck += 1
+                            if subcheck == len(self.attributes['variables'][variable + '_bounds'][0]):
+                                print('Variable {} is out of bounds'.format(variable))
+                                print('Ensure variable is within {} and {}'.format(self.attributes['variables'][variable + '_bounds'][0], self.attributes['variables'][variable + '_bounds'][1]))
+
+                                check = True
+                                subcheck = 0
+                        else:
+                            if float(variables[variable]) > float(self.attributes['variables'][variable + '_bounds'][1]) or float(variables[variable]) < float(self.attributes['variables'][variable + '_bounds'][0]):
+                                print('Variable {} is out of bounds'.format(variable))
+                                print('Ensure variable is within {} and {}'.format(self.attributes['variables'][variable + '_bounds'][0], self.attributes['variables'][variable + '_bounds'][1]))
+
+                                check = True
                 except:
                     print('Bounds check failed for variable {}'.format(variable))
                     check = True
@@ -969,6 +1063,7 @@ class GUI(QWidget):
             print("Error in predicting runtime. Please check sequence type and parameters.")
             return None
         self.runtime_journal[name] = [runtime, 0]
+        self.yamldict["Sequences"][name]['Runtime'] = runtime
         return runtime
 
     def total_runtime_check(self, yamldict):
@@ -981,86 +1076,14 @@ class GUI(QWidget):
 
         for device in devices:
             for sequence in devices[device]['sequences']:
-                print(self.runtime_journal[sequence][1])
                 self.runtime_journal[sequence][1] = self.runtime_journal[sequence][1] + 1
 
-        wavelength_constant = 10
-        smu_constant = 10
+        move_time_constant = 1
         total_runtime = 0
 
-        sequencetypes = [
-            "wavelength_sweep",
-            "current_sweep",
-            "voltage_sweep",
-            "set_current_wavelength_sweep",
-            "set_voltage_wavelength_sweep",
-            "set_wavelength_current_sweep",
-            "set_wavelength_voltage_sweep",
-            "wavelength_sweep_ida",
-            "current_sweep_ida",
-            "voltage_sweep_ida",
-            "set_current_wavelength_sweep_ida",
-            "set_voltage_wavelength_sweep_ida",
-            "set_wavelength_current_sweep_ida",
-            "set_wavelength_voltage_sweep_ida",
-        ]
+        for seq in self.runtime_journal:
+            total_runtime = total_runtime + self.runtime_journal[seq][0] * self.runtime_journal[seq][1]
 
-        # print(variables)
-        for sequence in sequences:
-            variables = sequences[sequence]['variables']
-            if sequencetypes[6] in sequence or sequencetypes[13] in sequence:
-
-                runtime = (
-                    (
-                        (float(variables["Stop"]) - float(variables["Start"]))
-                        / float(variables["Step"])
-                    )
-                    * smu_constant
-                    * (variables["Wavelengths"].count(",") + 1)
-                )
-            elif sequencetypes[5] in sequence or sequencetypes[12] in sequence:
-                runtime = (
-                    (
-                        (float(variables["Stop"]) - float(variables["Start"]))
-                        / float(variables["Step"])
-                    )
-                    * smu_constant
-                    * (variables["Wavelengths"].count(",") + 1)
-                )
-            elif sequencetypes[4] in sequence or sequencetypes[11] in sequence:
-                runtime = (
-                    (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
-                    * wavelength_constant
-                    * (variables["Voltages"].count(",") + 1)
-                )
-            elif sequencetypes[3] in sequence or sequencetypes[10] in sequence:
-                runtime = (
-                    (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
-                    * wavelength_constant
-                    * (variables["Currents"].count(",") + 1)
-                )
-            elif sequencetypes[2] in sequence or sequencetypes[9] in sequence:
-                runtime = (
-                    (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
-                ) * smu_constant
-            elif sequencetypes[1] in sequence or sequencetypes[8] in sequence:
-                runtime = (
-                    (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
-                ) * smu_constant
-            elif sequencetypes[0] in sequence or sequencetypes[7] in sequence:
-                runtime = (
-                    (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
-                    * wavelength_constant
-                )
-            else:
-                print("Error in predicting runtime. Please check sequence type and parameters.")
-                runtime = 0
-            total_runtime = total_runtime + runtime
         return total_runtime
 
     def to_title_case(self, s):
@@ -1087,6 +1110,7 @@ class GUI(QWidget):
             self.routinedict = inputfile["Sequences"]
             self.update_custom_sequences(self.customsequences_checklist, inputfile["Sequences"])
 
+
             self.deviceobjects = self.create_device_list(self.devicedict)
 
             self.populate_device_list()
@@ -1096,8 +1120,10 @@ class GUI(QWidget):
         elif fname[0] != "" and fname[0].endswith(".txt") == True:
             with open(fname[0], "r") as file:
                 lines = file.readlines()
-            if lines[0] != '% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params \n':
+            if lines[0] != '% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params \n' and lines[0] != '% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params\n':
                 print("Incorrect format for coordinate file, please reupload with correct format")
+                print('First line should be "% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params"')
+                print('First line is ' + lines[0])
                 self.file_label.setText('No file selected')
                 return
             try:
@@ -2011,7 +2037,7 @@ class ElectroOpticDevice:
 
     def add_electrical_coordinates(self, elecCoords):
         """Associates a bondpad with the device"""
-        self.electricalCoordinates.append(elecCoords)
+        self.electricalCoordinates = elecCoords
 
     def get_optical_coordinates(self):
         """Returns the coordinates of the optical input for the device as [x coordinate, y coordinate]"""

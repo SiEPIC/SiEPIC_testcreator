@@ -42,7 +42,7 @@ class SetWavelengthCurrentSweep(SmuSweep):
             'Sweeptype_options': ['current'],
             'Wavelengths': [1480, 1500, 1580],
             'Wavelengths_info': 'Please enter wavelengths value',
-            'Wavelengths_bounds': [1000, 2000]
+            'Wavelengths_bounds': [[1270, 1480], [1350, 1580]]
         }
         self.results_info = {
             'num_plots': 1,

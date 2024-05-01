@@ -17,7 +17,7 @@ class CurrentSweepIda(SmuSweep):
             'Stop_bounds': [-100, 100],
             'Step': 0.1, 
             'Step_info': 'Please enter stepsize (mA)',
-            'Step_bounds': [-100, 100],
+            'Step_bounds': [0.01, 100],
             'IV': 'True',
             'IV_info': 'Please enter True if you want an IV curve if not enter False',
             'IV_options': ['True', 'False'],

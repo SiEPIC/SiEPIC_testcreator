@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name = "DreamCreator",
-    version = "0.0.6",
+    version = "0.0.19",
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
     package_dir = {"": "app"},
     packages = find_packages(where="app"),
@@ -16,7 +16,7 @@ setup(
     author_email = "jonathanyorkbarnes@gmail.com",
     license="MIT",
     classifiers=[
-        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
@@ -35,5 +35,5 @@ setup(
         'watchdog==3.0.0',
         'matplotlib==3.8.2'
     ],
-    python_requires='>=3.11',
+    python_requires='>=3.10',
 )

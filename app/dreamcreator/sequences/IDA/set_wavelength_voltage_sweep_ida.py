@@ -12,13 +12,13 @@ class SetWavelengthVoltageSweepIda(SmuSweep):
         self.variables = {
             'Start': 0, 
             'Start_info': 'Please enter start voltage (V)',
-            'Start_bounds': [-10, 10],
+            'Start_bounds': [-100, 100],
             'Stop': 1, 
             'Stop_info': 'Please enter stop voltage (V)',
-            'Stop_bounds': [-10, 10],
+            'Stop_bounds': [-100, 100],
             'Step': 0.1, 
             'Step_info': 'Please enter step voltage (V)',
-            'Step_bounds': [-10, 10],
+            'Step_bounds': [0.01, 100],
             'IV': 'True',
             'IV_info': 'True if current vs voltage plot needed',
             'IV_options': ['True', 'False'],
@@ -36,7 +36,7 @@ class SetWavelengthVoltageSweepIda(SmuSweep):
             'Channel B_options': ['True', 'False'],
             'Wavelengths': '1480, 1550, 1580',
             'Wavelengths_info': 'Set wavelengths in form x, x1, x2 with unit nm',
-            'Wavelengths_bounds': [1400, 1600]
+            'Wavelengths_bounds': [[1270, 1480], [1350, 1580]]
         }
 
         self.results_info = {
