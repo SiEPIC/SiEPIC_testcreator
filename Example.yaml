@@ -1,0 +1,6205 @@
+Devices:
+  2StageMZIwithHeater:
+    device_id: 2StageMZIwithHeater
+    device_type: device
+    electricalCoordinates:
+    - S_3
+    - 837.0
+    - 5072.0
+    opticalCoordinates:
+    - 1834.0
+    - 6991.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  2StageMZIwithHeater2:
+    device_id: 2StageMZIwithHeater2
+    device_type: device
+    electricalCoordinates:
+    - G_18
+    - 837.0
+    - 5674.0
+    opticalCoordinates:
+    - 488.0
+    - 5616.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  2StageMZIwithHeater_1:
+    device_id: 2StageMZIwithHeater_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 488.0
+    - 5138.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  BalancedMZI:
+    device_id: BalancedMZI
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 499.0
+    - 5889.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  DissimilarWGsMZI:
+    device_id: DissimilarWGsMZI
+    device_type: device
+    electricalCoordinates:
+    - S_6
+    - 843.0
+    - 6996.0
+    opticalCoordinates:
+    - 490.0
+    - 6947.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  DongshengLyuTO1:
+    device_id: DongshengLyuTO1
+    device_type: device
+    electricalCoordinates:
+    - pad1
+    - 833.0
+    - 8551.0
+    opticalCoordinates:
+    - 505.0
+    - 8435.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Farm:
+    device_id: Farm
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8712.0
+    - 296.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1310'
+  FarmLeft:
+    device_id: FarmLeft
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 435.0
+    - 266.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_1:
+    device_id: FarmLeft_1
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8755.0
+    - 266.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_2:
+    device_id: FarmLeft_2
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 435.0
+    - 8766.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_3:
+    device_id: FarmLeft_3
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8755.0
+    - 8766.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_4:
+    device_id: FarmLeft_4
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 49.0
+    - 143.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_5:
+    device_id: FarmLeft_5
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8369.0
+    - 143.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_6:
+    device_id: FarmLeft_6
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 49.0
+    - 8639.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmLeft_7:
+    device_id: FarmLeft_7
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8369.0
+    - 8639.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle:
+    device_id: FarmMiddle
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 355.0
+    - 139.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_1:
+    device_id: FarmMiddle_1
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8675.0
+    - 139.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_2:
+    device_id: FarmMiddle_2
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 355.0
+    - 8639.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_3:
+    device_id: FarmMiddle_3
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8675.0
+    - 8639.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_4:
+    device_id: FarmMiddle_4
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 129.0
+    - 143.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_5:
+    device_id: FarmMiddle_5
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8449.0
+    - 143.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_6:
+    device_id: FarmMiddle_6
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 129.0
+    - 8639.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmMiddle_7:
+    device_id: FarmMiddle_7
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8449.0
+    - 8639.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight:
+    device_id: FarmRight
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 275.0
+    - 139.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_1:
+    device_id: FarmRight_1
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8595.0
+    - 139.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_2:
+    device_id: FarmRight_2
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 275.0
+    - 8639.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_3:
+    device_id: FarmRight_3
+    device_type: TMAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8595.0
+    - 8639.0
+    polarization: TM
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_4:
+    device_id: FarmRight_4
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 209.0
+    - 270.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_5:
+    device_id: FarmRight_5
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8529.0
+    - 270.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_6:
+    device_id: FarmRight_6
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 209.0
+    - 8766.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  FarmRight_7:
+    device_id: FarmRight_7
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8529.0
+    - 8766.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1550'
+  Farm_1:
+    device_id: Farm_1
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8763.0
+    - 296.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1310'
+  Farm_2:
+    device_id: Farm_2
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8712.0
+    - 8357.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1310'
+  Farm_3:
+    device_id: Farm_3
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8763.0
+    - 8357.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1310'
+  Farm_4:
+    device_id: Farm_4
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 502.0
+    - 8637.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1310'
+  Farm_5:
+    device_id: Farm_5
+    device_type: TEAlign
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 554.0
+    - 8637.0
+    polarization: TE
+    sequences:
+    - wav(wavelength_sweep_ida)
+    wavelength: '1310'
+  HangZou1_TE_1550_eskid_300nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_20_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_20_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_30_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_30_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_40_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_40_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_50_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_50_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_60_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_60_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_70_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_70_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_200nm_80_1:
+    device_id: HangZou1_TE_1550_eskid_300nm_200nm_80_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_300nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_300nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_300nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_20_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_20_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_30_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_30_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_40_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_40_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_50_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_50_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_60_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_60_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_70_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_70_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 5075.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_200nm_80_1:
+    device_id: HangZou1_TE_1550_eskid_320nm_200nm_80_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 4597.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_320nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 773.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_320nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_320nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 2685.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_20_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_20_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_30_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_30_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_40_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_40_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_50_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_50_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_60_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_60_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_70_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_70_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_200nm_80_1:
+    device_id: HangZou1_TE_1550_eskid_340nm_200nm_80_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_340nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_340nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_340nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_360nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_360nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_360nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_360nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_380nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6987.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_380nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 1251.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_380nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_380nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 5553.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_400nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_400nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_400nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_400nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_420nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_420nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_420nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_420nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_440nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 7465.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_440nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 1729.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_440nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_440nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6031.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_460nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_460nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_460nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_460nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_480nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_480nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_480nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_480nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_500nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 7943.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_500nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 2207.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_500nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_500nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6509.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_20:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_30:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_40:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_50:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_60:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_70:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_200nm_80:
+    device_id: HangZou1_TE_1550_eskid_520nm_200nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_20:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_30:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_40:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 597.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_50:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 652.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_60:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 707.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_70:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 762.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_250nm_80:
+    device_id: HangZou1_TE_1550_eskid_520nm_250nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 817.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_20:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_20
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_30:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_30
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_40:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_40
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 149.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_50:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_50
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 204.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_60:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_60
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 259.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_70:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_70
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 314.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_520nm_300nm_80:
+    device_id: HangZou1_TE_1550_eskid_520nm_300nm_80
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 369.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_300nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_300nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_300nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_300nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_300nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_300nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_320nm:
+    device_id: HangZou1_TE_1550_eskid_ref_320nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 4442.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_320nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_320nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 4920.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_320nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_320nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 618.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_320nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_320nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 2530.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_340nm:
+    device_id: HangZou1_TE_1550_eskid_ref_340nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 4752.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_340nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_340nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 5230.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_340nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_340nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 928.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_340nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_340nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 2840.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_360nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_360nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_360nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_360nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_360nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_360nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_380nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_380nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6832.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_380nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_380nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 1096.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_380nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_380nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 5398.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_400nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_400nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 7142.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_400nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_400nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 1406.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_400nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_400nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 5708.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_420nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_420nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_420nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_420nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_420nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_420nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_440nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_440nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 7310.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_440nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_440nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 1574.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_440nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_440nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 5876.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_460nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_460nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 7620.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_460nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_460nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 1884.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_460nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_460nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6186.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_480nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_480nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_480nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_480nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 487.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_480nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_480nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 39.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_500nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_500nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 7788.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_500nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_500nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 542.0
+    - 2052.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_500nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_500nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 94.0
+    - 6354.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_520nm_200nm:
+    device_id: HangZou1_TE_1550_eskid_ref_520nm_200nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 8098.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_520nm_250nm:
+    device_id: HangZou1_TE_1550_eskid_ref_520nm_250nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 872.0
+    - 2362.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  HangZou1_TE_1550_eskid_ref_520nm_300nm:
+    device_id: HangZou1_TE_1550_eskid_ref_520nm_300nm
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 424.0
+    - 6664.0
+    polarization: TE
+    sequences:
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  Lei_Yuan:
+    device_id: Lei_Yuan
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1036.0
+    - 913.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZI:
+    device_id: MZI
+    device_type: device
+    electricalCoordinates:
+    - G_29
+    - 830.0
+    - 4252.0
+    opticalCoordinates:
+    - 1406.0
+    - 2543.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZI_1:
+    device_id: MZI_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 955.0
+    - 4726.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZI_2:
+    device_id: MZI_2
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 842.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZI_3:
+    device_id: MZI_3
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1866.0
+    - 5148.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZI_4:
+    device_id: MZI_4
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 500.0
+    - 3665.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZI_5:
+    device_id: MZI_5
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 518.0
+    - 4191.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZIwithHeater:
+    device_id: MZIwithHeater
+    device_type: device
+    electricalCoordinates:
+    - Pad1
+    - 1285.0
+    - 1381.0
+    opticalCoordinates:
+    - 1845.0
+    - 6472.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZIwithHeater_1:
+    device_id: MZIwithHeater_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 498.0
+    - 4345.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MZIwithHeater_2:
+    device_id: MZIwithHeater_2
+    device_type: Device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 971.0
+    - 1322.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MicroringResonatorwithRingHeater:
+    device_id: MicroringResonatorwithRingHeater
+    device_type: device
+    electricalCoordinates:
+    - G_8
+    - 843.0
+    - 6632.0
+    opticalCoordinates:
+    - 498.0
+    - 6664.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  MicroringResonatorwithRingHeater2:
+    device_id: MicroringResonatorwithRingHeater2
+    device_type: device
+    electricalCoordinates:
+    - G_24
+    - 843.0
+    - 6154.0
+    opticalCoordinates:
+    - 498.0
+    - 6186.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW0nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW0nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8046.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW100nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW100nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7696.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW10nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW10nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8046.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW110nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW110nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7696.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW120nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW120nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7626.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW130nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW130nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7626.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW140nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW140nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7556.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW150nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW150nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7556.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7976.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW30nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW30nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7976.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW40nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW40nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7906.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW50nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW50nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7906.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW60nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW60nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7836.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW70nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW70nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7836.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW80nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW80nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7766.0
+    - 262.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_BraggSweepDW500N318nmPeriod500nmW90nmdW0Apo:
+    device_id: PCM_BraggSweepDW500N318nmPeriod500nmW90nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7766.0
+    - 199.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N313nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N313nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8676.0
+    - 4190.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N314nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N314nmPeriod500nmW20nmdW0Apo
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8676.0
+    - 4126.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N315nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N315nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8606.0
+    - 4190.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N316nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N316nmPeriod500nmW20nmdW0Apo
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8606.0
+    - 4126.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N317nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N317nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8536.0
+    - 4190.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N318nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N318nmPeriod500nmW20nmdW0Apo
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8536.0
+    - 4126.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N319nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N319nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8466.0
+    - 4190.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N320nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N320nmPeriod500nmW20nmdW0Apo
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8466.0
+    - 4126.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N321nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N321nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8396.0
+    - 4190.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N322nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N322nmPeriod500nmW20nmdW0Apo
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8396.0
+    - 4126.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_C__1000N323nmPeriod500nmW20nmdW0Apo:
+    device_id: PCM_Bragg_C__1000N323nmPeriod500nmW20nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8326.0
+    - 4190.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Bragg_O_800N273nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N273nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8702.0
+    - 720.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N274nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N274nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8702.0
+    - 657.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N275nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N275nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8635.0
+    - 720.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N276nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N276nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8635.0
+    - 657.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N277nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N277nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8568.0
+    - 720.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N278nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N278nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8568.0
+    - 657.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N278nmPeriod350nmW15nmdW0Apo_1:
+    device_id: PCM_Bragg_O_800N278nmPeriod350nmW15nmdW0Apo_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8501.0
+    - 720.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N279nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N279nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8501.0
+    - 657.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N281nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N281nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8434.0
+    - 720.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N282nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N282nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8434.0
+    - 657.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Bragg_O_800N283nmPeriod350nmW15nmdW0Apo:
+    device_id: PCM_Bragg_O_800N283nmPeriod350nmW15nmdW0Apo
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8368.0
+    - 720.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length0p00um:
+    device_id: PCM_DC_Length0p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8356.0
+    - 3767.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length0p00um_1:
+    device_id: PCM_DC_Length0p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8355.0
+    - 3167.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length10p00um:
+    device_id: PCM_DC_Length10p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7956.0
+    - 3767.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length10p00um_1:
+    device_id: PCM_DC_Length10p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7955.0
+    - 3167.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length1p00um:
+    device_id: PCM_DC_Length1p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8356.0
+    - 3703.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length1p00um_1:
+    device_id: PCM_DC_Length1p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8355.0
+    - 3104.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length2p00um:
+    device_id: PCM_DC_Length2p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8276.0
+    - 3767.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length2p00um_1:
+    device_id: PCM_DC_Length2p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8275.0
+    - 3167.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length3p00um:
+    device_id: PCM_DC_Length3p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8276.0
+    - 3703.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length3p00um_1:
+    device_id: PCM_DC_Length3p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8275.0
+    - 3104.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length4p00um:
+    device_id: PCM_DC_Length4p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8196.0
+    - 3767.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length4p00um_1:
+    device_id: PCM_DC_Length4p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8195.0
+    - 3167.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length5p00um:
+    device_id: PCM_DC_Length5p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8196.0
+    - 3703.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length5p00um_1:
+    device_id: PCM_DC_Length5p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8195.0
+    - 3104.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length6p00um:
+    device_id: PCM_DC_Length6p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8116.0
+    - 3767.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length6p00um_1:
+    device_id: PCM_DC_Length6p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8115.0
+    - 3167.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length7p00um:
+    device_id: PCM_DC_Length7p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8116.0
+    - 3703.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length7p00um_1:
+    device_id: PCM_DC_Length7p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8115.0
+    - 3104.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length8p00um:
+    device_id: PCM_DC_Length8p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8036.0
+    - 3767.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length8p00um_1:
+    device_id: PCM_DC_Length8p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8035.0
+    - 3167.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_DC_Length9p00um:
+    device_id: PCM_DC_Length9p00um
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8036.0
+    - 3703.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_DC_Length9p00um_1:
+    device_id: PCM_DC_Length9p00um_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8035.0
+    - 3104.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SWGAssistloss0TE:
+    device_id: PCM_SWGAssistloss0TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 5153.0
+    - 198.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SWGAssistloss17940TE:
+    device_id: PCM_SWGAssistloss17940TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 5153.0
+    - 398.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SWGAssistloss7800TE:
+    device_id: PCM_SWGAssistloss7800TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 5547.0
+    - 179.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SWGloss0TE:
+    device_id: PCM_SWGloss0TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 3856.0
+    - 196.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SWGloss13000TE:
+    device_id: PCM_SWGloss13000TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 4250.0
+    - 178.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SWGloss23400TE:
+    device_id: PCM_SWGloss23400TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 3856.0
+    - 396.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG0TE:
+    device_id: PCM_SpiralWG0TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 506.0
+    - 395.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG0TE_1:
+    device_id: PCM_SpiralWG0TE_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7900.0
+    - 2726.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG0TM:
+    device_id: PCM_SpiralWG0TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1213.0
+    - 395.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG0TM_1:
+    device_id: PCM_SpiralWG0TM_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7900.0
+    - 2179.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG10338TE:
+    device_id: PCM_SpiralWG10338TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8128.0
+    - 2421.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG10338TM:
+    device_id: PCM_SpiralWG10338TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8124.0
+    - 1874.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG15497TE:
+    device_id: PCM_SpiralWG15497TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 506.0
+    - 141.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG15497TM:
+    device_id: PCM_SpiralWG15497TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1213.0
+    - 141.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG20051TE:
+    device_id: PCM_SpiralWG20051TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7974.0
+    - 2726.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG20051TM:
+    device_id: PCM_SpiralWG20051TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7974.0
+    - 2179.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG40304TE:
+    device_id: PCM_SpiralWG40304TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8339.0
+    - 2627.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG40304TM:
+    device_id: PCM_SpiralWG40304TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8339.0
+    - 2080.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG47363TE:
+    device_id: PCM_SpiralWG47363TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 776.0
+    - 396.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG47363TM:
+    device_id: PCM_SpiralWG47363TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1483.0
+    - 396.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG5042TE:
+    device_id: PCM_SpiralWG5042TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7900.0
+    - 2421.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG5042TM:
+    device_id: PCM_SpiralWG5042TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7900.0
+    - 1874.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_SpiralWG5344TE:
+    device_id: PCM_SpiralWG5344TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 566.0
+    - 394.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_SpiralWG5344TM:
+    device_id: PCM_SpiralWG5344TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1273.0
+    - 394.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_StraightLongWGloss0TE:
+    device_id: PCM_StraightLongWGloss0TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8699.0
+    - 1071.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss0TM:
+    device_id: PCM_StraightLongWGloss0TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8699.0
+    - 1437.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss10304TE:
+    device_id: PCM_StraightLongWGloss10304TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7963.0
+    - 1071.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss10304TM:
+    device_id: PCM_StraightLongWGloss10304TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7963.0
+    - 1437.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss20504TE:
+    device_id: PCM_StraightLongWGloss20504TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8233.0
+    - 1071.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss20504TM:
+    device_id: PCM_StraightLongWGloss20504TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8233.0
+    - 1437.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss40521TE:
+    device_id: PCM_StraightLongWGloss40521TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7963.0
+    - 1251.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightLongWGloss40521TM:
+    device_id: PCM_StraightLongWGloss40521TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7963.0
+    - 1616.0
+    polarization: TM
+    sequences: []
+    wavelength: '1310'
+  PCM_StraightWGloss0TE:
+    device_id: PCM_StraightWGloss0TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 2507.0
+    - 394.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_StraightWGloss0TM:
+    device_id: PCM_StraightWGloss0TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 3797.0
+    - 144.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_StraightWGloss34909TE:
+    device_id: PCM_StraightWGloss34909TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1919.0
+    - 394.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_StraightWGloss34909TM:
+    device_id: PCM_StraightWGloss34909TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 3209.0
+    - 144.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_StraightWGloss80409TE:
+    device_id: PCM_StraightWGloss80409TE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1919.0
+    - 187.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_StraightWGloss80409TM:
+    device_id: PCM_StraightWGloss80409TM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 2573.0
+    - 351.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_Ycutbacks_N0:
+    device_id: PCM_Ycutbacks_N0
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8611.0
+    - 5039.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Ycutbacks_N0_1:
+    device_id: PCM_Ycutbacks_N0_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8611.0
+    - 4702.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Ycutbacks_N112:
+    device_id: PCM_Ycutbacks_N112
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8212.0
+    - 4874.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Ycutbacks_N112_1:
+    device_id: PCM_Ycutbacks_N112_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8212.0
+    - 4537.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_Ycutbacks_N56:
+    device_id: PCM_Ycutbacks_N56
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8212.0
+    - 5039.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_Ycutbacks_N56_1:
+    device_id: PCM_Ycutbacks_N56_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8212.0
+    - 4702.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_jackzhfPCDID32SET3R107p66:
+    device_id: PCM_jackzhfPCDID32SET3R107p66
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8403.0
+    - 432.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_ringTE:
+    device_id: PCM_ringTE
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7282.0
+    - 145.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_ringTE_1:
+    device_id: PCM_ringTE_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7330.0
+    - 145.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_ringTE_10:
+    device_id: PCM_ringTE_10
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8307.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_2:
+    device_id: PCM_ringTE_2
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7377.0
+    - 145.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCM_ringTE_3:
+    device_id: PCM_ringTE_3
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7852.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_4:
+    device_id: PCM_ringTE_4
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7917.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_5:
+    device_id: PCM_ringTE_5
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7982.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_6:
+    device_id: PCM_ringTE_6
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8047.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_7:
+    device_id: PCM_ringTE_7
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8112.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_8:
+    device_id: PCM_ringTE_8
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8177.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTE_9:
+    device_id: PCM_ringTE_9
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8242.0
+    - 626.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCM_ringTM:
+    device_id: PCM_ringTM
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7426.0
+    - 143.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCM_ringTM_1:
+    device_id: PCM_ringTM_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7485.0
+    - 143.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  PCMcontraDCcascaded1:
+    device_id: PCMcontraDCcascaded1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6244.0
+    - 146.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMcontraDCcascaded15:
+    device_id: PCMcontraDCcascaded15
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6840.0
+    - 268.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMcontraDCcascaded1_1:
+    device_id: PCMcontraDCcascaded1_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7526.0
+    - 754.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCMcontraDCcascaded3:
+    device_id: PCMcontraDCcascaded3
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6297.0
+    - 179.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMcontraDCcascaded3_1:
+    device_id: PCMcontraDCcascaded3_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7606.0
+    - 754.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCMcontraDCcascaded5:
+    device_id: PCMcontraDCcascaded5
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6352.0
+    - 247.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMcontraDCcascaded5_1:
+    device_id: PCMcontraDCcascaded5_1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7709.0
+    - 754.0
+    polarization: TE
+    sequences: []
+    wavelength: '1310'
+  PCMcontraDCcascaded7:
+    device_id: PCMcontraDCcascaded7
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6790.0
+    - 147.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMmziTE1:
+    device_id: PCMmziTE1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6407.0
+    - 392.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMmziTE2:
+    device_id: PCMmziTE2
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6512.0
+    - 342.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  PCMmziTM1:
+    device_id: PCMmziTM1
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 6620.0
+    - 392.0
+    polarization: TM
+    sequences: []
+    wavelength: '1550'
+  UnbalancedMZI:
+    device_id: UnbalancedMZI
+    device_type: device
+    electricalCoordinates:
+    - G_23
+    - 843.0
+    - 5904.0
+    opticalCoordinates:
+    - 498.0
+    - 6357.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Vernier:
+    device_id: Vernier
+    device_type: device
+    electricalCoordinates:
+    - Pad1N
+    - 1282.0
+    - 1860.0
+    opticalCoordinates:
+    - 944.0
+    - 1711.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Vesnog_MZIheater1:
+    device_id: Vesnog_MZIheater1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 933.0
+    - 2562.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Vesnog_MZIheater2:
+    device_id: Vesnog_MZIheater2
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 933.0
+    - 2812.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Vesnog_MZIheaterSYM1:
+    device_id: Vesnog_MZIheaterSYM1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 933.0
+    - 3040.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Vesnog_MZIheaterSYM2:
+    device_id: Vesnog_MZIheaterSYM2
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 933.0
+    - 3290.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  Vesnog_RRheater:
+    device_id: Vesnog_RRheater
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 933.0
+    - 3639.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  WGwithHeater:
+    device_id: WGwithHeater
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 498.0
+    - 4599.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoA012gap:
+    device_id: avram5_thermoA012gap
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 5204.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoA015gap:
+    device_id: avram5_thermoA015gap
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 4950.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoB015gap18top:
+    device_id: avram5_thermoB015gap18top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 5428.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoB015gap20top:
+    device_id: avram5_thermoB015gap20top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 5682.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoC015gap14top:
+    device_id: avram5_thermoC015gap14top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 5906.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoC015gap16top:
+    device_id: avram5_thermoC015gap16top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 6160.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoD012gap20top:
+    device_id: avram5_thermoD012gap20top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 6638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoD015gap10top:
+    device_id: avram5_thermoD015gap10top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 930.0
+    - 6384.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoE20rad015gap16top:
+    device_id: avram5_thermoE20rad015gap16top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 946.0
+    - 6989.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoF20rad015gap18top:
+    device_id: avram5_thermoF20rad015gap18top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 946.0
+    - 7467.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoG20rad015gap20top:
+    device_id: avram5_thermoG20rad015gap20top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 946.0
+    - 7945.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoH20rad015gap22top:
+    device_id: avram5_thermoH20rad015gap22top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 946.0
+    - 8423.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoI20rad015gap24top:
+    device_id: avram5_thermoI20rad015gap24top
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1394.0
+    - 775.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoJI20rad015gap25curve:
+    device_id: avram5_thermoJI20rad015gap25curve
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1394.0
+    - 1253.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoK20rad015gap30curve:
+    device_id: avram5_thermoK20rad015gap30curve
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1394.0
+    - 1731.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  avram5_thermoL20rad015gap35curve:
+    device_id: avram5_thermoL20rad015gap35curve
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1394.0
+    - 2209.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  chander_MZI1:
+    device_id: chander_MZI1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 490.0
+    - 7599.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  chander_MZI1_1:
+    device_id: chander_MZI1_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 490.0
+    - 8077.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  chander_MZI2:
+    device_id: chander_MZI2
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 490.0
+    - 7349.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  chander_MZI2_1:
+    device_id: chander_MZI2_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 490.0
+    - 7827.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  fustunerA:
+    device_id: fustunerA
+    device_type: device
+    electricalCoordinates:
+    - S1_4
+    - 1733.0
+    - 3643.0
+    opticalCoordinates:
+    - 1403.0
+    - 3642.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  fustunerB:
+    device_id: fustunerB
+    device_type: device
+    electricalCoordinates:
+    - G1_3
+    - 1733.0
+    - 4246.0
+    opticalCoordinates:
+    - 1403.0
+    - 4120.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  fustunerC:
+    device_id: fustunerC
+    device_type: device
+    electricalCoordinates:
+    - G1_2
+    - 1733.0
+    - 4724.0
+    opticalCoordinates:
+    - 1403.0
+    - 4598.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  fustunerD:
+    device_id: fustunerD
+    device_type: device
+    electricalCoordinates:
+    - G1_1
+    - 1733.0
+    - 5204.0
+    opticalCoordinates:
+    - 1403.0
+    - 5078.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  fustunerE:
+    device_id: fustunerE
+    device_type: device
+    electricalCoordinates:
+    - G1_5
+    - 1733.0
+    - 5680.0
+    opticalCoordinates:
+    - 1403.0
+    - 5554.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  fustunerF:
+    device_id: fustunerF
+    device_type: device
+    electricalCoordinates:
+    - G1
+    - 1733.0
+    - 6160.0
+    opticalCoordinates:
+    - 1403.0
+    - 6034.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  gsun86_heater1_PSGC900T0.90F:
+    device_id: gsun86_heater1_PSGC900T0.90F
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 1730.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  gsun86_heater2_PSGC900T0.80F:
+    device_id: gsun86_heater2_PSGC900T0.80F
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 2208.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  gsun86_heater3_PSGC900T0.70F:
+    device_id: gsun86_heater3_PSGC900T0.70F
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 2686.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  gsun86_heater4_PSGC900T0.60F:
+    device_id: gsun86_heater4_PSGC900T0.60F
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 3164.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  gsun86_heater5_PSGC900T0.50F:
+    device_id: gsun86_heater5_PSGC900T0.50F
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 3642.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  gsun86_heater6_PSGC900T0.40F:
+    device_id: gsun86_heater6_PSGC900T0.40F
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 69.0
+    - 4120.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ik_ThermoOpticPhaseShifter:
+    device_id: ik_ThermoOpticPhaseShifter
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1381.0
+    - 6560.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ik_ThermoOpticPhaseShifter_1:
+    device_id: ik_ThermoOpticPhaseShifter_1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 485.0
+    - 3214.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  mehmetunlu_BendNewv01:
+    device_id: mehmetunlu_BendNewv01
+    device_type: device
+    electricalCoordinates:
+    - G_11
+    - 2191.0
+    - 1385.0
+    opticalCoordinates:
+    - 1836.0
+    - 1394.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_BendNewv02:
+    device_id: mehmetunlu_BendNewv02
+    device_type: device
+    electricalCoordinates:
+    - G_12
+    - 2190.0
+    - 1130.0
+    opticalCoordinates:
+    - 1836.0
+    - 1150.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_DelayLineD03V01:
+    device_id: mehmetunlu_DelayLineD03V01
+    device_type: device
+    electricalCoordinates:
+    - G_3
+    - 1745.0
+    - 7949.0
+    opticalCoordinates:
+    - 1391.0
+    - 8054.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_DelayLineD04V02:
+    device_id: mehmetunlu_DelayLineD04V02
+    device_type: device
+    electricalCoordinates:
+    - G_20
+    - 1741.0
+    - 8430.0
+    opticalCoordinates:
+    - 1386.0
+    - 8523.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_GCto1DGW1x1v01:
+    device_id: mehmetunlu_GCto1DGW1x1v01
+    device_type: device
+    electricalCoordinates:
+    - G_10
+    - 2122.0
+    - 2104.0
+    opticalCoordinates:
+    - 1835.0
+    - 2325.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_GCto1DGW1x2v01um10:
+    device_id: mehmetunlu_GCto1DGW1x2v01um10
+    device_type: device
+    electricalCoordinates:
+    - G_1
+    - 2189.0
+    - 3162.0
+    opticalCoordinates:
+    - 1841.0
+    - 3312.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_GCto1DGW1x2v02:
+    device_id: mehmetunlu_GCto1DGW1x2v02
+    device_type: device
+    electricalCoordinates:
+    - G_2
+    - 2097.0
+    - 2559.0
+    opticalCoordinates:
+    - 1834.0
+    - 2743.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_GCto1DGW1x4v01:
+    device_id: mehmetunlu_GCto1DGW1x4v01
+    device_type: device
+    electricalCoordinates:
+    - G
+    - 2127.0
+    - 3586.0
+    opticalCoordinates:
+    - 1852.0
+    - 3665.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_Splitter12port1:
+    device_id: mehmetunlu_Splitter12port1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1836.0
+    - 854.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_Splitter1x3v02:
+    device_id: mehmetunlu_Splitter1x3v02
+    device_type: device
+    electricalCoordinates:
+    - G_22
+    - 2190.0
+    - 1748.0
+    opticalCoordinates:
+    - 1843.0
+    - 1732.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_heatertransitionv03:
+    device_id: mehmetunlu_heatertransitionv03
+    device_type: device
+    electricalCoordinates:
+    - G_4
+    - 1746.0
+    - 7115.0
+    opticalCoordinates:
+    - 1400.0
+    - 7095.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_heatertransitionv03v02:
+    device_id: mehmetunlu_heatertransitionv03v02
+    device_type: device
+    electricalCoordinates:
+    - G_14
+    - 1746.0
+    - 7593.0
+    opticalCoordinates:
+    - 1400.0
+    - 7573.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_heatertransitionvtest03D02:
+    device_id: mehmetunlu_heatertransitionvtest03D02
+    device_type: device
+    electricalCoordinates:
+    - G_5
+    - 1745.0
+    - 6861.0
+    opticalCoordinates:
+    - 1400.0
+    - 6880.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  mehmetunlu_heatertransitionvtest03D02v02:
+    device_id: mehmetunlu_heatertransitionvtest03D02v02
+    device_type: device
+    electricalCoordinates:
+    - G_13
+    - 1745.0
+    - 7339.0
+    opticalCoordinates:
+    - 1400.0
+    - 7358.0
+    polarization: TE
+    sequences:
+    - volt(voltage_sweep_ida)
+    - setwvolt(set_wavelength_voltage_sweep_ida)
+    wavelength: '1550'
+  my-mitx_m3heatv6:
+    device_id: my-mitx_m3heatv6
+    device_type: device
+    electricalCoordinates:
+    - G_25
+    - 2178.0
+    - 4066.0
+    opticalCoordinates:
+    - 1834.0
+    - 4063.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ramrar_MZI1:
+    device_id: ramrar_MZI1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 945.0
+    - 2347.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ramrar_MZI2:
+    device_id: ramrar_MZI2
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 945.0
+    - 2093.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g100&WG500:
+    device_id: ringloss4pt&r10&g100&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7079.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g121&WG500:
+    device_id: ringloss4pt&r10&g121&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7164.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g143&WG500:
+    device_id: ringloss4pt&r10&g143&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7250.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g164&WG500:
+    device_id: ringloss4pt&r10&g164&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7336.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g186&WG500:
+    device_id: ringloss4pt&r10&g186&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7422.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g207&WG500:
+    device_id: ringloss4pt&r10&g207&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7507.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g229&WG500:
+    device_id: ringloss4pt&r10&g229&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7593.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g250&WG500:
+    device_id: ringloss4pt&r10&g250&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7679.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g271&WG500:
+    device_id: ringloss4pt&r10&g271&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7765.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g293&WG500:
+    device_id: ringloss4pt&r10&g293&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7851.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g314&WG500:
+    device_id: ringloss4pt&r10&g314&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 7937.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g336&WG500:
+    device_id: ringloss4pt&r10&g336&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8022.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g357&WG500:
+    device_id: ringloss4pt&r10&g357&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8108.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g379&WG500:
+    device_id: ringloss4pt&r10&g379&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8194.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  ringloss4pt&r10&g400&WG500:
+    device_id: ringloss4pt&r10&g400&WG500
+    device_type: PCM
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 8280.0
+    - 8638.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  veerpalkaur:
+    device_id: veerpalkaur
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1828.0
+    - 5627.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  yhcheng_MZI1:
+    device_id: yhcheng_MZI1
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 1828.0
+    - 6030.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+  yhcheng_MZIa:
+    device_id: yhcheng_MZIa
+    device_type: device
+    electricalCoordinates: []
+    opticalCoordinates:
+    - 2038.0
+    - 6030.0
+    polarization: TE
+    sequences: []
+    wavelength: '1550'
+Sequences:
+  setwvolt(set_wavelength_voltage_sweep_ida):
+    Runtime: 15.0
+    results_info:
+      csv: 'True'
+      foldername: ''
+      legend: 'True'
+      mat: 'True'
+      num_plots: '1'
+      pdf: 'True'
+      pkl: 'False'
+      plottitle: Set Wavelength Voltage Sweep
+      save_location: ''
+      saveplot: 'True'
+      visual: 'True'
+      xscale: '1'
+      xtitle: Voltage (V)
+      yscale: '1'
+      ytitle: Current (A)
+    variables:
+      Channel A: 'True'
+      Channel B: 'False'
+      IV: 'True'
+      PV: 'True'
+      RV: 'True'
+      Start: '0'
+      Step: '0.1'
+      Stop: '1'
+      Wavelengths: 1480, 1550, 1580
+  volt(voltage_sweep_ida):
+    Runtime: 5.0
+    results_info:
+      csv: 'True'
+      foldername: ''
+      legend: 'True'
+      mat: 'True'
+      num_plots: '1'
+      pdf: 'True'
+      pkl: 'True'
+      plottitle: Voltage Sweep
+      save_location: ''
+      saveplot: 'True'
+      visual: 'True'
+      xscale: '1'
+      xtitle: Voltage (V)
+      yscale: '1'
+      ytitle: Current (A)
+    variables:
+      Channel A: 'True'
+      Channel B: 'False'
+      IV: 'True'
+      PV: 'True'
+      RV: 'True'
+      Start: '0'
+      Step: '0.1'
+      Stop: '1'
+  wav(wavelength_sweep_ida):
+    Runtime: 50.0
+    results_info:
+      csv: 'True'
+      foldername: ''
+      legend: 'True'
+      mat: 'True'
+      num_plots: '1'
+      pdf: 'True'
+      pkl: 'False'
+      plottitle: WavelengthSweep
+      save_location: ''
+      saveplot: 'True'
+      visual: 'True'
+      xscale: '1'
+      xtitle: Wavelength (nm)
+      yscale: '1'
+      ytitle: Power (dBm)
+    variables:
+      Initialrange: '-20'
+      Laser Output: High Power
+      Numscans: '1'
+      Power: '1'
+      RangeDec: '20'
+      Start: '1480'
+      Step: '1'
+      Stop: '1580'
+      Sweep Speed: auto

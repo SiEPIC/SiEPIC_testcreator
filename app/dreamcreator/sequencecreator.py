@@ -406,7 +406,7 @@ class GUI(QWidget):
                 print(
                     "Linked sequence: "
                     + selected_sequence[0].text()
-                    + "and device: "
+                    + " and device: "
                     + device.text()
                 )
 
@@ -599,8 +599,17 @@ class GUI(QWidget):
     def select_items(self, sequence_name):
         for i in range(self.listbox2.count()):
             item = self.listbox2.item(i)
-            if sequence_name in self.devicedict[item.text()]['sequences']:
-                item.setSelected(True)
+            try:
+                if sequence_name in self.devicedict[item.text()]['sequences']:
+                    item.setSelected(True)
+            except:
+                for x in self.deviceobjects:
+                    a = item.text()
+                    b = x.device_id
+                    if item.text() == x.device_id:
+                        deviceobject = x
+                if sequence_name in deviceobject.sequences:
+                    item.setSelected(True)
 
     def unselect_items(self):
         for i in range(self.listbox2.count()):
@@ -644,10 +653,20 @@ class GUI(QWidget):
             row = self.listbox4.row(item)  # Get the row of the item
             self.listbox4.takeItem(row)
 
+        for seq in selected_sequences:
+            a = seq.text()
+            self.runtime_journal[seq.text()][1] = self.runtime_journal[seq.text()][1] - len(selected_devices) 
+
         for device in selected_devices:
             for sequence in selected_sequences:
-                self.yamldict['Devices'][device.text()]['sequences'].remove(sequence.text())
-                print('Removed sequence '+sequence.text()+' from device '+device.text())
+                try:
+                    self.yamldict['Devices'][device.text()]['sequences'].remove(sequence.text())
+                    print('Removed sequence '+sequence.text()+' from device '+device.text())
+                except: 
+                    for x in self.deviceobjects:
+                        if x.device_id == device.text():
+                            x.sequences.remove(sequence.text())
+                    print('Removed sequence '+sequence.text()+' from device '+device.text())
 
     def select_keyword(self, item):
         keyword = self.device_search.text()

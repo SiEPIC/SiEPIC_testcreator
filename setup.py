@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name = "DreamCreator",
-    version = "0.0.19",
+    version = "0.0.21",
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
     package_dir = {"": "app"},
     packages = find_packages(where="app"),
@@ -21,19 +21,19 @@ setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[    
-        'numpy==1.26.3',
-        'pandas==2.2.0',
-        'pillow==10.2.0',
+        'numpy>=1.26.3',
+        'pandas>=2.2.0',
+        'pillow>=10.2.0',
         'pkginfo==1.10.0',
         'PyQt5>=5.15.10',
         'PyQt5-Qt5>=5.15.2',
-        'PyQt5-sip==12.13.0',
-        'pywin32-ctypes==0.2.2',
-        'PyYAML==6.0.1',
-        'scipy==1.12.0',
-        'twine==5.0.0',
-        'watchdog==3.0.0',
-        'matplotlib==3.8.2'
+        'PyQt5-sip>=12.13.0',
+        'pywin32-ctypes>=0.2.2',
+        'PyYAML>=6.0.1',
+        'scipy>=1.12.0',
+        'twine>=5.0.0',
+        'watchdog>=3.0.0',
+        'matplotlib>=3.8.2'
     ],
     python_requires='>=3.10',
 )

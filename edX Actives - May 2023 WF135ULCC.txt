@@ -1,0 +1,732 @@
+% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params 
+275, 139, TM, 1550, TMAlign, FarmRight, comment
+435, 266, TM, 1550, TMAlign, FarmLeft, comment
+355, 139, TM, 1550, TMAlign, FarmMiddle, comment
+8595, 139, TM, 1550, TMAlign, FarmRight, comment
+8755, 266, TM, 1550, TMAlign, FarmLeft, comment
+8675, 139, TM, 1550, TMAlign, FarmMiddle, comment
+275, 8639, TM, 1550, TMAlign, FarmRight, comment
+435, 8766, TM, 1550, TMAlign, FarmLeft, comment
+355, 8639, TM, 1550, TMAlign, FarmMiddle, comment
+8595, 8639, TM, 1550, TMAlign, FarmRight, comment
+8755, 8766, TM, 1550, TMAlign, FarmLeft, comment
+8675, 8639, TM, 1550, TMAlign, FarmMiddle, comment
+2573, 351, TM, 1550, PCM, PCM, StraightWGloss80409TM
+2507, 394, TE, 1550, PCM, PCM, StraightWGloss0TE
+1919, 394, TE, 1550, PCM, PCM, StraightWGloss34909TE
+3209, 144, TM, 1550, PCM, PCM, StraightWGloss34909TM
+1919, 187, TE, 1550, PCM, PCM, StraightWGloss80409TE
+3797, 144, TM, 1550, PCM, PCM, StraightWGloss0TM
+7766, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW90nmdW0Apo
+7766, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW80nmdW0Apo
+7696, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW100nmdW0Apo
+7836, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW70nmdW0Apo
+7906, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW50nmdW0Apo
+7626, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW130nmdW0Apo
+7976, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW30nmdW0Apo
+7976, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW20nmdW0Apo
+7696, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW110nmdW0Apo
+7836, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW60nmdW0Apo
+7626, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW120nmdW0Apo
+8046, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW0nmdW0Apo
+7906, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW40nmdW0Apo
+8046, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW10nmdW0Apo
+7556, 199, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW150nmdW0Apo
+7556, 262, TE, 1550, PCM, PCM, BraggSweepDW500N318nmPeriod500nmW140nmdW0Apo
+6244, 146, TE, 1550, PCM, PCMcontraDCcascaded1, comment
+6297, 179, TE, 1550, PCM, PCMcontraDCcascaded3, comment
+6790, 147, TE, 1550, PCM, PCMcontraDCcascaded7, comment
+6352, 247, TE, 1550, PCM, PCMcontraDCcascaded5, comment
+6840, 268, TE, 1550, PCM, PCMcontraDCcascaded15, comment
+6620, 392, TM, 1550, PCM, PCMmziTM1, comment
+6512, 342, TE, 1550, PCM, PCMmziTE2, comment
+6407, 392, TE, 1550, PCM, PCMmziTE1, comment
+8403, 432, TE, 1550, PCM, PCM, jackzhfPCDID32SET3R107p66
+3856, 196, TE, 1550, PCM, PCM, SWGloss0TE
+3856, 396, TE, 1550, PCM, PCM, SWGloss23400TE
+4250, 178, TE, 1550, PCM, PCM, SWGloss13000TE
+5547, 179, TE, 1550, PCM, PCM, SWGAssistloss7800TE
+5153, 398, TE, 1550, PCM, PCM, SWGAssistloss17940TE
+5153, 198, TE, 1550, PCM, PCM, SWGAssistloss0TE
+506, 395, TE, 1550, PCM, PCM, SpiralWG0TE
+776, 396, TE, 1550, PCM, PCM, SpiralWG47363TE
+506, 141, TE, 1550, PCM, PCM, SpiralWG15497TE
+566, 394, TE, 1550, PCM, PCM, SpiralWG5344TE
+1213, 395, TM, 1550, PCM, PCM, SpiralWG0TM
+1483, 396, TM, 1550, PCM, PCM, SpiralWG47363TM
+1213, 141, TM, 1550, PCM, PCM, SpiralWG15497TM
+1273, 394, TM, 1550, PCM, PCM, SpiralWG5344TM
+7426, 143, TM, 1550, PCM, PCM, ringTM
+7485, 143, TM, 1550, PCM, PCM, ringTM
+8702, 657, TE, 1310, PCM, PCM, Bragg, O, 800N274nmPeriod350nmW15nmdW0Apo
+8368, 720, TE, 1310, PCM, PCM, Bragg, O, 800N283nmPeriod350nmW15nmdW0Apo
+8568, 720, TE, 1310, PCM, PCM, Bragg, O, 800N277nmPeriod350nmW15nmdW0Apo
+8434, 657, TE, 1310, PCM, PCM, Bragg, O, 800N282nmPeriod350nmW15nmdW0Apo
+8702, 720, TE, 1310, PCM, PCM, Bragg, O, 800N273nmPeriod350nmW15nmdW0Apo
+8501, 657, TE, 1310, PCM, PCM, Bragg, O, 800N279nmPeriod350nmW15nmdW0Apo
+8568, 657, TE, 1310, PCM, PCM, Bragg, O, 800N278nmPeriod350nmW15nmdW0Apo
+8501, 720, TE, 1310, PCM, PCM, Bragg, O, 800N278nmPeriod350nmW15nmdW0Apo
+8434, 720, TE, 1310, PCM, PCM, Bragg, O, 800N281nmPeriod350nmW15nmdW0Apo
+8635, 657, TE, 1310, PCM, PCM, Bragg, O, 800N276nmPeriod350nmW15nmdW0Apo
+8635, 720, TE, 1310, PCM, PCM, Bragg, O, 800N275nmPeriod350nmW15nmdW0Apo
+7282, 145, TE, 1550, PCM, PCM, ringTE
+7330, 145, TE, 1550, PCM, PCM, ringTE
+7377, 145, TE, 1550, PCM, PCM, ringTE
+8339, 2627, TE, 1310, PCM, PCM, SpiralWG40304TE
+7900, 2726, TE, 1310, PCM, PCM, SpiralWG0TE
+7900, 2421, TE, 1310, PCM, PCM, SpiralWG5042TE
+7974, 2726, TE, 1310, PCM, PCM, SpiralWG20051TE
+8128, 2421, TE, 1310, PCM, PCM, SpiralWG10338TE
+8396, 4126, TE, 1550, device, PCM, Bragg, C, , 1000N322nmPeriod500nmW20nmdW0Apo
+8676, 4190, TE, 1550, PCM, PCM, Bragg, C, , 1000N313nmPeriod500nmW20nmdW0Apo
+8396, 4190, TE, 1550, PCM, PCM, Bragg, C, , 1000N321nmPeriod500nmW20nmdW0Apo
+8466, 4126, TE, 1550, device, PCM, Bragg, C, , 1000N320nmPeriod500nmW20nmdW0Apo
+8606, 4190, TE, 1550, PCM, PCM, Bragg, C, , 1000N315nmPeriod500nmW20nmdW0Apo
+8536, 4126, TE, 1550, device, PCM, Bragg, C, , 1000N318nmPeriod500nmW20nmdW0Apo
+8606, 4126, TE, 1550, device, PCM, Bragg, C, , 1000N316nmPeriod500nmW20nmdW0Apo
+8326, 4190, TE, 1550, PCM, PCM, Bragg, C, , 1000N323nmPeriod500nmW20nmdW0Apo
+8676, 4126, TE, 1550, device, PCM, Bragg, C, , 1000N314nmPeriod500nmW20nmdW0Apo
+8466, 4190, TE, 1550, PCM, PCM, Bragg, C, , 1000N319nmPeriod500nmW20nmdW0Apo
+8536, 4190, TE, 1550, PCM, PCM, Bragg, C, , 1000N317nmPeriod500nmW20nmdW0Apo
+7606, 754, TE, 1310, PCM, PCMcontraDCcascaded3, comment
+7709, 754, TE, 1310, PCM, PCMcontraDCcascaded5, comment
+7526, 754, TE, 1310, PCM, PCMcontraDCcascaded1, comment
+8276, 3703, TE, 1310, PCM, PCM, DC, Length3p00um
+8196, 3767, TE, 1310, PCM, PCM, DC, Length4p00um
+8036, 3767, TE, 1310, PCM, PCM, DC, Length8p00um
+8276, 3767, TE, 1310, PCM, PCM, DC, Length2p00um
+8356, 3767, TE, 1310, PCM, PCM, DC, Length0p00um
+8356, 3703, TE, 1310, PCM, PCM, DC, Length1p00um
+8116, 3703, TE, 1310, PCM, PCM, DC, Length7p00um
+8116, 3767, TE, 1310, PCM, PCM, DC, Length6p00um
+7956, 3767, TE, 1310, PCM, PCM, DC, Length10p00um
+8196, 3703, TE, 1310, PCM, PCM, DC, Length5p00um
+8036, 3703, TE, 1310, PCM, PCM, DC, Length9p00um
+8115, 3167, TE, 1550, PCM, PCM, DC, Length6p00um
+8275, 3167, TE, 1550, PCM, PCM, DC, Length2p00um
+8355, 3104, TE, 1550, PCM, PCM, DC, Length1p00um
+8035, 3104, TE, 1550, PCM, PCM, DC, Length9p00um
+8195, 3167, TE, 1550, PCM, PCM, DC, Length4p00um
+8355, 3167, TE, 1550, PCM, PCM, DC, Length0p00um
+8115, 3104, TE, 1550, PCM, PCM, DC, Length7p00um
+7955, 3167, TE, 1550, PCM, PCM, DC, Length10p00um
+8275, 3104, TE, 1550, PCM, PCM, DC, Length3p00um
+8195, 3104, TE, 1550, PCM, PCM, DC, Length5p00um
+8035, 3167, TE, 1550, PCM, PCM, DC, Length8p00um
+8212, 5039, TE, 1310, PCM, PCM, Ycutbacks, N56
+8611, 5039, TE, 1310, PCM, PCM, Ycutbacks, N0
+8212, 4874, TE, 1310, PCM, PCM, Ycutbacks, N112
+7852, 626, TE, 1310, PCM, PCM, ringTE
+7917, 626, TE, 1310, PCM, PCM, ringTE
+7982, 626, TE, 1310, PCM, PCM, ringTE
+8047, 626, TE, 1310, PCM, PCM, ringTE
+8112, 626, TE, 1310, PCM, PCM, ringTE
+8177, 626, TE, 1310, PCM, PCM, ringTE
+8242, 626, TE, 1310, PCM, PCM, ringTE
+8307, 626, TE, 1310, PCM, PCM, ringTE
+8212, 4702, TE, 1550, PCM, PCM, Ycutbacks, N56
+8611, 4702, TE, 1550, PCM, PCM, Ycutbacks, N0
+8212, 4537, TE, 1550, PCM, PCM, Ycutbacks, N112
+7963, 1616, TM, 1310, PCM, PCM, StraightLongWGloss40521TM
+7963, 1437, TM, 1310, PCM, PCM, StraightLongWGloss10304TM
+8699, 1437, TM, 1310, PCM, PCM, StraightLongWGloss0TM
+8233, 1437, TM, 1310, PCM, PCM, StraightLongWGloss20504TM
+7963, 1071, TE, 1310, PCM, PCM, StraightLongWGloss10304TE
+8699, 1071, TE, 1310, PCM, PCM, StraightLongWGloss0TE
+8233, 1071, TE, 1310, PCM, PCM, StraightLongWGloss20504TE
+7963, 1251, TE, 1310, PCM, PCM, StraightLongWGloss40521TE
+7900, 1874, TM, 1310, PCM, PCM, SpiralWG5042TM
+8124, 1874, TM, 1310, PCM, PCM, SpiralWG10338TM
+7900, 2179, TM, 1310, PCM, PCM, SpiralWG0TM
+7974, 2179, TM, 1310, PCM, PCM, SpiralWG20051TM
+8339, 2080, TM, 1310, PCM, PCM, SpiralWG40304TM
+8280, 8638, TE, 1550, PCM, ringloss4pt&r10&g400&WG500, comment
+7679, 8638, TE, 1550, PCM, ringloss4pt&r10&g250&WG500, comment
+7593, 8638, TE, 1550, PCM, ringloss4pt&r10&g229&WG500, comment
+7937, 8638, TE, 1550, PCM, ringloss4pt&r10&g314&WG500, comment
+7164, 8638, TE, 1550, PCM, ringloss4pt&r10&g121&WG500, comment
+7079, 8638, TE, 1550, PCM, ringloss4pt&r10&g100&WG500, comment
+7250, 8638, TE, 1550, PCM, ringloss4pt&r10&g143&WG500, comment
+8022, 8638, TE, 1550, PCM, ringloss4pt&r10&g336&WG500, comment
+8108, 8638, TE, 1550, PCM, ringloss4pt&r10&g357&WG500, comment
+7851, 8638, TE, 1550, PCM, ringloss4pt&r10&g293&WG500, comment
+7336, 8638, TE, 1550, PCM, ringloss4pt&r10&g164&WG500, comment
+7765, 8638, TE, 1550, PCM, ringloss4pt&r10&g271&WG500, comment
+8194, 8638, TE, 1550, PCM, ringloss4pt&r10&g379&WG500, comment
+7422, 8638, TE, 1550, PCM, ringloss4pt&r10&g186&WG500, comment
+7507, 8638, TE, 1550, PCM, ringloss4pt&r10&g207&WG500, comment
+8712, 296, TE, 1310, TEAlign, Farm, comment
+8763, 296, TE, 1310, TEAlign, Farm, comment
+8712, 8357, TE, 1310, TEAlign, Farm, comment
+8763, 8357, TE, 1310, TEAlign, Farm, comment
+502, 8637, TE, 1310, TEAlign, Farm, comment
+554, 8637, TE, 1310, TEAlign, Farm, comment
+49, 143, TE, 1550, TEAlign, FarmLeft, comment
+129, 143, TE, 1550, TEAlign, FarmMiddle, comment
+209, 270, TE, 1550, TEAlign, FarmRight, comment
+8369, 143, TE, 1550, TEAlign, FarmLeft, comment
+8449, 143, TE, 1550, TEAlign, FarmMiddle, comment
+8529, 270, TE, 1550, TEAlign, FarmRight, comment
+49, 8639, TE, 1550, TEAlign, FarmLeft, comment
+129, 8639, TE, 1550, TEAlign, FarmMiddle, comment
+209, 8766, TE, 1550, TEAlign, FarmRight, comment
+8369, 8639, TE, 1550, TEAlign, FarmLeft, comment
+8449, 8639, TE, 1550, TEAlign, FarmMiddle, comment
+8529, 8766, TE, 1550, TEAlign, FarmRight, comment
+1828, 6030, TE, 1550, device, yhcheng, MZI1
+2038, 6030, TE, 1550, device, yhcheng, MZIa
+1828, 5627, TE, 1550, device, veerpalkaur, comment
+1852, 3665, TE, 1550, device, mehmetunlu, GCto1DGW1x4v01
+1841, 3312, TE, 1550, device, mehmetunlu, GCto1DGW1x2v01um10
+1834, 2743, TE, 1550, device, mehmetunlu, GCto1DGW1x2v02
+1391, 8054, TE, 1550, device, mehmetunlu, DelayLineD03V01
+1400, 6880, TE, 1550, device, mehmetunlu, heatertransitionvtest03D02
+1400, 7095, TE, 1550, device, mehmetunlu, heatertransitionv03
+1403, 6034, TE, 1550, device, fustunerF, comment
+1403, 5078, TE, 1550, device, fustunerD, comment
+1403, 4598, TE, 1550, device, fustunerC, comment
+1839, 4752, TE, 1550, comment, comment, comment
+1403, 4120, TE, 1550, device, fustunerB, comment
+1412, 3167, TE, 1550, HC, comment, comment
+1406, 2543, TE, 1550, device, MZI, comment
+1845, 6472, TE, 1550, device, MZIwithHeater, comment
+1394, 2209, TE, 1550, device, avram5, thermoL20rad015gap35curve
+1394, 1731, TE, 1550, device, avram5, thermoK20rad015gap30curve
+1394, 1253, TE, 1550, device, avram5, thermoJI20rad015gap25curve
+1394, 775, TE, 1550, device, avram5, thermoI20rad015gap24top
+946, 7467, TE, 1550, device, avram5, thermoF20rad015gap18top
+1381, 6560, TE, 1550, device, ik, ThermoOpticPhaseShifter
+1403, 3642, TE, 1550, device, fustunerA, comment
+817, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 80
+762, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 70
+872, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 80
+817, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 60
+762, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 50
+872, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 70
+707, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 40
+542, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 30
+652, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 30
+597, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 40
+597, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 300nm, 20
+707, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 60
+487, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 300nm, 300nm
+652, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 50
+542, 2530, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 320nm, 300nm
+762, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 70
+872, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 340nm, 300nm
+817, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 80
+707, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 60
+652, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 50
+487, 2685, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 300nm, 20
+487, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 20
+542, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 30
+597, 2840, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 300nm, 40
+424, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 340nm, 200nm
+94, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 320nm, 200nm
+149, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 40
+424, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 70
+94, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 30
+39, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 20
+314, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 70
+94, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 30
+259, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 60
+149, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 40
+259, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 40
+204, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 50
+314, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 50
+39, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 20
+39, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 300nm, 200nm
+259, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 60
+314, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 70
+369, 5230, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 80
+424, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 80
+204, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 50
+369, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 60
+369, 5075, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 80
+204, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 30
+149, 4920, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 20
+498, 6664, TE, 1550, device, MicroringResonatorwithRingHeater, comment
+498, 6357, TE, 1550, device, UnbalancedMZI, comment
+505, 8435, TE, 1550, device, DongshengLyuTO1, comment
+1835, 2325, TE, 1550, device, mehmetunlu, GCto1DGW1x1v01
+369, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 80
+314, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 70
+424, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 80
+424, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 70
+259, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 40
+369, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 60
+39, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 20
+204, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 30
+314, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 50
+39, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 20
+149, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 200nm, 20
+39, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 420nm, 200nm
+94, 7310, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 440nm, 200nm
+149, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 40
+424, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 460nm, 200nm
+94, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 30
+369, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 80
+204, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 50
+314, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 70
+259, 7620, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 200nm, 60
+259, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 60
+149, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 40
+204, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 50
+94, 7465, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 200nm, 30
+946, 8423, TE, 1550, device, avram5, thermoH20rad015gap22top
+369, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 80
+314, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 70
+369, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 60
+259, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 40
+314, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 50
+424, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 70
+424, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 80
+204, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 30
+149, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 40
+149, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 200nm, 20
+204, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 50
+39, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 360nm, 200nm
+204, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 50
+94, 6832, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 380nm, 200nm
+149, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 40
+424, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 400nm, 200nm
+369, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 80
+314, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 70
+259, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 60
+94, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 30
+39, 6987, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 200nm, 20
+39, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 20
+94, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 30
+259, 7142, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 200nm, 60
+69, 2208, TE, 1550, device, gsun86, heater2, PSGC900T0.80F
+369, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 80
+314, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 70
+369, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 60
+424, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 80
+149, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 40
+314, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 50
+424, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 70
+94, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 30
+259, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 40
+204, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 30
+149, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 300nm, 20
+259, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 60
+39, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 480nm, 300nm
+204, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 50
+94, 6354, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 500nm, 300nm
+424, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 520nm, 300nm
+369, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 80
+314, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 70
+259, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 60
+204, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 50
+149, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 40
+39, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 20
+94, 6509, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 300nm, 30
+39, 6664, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 300nm, 20
+955, 4726, TE, 1550, device, MZI, comment
+946, 6989, TE, 1550, device, avram5, thermoE20rad015gap16top
+485, 3214, TE, 1550, device, ik, ThermoOpticPhaseShifter
+1836, 1150, TE, 1550, device, mehmetunlu, BendNewv02
+1836, 1394, TE, 1550, device, mehmetunlu, BendNewv01
+69, 3164, TE, 1550, device, gsun86, heater4, PSGC900T0.60F
+944, 1711, TE, 1550, device, Vernier, comment
+424, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 460nm, 300nm
+94, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 440nm, 300nm
+149, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 40
+204, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 50
+94, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 30
+424, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 80
+39, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 20
+369, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 80
+39, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 20
+149, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 20
+149, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 40
+204, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 50
+259, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 60
+369, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 60
+314, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 70
+424, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 70
+94, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 30
+204, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 30
+369, 6186, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 300nm, 80
+259, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 60
+314, 6031, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 300nm, 70
+314, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 50
+259, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 300nm, 40
+39, 5876, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 420nm, 300nm
+1400, 7358, TE, 1550, device, mehmetunlu, heatertransitionvtest03D02v02
+1400, 7573, TE, 1550, device, mehmetunlu, heatertransitionv03v02
+930, 6160, TE, 1550, device, avram5, thermoC015gap16top
+930, 5906, TE, 1550, device, avram5, thermoC015gap14top
+369, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 80
+314, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 70
+424, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 80
+149, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 20
+424, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 70
+39, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 300nm
+259, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 40
+204, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 30
+369, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 60
+94, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 320nm
+94, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 30
+259, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 60
+314, 4442, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 200nm, 50
+424, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 340nm
+149, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 40
+204, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 50
+369, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 80
+314, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 70
+259, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 60
+204, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 50
+39, 4597, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 200nm, 20
+39, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 20
+94, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 30
+149, 4752, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 200nm, 40
+424, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 520nm, 200nm
+94, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 500nm, 200nm
+149, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 40
+94, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 30
+204, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 50
+149, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 40
+39, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 20
+94, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 30
+39, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 20
+259, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 60
+314, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 70
+314, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 70
+259, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 60
+369, 8098, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 200nm, 80
+259, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 40
+204, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 50
+369, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 200nm, 80
+424, 7943, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 80
+424, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 70
+369, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 60
+314, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 50
+204, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 30
+39, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 480nm, 200nm
+149, 7788, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 200nm, 20
+872, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 520nm, 250nm
+542, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 500nm, 250nm
+597, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 40
+652, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 30
+542, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 30
+487, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 20
+487, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 20
+542, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 30
+597, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 40
+707, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 60
+817, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 80
+762, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 70
+652, 2362, TE, 1550, device, HangZou1, TE, 1550, eskid, 520nm, 250nm, 50
+487, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 480nm, 250nm
+652, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 50
+597, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 20
+707, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 60
+762, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 70
+817, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 500nm, 250nm, 80
+872, 2207, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 80
+872, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 70
+762, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 50
+817, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 60
+707, 2052, TE, 1550, device, HangZou1, TE, 1550, eskid, 480nm, 250nm, 40
+424, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 400nm, 300nm
+94, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 380nm, 300nm
+149, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 40
+94, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 30
+39, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 20
+314, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 70
+39, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 360nm, 300nm
+39, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 20
+369, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 80
+149, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 20
+94, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 30
+149, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 40
+204, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 50
+259, 5708, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 300nm, 60
+204, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 50
+259, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 60
+314, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 70
+259, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 40
+369, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 300nm, 80
+204, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 30
+424, 5553, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 80
+424, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 70
+369, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 60
+314, 5398, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 300nm, 50
+1036, 913, TE, 1550, device, Lei, Yuan
+498, 4345, TE, 1550, device, MZIwithHeater, comment
+498, 4599, TE, 1550, device, WGwithHeater, comment
+68, 1255, TE, 1550, HC, comment, comment
+933, 3639, TE, 1550, device, Vesnog, RRheater
+69, 842, TE, 1550, device, MZI, comment
+930, 5204, TE, 1550, device, avram5, thermoA012gap
+930, 4950, TE, 1550, device, avram5, thermoA015gap
+1866, 5148, TE, 1550, device, MZI, comment
+1403, 5554, TE, 1550, device, fustunerE, comment
+872, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 340nm, 250nm
+542, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 320nm, 250nm
+597, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 40
+542, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 30
+487, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 20
+652, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 30
+487, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 20
+817, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 60
+652, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 50
+597, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 20
+542, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 30
+762, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 50
+707, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 60
+487, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 300nm, 250nm
+597, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 40
+762, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 70
+817, 928, TE, 1550, device, HangZou1, TE, 1550, eskid, 340nm, 250nm, 80
+652, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 50
+707, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 60
+762, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 70
+817, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 320nm, 250nm, 80
+872, 773, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 80
+872, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 70
+707, 618, TE, 1550, device, HangZou1, TE, 1550, eskid, 300nm, 250nm, 40
+69, 1730, TE, 1550, device, gsun86, heater1, PSGC900T0.90F
+1836, 854, TE, 1550, device, mehmetunlu, Splitter12port1
+488, 5616, TE, 1550, device, 2StageMZIwithHeater2, comment
+1834, 6991, TE, 1550, device, 2StageMZIwithHeater, comment
+946, 7945, TE, 1550, device, avram5, thermoG20rad015gap20top
+971, 1322, TE, 1550, Device, MZIwithHeater, comment
+817, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 80
+762, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 70
+872, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 80
+872, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 70
+817, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 60
+762, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 50
+652, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 30
+487, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 360nm, 250nm
+707, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 40
+542, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 380nm, 250nm
+597, 1096, TE, 1550, device, HangZou1, TE, 1550, eskid, 360nm, 250nm, 20
+872, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 400nm, 250nm
+817, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 80
+762, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 70
+707, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 60
+707, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 60
+652, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 50
+597, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 40
+542, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 30
+487, 1251, TE, 1550, device, HangZou1, TE, 1550, eskid, 380nm, 250nm, 20
+487, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 20
+597, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 40
+542, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 30
+652, 1406, TE, 1550, device, HangZou1, TE, 1550, eskid, 400nm, 250nm, 50
+945, 2093, TE, 1550, device, ramrar, MZI2
+945, 2347, TE, 1550, device, ramrar, MZI1
+69, 2686, TE, 1550, device, gsun86, heater3, PSGC900T0.70F
+817, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 80
+762, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 70
+872, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 80
+762, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 70
+872, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 70
+817, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 80
+817, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 60
+487, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 20
+762, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 50
+487, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 20
+652, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 30
+597, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 20
+652, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 50
+487, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 420nm, 250nm
+707, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 60
+542, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 440nm, 250nm
+707, 1574, TE, 1550, device, HangZou1, TE, 1550, eskid, 420nm, 250nm, 40
+872, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, ref, 460nm, 250nm
+597, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 40
+542, 1729, TE, 1550, device, HangZou1, TE, 1550, eskid, 440nm, 250nm, 30
+542, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 30
+597, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 40
+652, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 50
+707, 1884, TE, 1550, device, HangZou1, TE, 1550, eskid, 460nm, 250nm, 60
+69, 4120, TE, 1550, device, gsun86, heater6, PSGC900T0.40F
+500, 3665, TE, 1550, device, MZI, comment
+1386, 8523, TE, 1550, device, mehmetunlu, DelayLineD04V02
+488, 5138, TE, 1550, device, 2StageMZIwithHeater, comment
+1843, 1732, TE, 1550, device, mehmetunlu, Splitter1x3v02
+69, 3642, TE, 1550, device, gsun86, heater5, PSGC900T0.50F
+499, 5889, TE, 1550, device, BalancedMZI, comment
+498, 6186, TE, 1550, device, MicroringResonatorwithRingHeater2, comment
+1834, 4063, TE, 1550, device, my-mitx, m3heatv6
+490, 6947, TE, 1310, device, DissimilarWGsMZI, comment
+933, 3290, TE, 1550, device, Vesnog, MZIheaterSYM2
+933, 3040, TE, 1550, device, Vesnog, MZIheaterSYM1
+518, 4191, TE, 1550, device, MZI, comment
+490, 7599, TE, 1550, device, chander, MZI1
+490, 7349, TE, 1550, device, chander, MZI2
+490, 8077, TE, 1550, device, chander, MZI1
+490, 7827, TE, 1550, device, chander, MZI2
+933, 2812, TE, 1550, device, Vesnog, MZIheater2
+933, 2562, TE, 1550, device, Vesnog, MZIheater1
+930, 5428, TE, 1550, device, avram5, thermoB015gap18top
+930, 5682, TE, 1550, device, avram5, thermoB015gap20top
+930, 6384, TE, 1550, device, avram5, thermoD015gap10top
+930, 6638, TE, 1550, device, avram5, thermoD012gap20top
+
+% X-coord, Y-coord, deviceID, padName, params 
+2127, 3586, mehmetunlu, GCto1DGW1x4v01, G
+2189, 3162, mehmetunlu, GCto1DGW1x2v01um10, G
+2097, 2559, mehmetunlu, GCto1DGW1x2v02, G
+1745, 7949, mehmetunlu, DelayLineD03V01, G
+1746, 7115, mehmetunlu, heatertransitionv03, G
+1745, 6861, mehmetunlu, heatertransitionvtest03D02, G
+1733, 5785, fustunerF, S2, comment
+1733, 5910, fustunerF, G2, comment
+1733, 6035, fustunerF, S1, comment
+1733, 6160, fustunerF, G1, comment
+1733, 4954, fustunerD, G2, comment
+1733, 5079, fustunerD, S1, comment
+1733, 4829, fustunerD, S2, comment
+1733, 5204, fustunerD, G1, comment
+1733, 4349, fustunerC, S2, comment
+1733, 4474, fustunerC, G2, comment
+1733, 4599, fustunerC, S1, comment
+1733, 4724, fustunerC, G1, comment
+2174, 4352, TE, 1550, Contact
+2174, 4604, TE, 1550, Contact
+2172, 4475, TE, 1550, GND
+2178, 4729, TE, 1550, GND
+1733, 4121, fustunerB, S1, comment
+1733, 3871, fustunerB, S2, comment
+1733, 3996, fustunerB, G2, comment
+1733, 4246, fustunerB, G1, comment
+1739, 2914, HC, Gnd1, comment
+1736, 3164, HC, Vpp2, comment
+1736, 3041, HC, Gnd2, comment
+1738, 3291, HC, Vpp1, comment
+1739, 2816, in, MZI, G
+2184, 6631, MZIwithHeater, G, comment
+1749, 1952, avram5, S2, thermoL20rad015gap35curve
+1749, 2203, avram5, S1, thermoL20rad015gap35curve
+1748, 2076, avram5, G2, thermoL20rad015gap35curve
+1746, 2329, avram5, G1, thermoL20rad015gap35curve
+1749, 1474, avram5, S2, thermoK20rad015gap30curve
+1748, 1598, avram5, G2, thermoK20rad015gap30curve
+1749, 1725, avram5, S1, thermoK20rad015gap30curve
+1746, 1851, avram5, G1, thermoK20rad015gap30curve
+1749, 996, avram5, S2, thermoJ20rad015gap25curve
+1748, 1120, avram5, G2, thermoJ20rad015gap25curve
+1749, 1247, avram5, S1, thermoJ20rad015gap25curve
+1746, 1373, avram5, G1, thermoJ20rad015gap25curve
+1749, 518, avram5, S2, thermoI20rad015gap24top
+1748, 642, avram5, G2, thermoI20rad015gap24top
+1749, 769, avram5, S1, thermoI20rad015gap24top
+1746, 895, avram5, G1, thermoI20rad015gap24top
+1301, 7210, avram5, S2, thermoF20rad015gap18top
+1300, 7334, avram5, G2, thermoF20rad015gap18top
+1301, 7461, avram5, S1, thermoF20rad015gap18top
+1298, 7587, avram5, G1, thermoF20rad015gap18top
+1733, 3393, fustunerA, S2, comment
+1733, 3518, fustunerA, G2, comment
+1733, 3768, fustunerA, G1, comment
+1733, 3643, fustunerA, S1, comment
+843, 6508, MicroringResonatorwithRingHeater, S, comment
+843, 6632, MicroringResonatorwithRingHeater, G, comment
+843, 6257, UnbalancedMZI, S, comment
+843, 6382, UnbalancedMZI, G, comment
+834, 8174, DongshengLyuTO1, pad4, comment
+833, 8300, DongshengLyuTO1, pad3, comment
+834, 8424, DongshengLyuTO1, pad2, comment
+833, 8551, DongshengLyuTO1, pad1, comment
+2122, 2104, mehmetunlu, GCto1DGW1x1v01, G
+1301, 8166, avram5, S2, thermoH20rad015gap22top
+1300, 8290, avram5, G2, thermoH20rad015gap22top
+1301, 8417, avram5, S1, thermoH20rad015gap22top
+1298, 8543, avram5, G1, thermoH20rad015gap22top
+382, 2333, gsun86, heater2, PSGC, 900T0.80F, 1
+382, 2208, gsun86, heater2, PSGC, 900T0.80F, 2
+382, 2083, gsun86, heater2, PSGC, 900T0.80F, 3
+382, 1958, gsun86, heater2, PSGC, 900T0.80F, 4
+1301, 6732, avram5, S2, thermoE20rad015gap14top
+1300, 6856, avram5, G2, thermoE20rad015gap16top
+1301, 6983, avram5, S1, thermoE20rad015gap16top
+1298, 7109, avram5, G1, thermoE20rad015gap16top
+2191, 1385, mehmetunlu, BendNewv01, G
+2190, 1130, mehmetunlu, BendNewv02, G
+382, 3289, gsun86, heater4, PSGC, 900T0.60F, 1
+382, 3039, gsun86, heater4, PSGC, 900T0.60F, 3
+382, 3164, gsun86, heater4, PSGC, 900T0.60F, 2
+382, 2914, gsun86, heater4, PSGC, 900T0.60F, 4
+1282, 1610, Vernier, Pad2N, comment
+1285, 1487, Vernier, Pad2P, comment
+1285, 1737, Vernier, Pad1P, comment
+1282, 1860, Vernier, Pad1N, comment
+1745, 7339, mehmetunlu, heatertransitionvtest03D02v02, G
+1746, 7593, mehmetunlu, heatertransitionv03v02, G
+1285, 5776, avram5, S2, thermoC015gap14top
+1284, 5900, avram5, G2, thermoC015gap14top
+1285, 6027, avram5, S1, thermoC015gap16top
+1281, 6153, avram5, G1, thermoC015gap16top
+839, 4463, MZIwithHeater, comment, comment
+840, 4719, WGwithHeater, comment, comment
+395, 1002, HC, Gnd1, comment
+392, 1252, HC, Vpp2, comment
+392, 1129, HC, Gnd2, comment
+394, 1379, HC, Vpp1, comment
+1283, 3510, device, Vesnog, RRheater, G
+1285, 4820, avram5, S2, thermoA015gap
+1284, 4944, avram5, G2, thermoA015gap
+1285, 5071, avram5, S1, thermoA012gap
+1281, 5197, avram5, G1, thermoA012gap
+2181, 5211, MZI, G, comment
+1733, 5305, fustunerE, S2, comment
+1733, 5555, fustunerE, S1, comment
+1733, 5430, fustunerE, G2, comment
+1733, 5680, fustunerE, G1, comment
+382, 1730, gsun86, heater1, PSGC, 900T0.90F, 2
+382, 1605, gsun86, heater1, PSGC, 900T0.90F, 3
+382, 1480, gsun86, heater1, PSGC, 900T0.90F, 4
+382, 1855, gsun86, heater1, PSGC, 900T0.90F, 1
+2191, 795, mehmetunlu, mehmetunlu, Splitter12port1, G
+837, 5549, 2StageMZIwithHeater2, S, comment
+837, 5674, 2StageMZIwithHeater2, G, comment
+2187, 7118, 2StageMZIwithHeater, G, comment
+1300, 7812, avram5, G2, thermoG20rad015gap20top
+1301, 7688, avram5, S2, thermoG20rad015gap20top
+1301, 7939, avram5, S1, thermoG20rad015gap20top
+1298, 8065, avram5, G1, thermoG20rad015gap20top
+1285, 1381, MZIwithHeater, Pad1, comment
+1281, 1960, in, TE, 1550, device, ramrar, MZI2
+1281, 2210, in, TE, 1550, device, ramrar, MZI1
+382, 2811, gsun86, heater3, PSGC, 900T0.70F, 1
+382, 2686, gsun86, heater3, PSGC, 900T0.70F, 2
+382, 2561, gsun86, heater3, PSGC, 900T0.70F, 3
+382, 2436, gsun86, heater3, PSGC, 900T0.70F, 4
+382, 4245, gsun86, heater6, PSGC, 900T0.40F, 1
+382, 4120, gsun86, heater6, PSGC, 900T0.40F, 2
+382, 3995, gsun86, heater6, PSGC, 900T0.40F, 3
+382, 3870, gsun86, heater6, PSGC, 900T0.40F, 4
+1741, 8430, mehmetunlu, DelayLineD04V02, G
+837, 5196, 2StageMZIwithHeater, G, comment
+837, 5072, 2StageMZIwithHeater, S, comment
+2190, 1748, mehmetunlu, Splitter1x3v02, G
+382, 3767, gsun86, heater5, PSGC, 900T0.50F, 1
+382, 3642, gsun86, heater5, PSGC, 900T0.50F, 2
+382, 3517, gsun86, heater5, PSGC, 900T0.50F, 3
+382, 3392, gsun86, heater5, PSGC, 900T0.50F, 4
+843, 5779, UnbalancedMZI, S, comment
+843, 5904, UnbalancedMZI, G, comment
+843, 6030, MicroringResonatorwithRingHeater2, S, comment
+843, 6154, MicroringResonatorwithRingHeater2, G, comment
+2178, 4066, my-mitx, m3heatv6, G
+843, 7120, DissimilarWGsMZI, G, comment
+843, 6996, DissimilarWGsMZI, S, comment
+1283, 3288, device, Vesnog, MZIheaterSYM2, G
+1283, 3038, device, Vesnog, MZIheaterSYM1, G
+830, 4252, MZI, G, comment
+1283, 2810, device, Vesnog, MZIheater2, G
+1283, 2560, device, Vesnog, MZIheater1, G
+1285, 5298, avram5, S2, thermoB015gap18top
+1284, 5422, avram5, G2, thermoB015gap18top
+1285, 5549, avram5, S1, thermoB015gap20top
+1281, 5675, avram5, G1, thermoB015gap20top
+1285, 6254, avram5, S2, thermoD015gap10top
+1284, 6378, avram5, G2, thermoD015gap10top
+1285, 6505, avram5, S1, thermoD015gap12top
+1281, 6631, avram5, G1, thermoD015gap12top
