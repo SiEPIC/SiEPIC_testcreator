@@ -398,11 +398,14 @@ class GUI(QWidget):
 
         # selected_sequence = self.customsequences_checklist.selectedItems()
 
+
         if selected_sequence != [] and selected_devices != []:
             for device in selected_devices:
                 self.yamldict["Devices"][device.text()]["sequences"].append(
                     selected_sequence[0].text().split(' ')[0]
                 )
+                seq = selected_sequence[0].text().split(' ')[0]
+                self.runtime_journal[seq][1] = self.runtime_journal[seq][1] + 1
                 print(
                     "Linked sequence: "
                     + selected_sequence[0].text()
@@ -1093,9 +1096,9 @@ class GUI(QWidget):
         sequences = yamldict["Sequences"]
         devices = yamldict['Devices']
 
-        for device in devices:
-            for sequence in devices[device]['sequences']:
-                self.runtime_journal[sequence][1] = self.runtime_journal[sequence][1] + 1
+        # for device in devices:
+        #     for sequence in devices[device]['sequences']:
+        #         self.runtime_journal[sequence][1] = self.runtime_journal[sequence][1] + 1
 
         move_time_constant = 1
         total_runtime = 0
