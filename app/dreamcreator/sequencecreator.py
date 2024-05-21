@@ -1009,7 +1009,7 @@ class GUI(QWidget):
         return check
 
     def sequence_runtime_check(self, sequenceName, parameters, name):
-        wavelength_constant = 0.5
+        wavelength_constant = 0.25
         smu_constant = 0.5
 
         sequencetypes = [
