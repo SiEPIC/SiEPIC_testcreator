@@ -45,6 +45,7 @@ class GUI(QWidget):
         self.setWindowTitle("Dream Creator")
         self.custom_sequences_store = dict()
         self.branch = 'IDA'
+        self.runtime_max = 10000
 
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
@@ -429,12 +430,12 @@ class GUI(QWidget):
             "YAML Files (*.yaml);;All Files (*)",
             options=options,
         )
-        settime = 10000
+        self.runtime_max = 10000
         runtime = self.total_runtime_check(self.yamldict)
-        if runtime >= settime:
-            print(f"Total runtime {runtime} exceeds set threshold of {settime}, aborting save.")
+        if runtime >= self.runtime_max:
+            print(f"Total runtime {runtime} exceeds set threshold of {self.runtime_max}, aborting save.")
         else:
-            print(f"Total runtime {runtime} is within set threshold of {settime}, proceeding with save.")
+            print(f"Total runtime {runtime} is within set threshold of {self.runtime_max}, proceeding with save.")
             if filename:
                 if not filename.endswith(".yaml"):
                     filename += ".yaml"
@@ -656,20 +657,26 @@ class GUI(QWidget):
             row = self.listbox4.row(item)  # Get the row of the item
             self.listbox4.takeItem(row)
 
-        for seq in selected_sequences:
-            a = seq.text()
-            self.runtime_journal[seq.text()][1] = self.runtime_journal[seq.text()][1] - len(selected_devices) 
-
+        count = 0
         for device in selected_devices:
             for sequence in selected_sequences:
                 try:
                     self.yamldict['Devices'][device.text()]['sequences'].remove(sequence.text())
                     print('Removed sequence '+sequence.text()+' from device '+device.text())
+                    count = count + 1
                 except: 
                     for x in self.deviceobjects:
                         if x.device_id == device.text():
-                            x.sequences.remove(sequence.text())
+                            try:
+                                x.sequences.remove(sequence.text())
+                                count = count + 1
+                            except:
+                                pass
                     print('Removed sequence '+sequence.text()+' from device '+device.text())
+
+        for seq in selected_sequences:
+            a = seq.text()
+            self.runtime_journal[seq.text()][1] = self.runtime_journal[seq.text()][1] - count
 
     def select_keyword(self, item):
         keyword = self.device_search.text()
