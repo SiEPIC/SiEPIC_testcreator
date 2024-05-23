@@ -4,14 +4,14 @@ with open("app/README.md", "r") as f:
     long_description = f.read()
 
 setup(
-    name = "DreamCreator",
-    version = "0.0.25",
+    name = "SiEPIC_TestCreator",
+    version = "0.1.2",
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
     package_dir = {"": "app"},
     packages = find_packages(where="app"),
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "https://github.com/dreamphotonics/DreamCreator.git",
+    url = "https://github.com/SiEPIC/SiEPIC_testcreator.git",
     author = "Jonathan Barnes",
     author_email = "jonathanyorkbarnes@gmail.com",
     license="MIT",

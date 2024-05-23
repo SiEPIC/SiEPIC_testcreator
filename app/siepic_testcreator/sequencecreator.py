@@ -29,7 +29,7 @@ import inspect
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import logging
-from dreamcreator.yamlcheck import yaml_check
+from yamlcheck import yaml_check
 
 
 def launch():

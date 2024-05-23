@@ -1,32 +1,32 @@
-from dreamcreator.sequences.core.laser_sweep import LaserSweep
+from siepic_testcreator.sequences.core.laser_sweep import LaserSweep
 
-class SetVoltageWavelengthSweep(LaserSweep):
+class WavelengthSweep(LaserSweep):
     """
-    Sets the voltage and then performs a laser sweep.
+    Wavelength sweep sequence class.
 
     Args:
         ps (Dreams Lab probe station object): the probe station performing the sweep.
     """
     def __init__(self, ps):
-
         self.variables = {
             'Start': 1280,
             'Start_info': 'unit nm',
-            'Start_bounds': [1200, 1400],
+            'Start_bounds': [[1270, 1480], [1350, 1580]],
             'Stop': 1370,
             'Stop_info': 'unit nm',
-            'Stop_bounds': [1200, 1400],
+            'Stop_bounds': [[1270, 1480], [1350, 1580]],
             'Step': 1,
             'Step_info': 'unit nm, can also use wavl_pts, if both filled Step will take priority',
-            'Step_bounds': [1200, 1400],
+            'Step_bounds': [0.01, 100],
             'wavl_pts': 601,
             'wavl_pts_info': 'can also use Step, if both filled Step will take priority',
-            'wavl_pts_bounds': [1200, 1400],
+            'wavl_pts_bounds': [1, 10000],
             'Power': 1,
             'Power_info': 'unit dBm',
-            'Power_bounds': [1200, 1400],
-            'Sweep Speed': 20,
+            'Power_bounds': [-70, 100],
+            'Sweep Speed': 'auto',
             'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this',
+            'Sweep Speed_options': ['20nm', '10nm', 'auto'],
             'Upper Limit': 0,
             'Upper Limit_info': 'set to 0',
             'Upper Limit_bounds': [-30, 0],
@@ -42,16 +42,13 @@ class SetVoltageWavelengthSweep(LaserSweep):
             'RangeDec': 20,
             'RangeDec_info': 'default 20',
             'RangeDec_bounds': [0, 100],
-            'Voltages': '[0, 1, 2]',
-            'Voltages_info': 'Please format the voltages as a list of integers separated by commas ex. [0,1,2]',
-            'Voltages_bounds': [-30, 30]
         }
 
         self.results_info = {
             'num_plots': 1,
             'visual': True,
             'saveplot': True,
-            'plottitle': 'Set Voltage Wavelength Sweep',
+            'plottitle': 'WavelengthSweep',
             'save_location': '',
             'foldername': '',
             'xtitle': 'Wavelength (nm)',
@@ -62,25 +59,16 @@ class SetVoltageWavelengthSweep(LaserSweep):
             'csv': True,
             'pdf': True,
             'mat': True,
-            'pkl': False
+            'pkl': True
         }
-        super().__init__(variables=self.variables, resultsinfo=self.resultsinfo, ps=ps)
-
+        super().__init__(ps, variables=self.variables, resultsinfo=self.resultsinfo, mode='CONT')
+        
     def run(self, routine=False):
         self.set_results(variables=self.variables, resultsinfo = self.resultsinfo, routine=routine)
-        """Executes a wavelength sweep for each given voltage."""
-
         settings = self.ps.get_settings(self.verbose)
-        
-        for volt in self.variables['voltages']:
-            self.ps.elecprobe.smuchannels[0].set_current_mode()
-            self.ps.elecprobe.smuchannels[0].set_voltage(volt)
-            self.ps.elecprobe.smuchannels[0].set_output(True)
-        
-            self.external_parameters = volt
-            self.external_unit = 'V'
-            self.execute()
-
-            self.ps.elecprobe.smuchannels[0].set_output(False)
+        self.execute()
 
         self.ps.set_settings(settings)
+
+
+    

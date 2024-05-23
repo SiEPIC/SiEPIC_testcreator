@@ -1,7 +1,7 @@
-from dreamcreator.sequences.core.smu_sweep import SmuSweep
+from siepic_testcreator.sequences.core.smu_sweep import SmuSweep
 import time
 
-class SetWavelengthVoltageSweep(SmuSweep):
+class SetWavelengthVoltageSweepIda(SmuSweep):
     """
     Sets the wavelength then performs a voltage sweep.
 
@@ -12,47 +12,33 @@ class SetWavelengthVoltageSweep(SmuSweep):
         self.variables = {
             'Start': 0, 
             'Start_info': 'Please enter start voltage (V)',
-            'Start_bounds': [-100, 100],
+            'Start_bounds': [-50, 50],
             'Stop': 1, 
             'Stop_info': 'Please enter stop voltage (V)',
-            'Stop_bounds': [-100, 100],
+            'Stop_bounds': [-50, 50],
             'Step': 0.1, 
-            'Step_info': 'Please enter stepsize (V)',
+            'Step_info': 'Please enter step voltage (V)',
             'Step_bounds': [0.01, 100],
-            'Center': '',
-            'Center_info': 'Please enter center voltage',
-            'Center_bounds': [0, 100],
-            'Span': '',
-            'Span_info': 'Please enter span voltage',
-            'Span_bounds': [0, 100],
-            'Range': '',
-            'Range_info': 'Please enter range voltage',
-            'Range_bounds': [0, 100],
-            'Spacing': '',
-            'Spacing_info': 'Please enter spacing voltage',
-            'Spacing_bounds': [0, 100],
-            'Points': '',
-            'Points_info': 'Please enter points voltage',
-            'Points_bounds': [0, 1000],
-            'Direction': 'UP',
-            'Direction_info': 'Please enter direction voltage',
-            'Direction_options': ['UP', 'DOWN'],
-            'Sweeptype': 'voltage',
-            'Sweeptype_info': 'Please enter sweep type',
-            'Sweeptype_options': ['voltage'],
-            'Upper Limit': 5,
-            'Upper Limit_info': 'Please enter upper limit value',
-            'Upper Limit_bounds': [0, 100],
-            'Trans_col': False,
-            'Trans_col_info': 'Please enter trans_col value',
-            'Trans_col_options': ['True', 'False'],
-            'Wavelengths': [1480, 1500, 1580],
-            'Wavelengths_info': 'Please enter wavelengths value',
-            'Wavelengths_bounds': [[1270, 1480], [1350, 1580]],
-            'Power': 1,
-            'Power_info': 'Please enter power (dBm) value',
-            'Power_bounds': [-70, 100]
+            'IV': 'True',
+            'IV_info': 'True if current vs voltage plot needed',
+            'IV_options': ['True', 'False'],
+            'RV': 'True',
+            'RV_info': 'True if ressiatnce vs voltage plot needed',
+            'RV_options': ['True', 'False'],
+            'PV': 'True',
+            'PV_info': 'True if power vs voltage plot needed',
+            'PV_options': ['True', 'False'],
+            'Channel A': 'True',
+            'Channel A_info': 'Please enter True to use Channel A if not enter False',
+            'Channel A_options': ['True', 'False'],
+            'Channel B': 'False',
+            'Channel B_info': 'Please enter True to use Channel B if not enter False',
+            'Channel B_options': ['True', 'False'],
+            'Wavelengths': '1480, 1550, 1580',
+            'Wavelengths_info': 'Set wavelengths in form x, x1, x2 with unit nm',
+            'Wavelengths_bounds': [[1270, 1480], [1350, 1580]]
         }
+
         self.results_info = {
             'num_plots': 1,
             'visual': True,

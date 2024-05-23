@@ -1,4 +1,4 @@
-from dreamcreator.sequences.core.laser_sweep import LaserSweep
+from siepic_testcreator.sequences.core.laser_sweep import LaserSweep
 
 class SetVoltageWavelengthSweepIda(LaserSweep):
     """
