@@ -1208,10 +1208,10 @@ class GUI(QWidget):
         errors = self.check_number_of_columns_optical(file)
         file = self.elec_pad_underscore_issue(file, save_location)
 
-        if errors != []:
-            print("Issues found in the following lines:")
-            for x in errors:
-                print(x)
+        # if errors != []:
+        #     print("Issues found in the following lines:")
+        #     for x in errors:
+        #         print(x)
 
         with open(file, "r") as f:
             data = f.readlines()
@@ -1248,8 +1248,8 @@ class GUI(QWidget):
             # Skip blank lines
             if line:
                 try:
-                    x, y, device_id, pad_name = line.split(", ")
-                    elec_coords = [pad_name, float(x), float(y)]
+                    x, y, device_id = line.split(", ")
+                    elec_coords = ['G', float(x), float(y)]
                     devices_dict[device_id].add_electrical_coordinates(elec_coords)
                 except:
                     print(
@@ -1325,10 +1325,10 @@ class GUI(QWidget):
             errors = self.check_number_of_columns_optical(file)
             file = self.elec_pad_underscore_issue(file, save_location)
 
-            if errors != []:
-                print("Issues found in the following lines:")
-                for x in errors:
-                    print(x)
+            # if errors != []:
+            #     print("Issues found in the following lines:")
+            #     for x in errors:
+            #         print(x)
 
     def elec_pad_underscore_issue(self, input_file_path, output_file_path):
         modified_lines = []
@@ -1364,16 +1364,16 @@ class GUI(QWidget):
 
     def account_for_underscores(self, input_file_path, output_file_path):
         modified_lines = []
-        process_line = True  # Flag to indicate if the line should be processed
+        process_line_optical = True  # Flag to indicate if the line should be processed
 
         with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
             if line == "\n":  # Check for the line with just '\n'
-                process_line = False
+                process_line_optical = False
 
-            if process_line:
+            if process_line_optical:
                 if line.strip().startswith("%"):
                     modified_lines.append(line)
                     continue
@@ -1384,6 +1384,13 @@ class GUI(QWidget):
                 modified_lines.append(line)
             else:
                 # Simply append the line as is, without modification
+                if line.strip().startswith("%"):
+                    modified_lines.append(line)
+                    continue
+                elements = line.strip().split(", ")
+                if len(elements) > 3:
+                    elements[2:] = ["_".join(elements[2:])]
+                line = ", ".join(elements) + "\n"
                 modified_lines.append(line)
 
         with open(output_file_path, "w") as file:
@@ -1464,28 +1471,53 @@ class GUI(QWidget):
     def append_number_to_duplicate_device_ids(self, input_file_path, output_file_path):
         device_id_counter = {}
         modified_lines = []
+        optical_lines = True
+        change_record = []
+        errorcheck = 0
 
         with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
-            if not line.startswith("%"):  # ignore comment lines
-                parts = line.split(", ")
+            
+            if line == "\n":  # Check for the line with just '\n'
+                optical_lines = False 
+            if optical_lines:
+                if not line.startswith("%"):  # ignore comment lines
+                    parts = line.split(", ")
 
-                device_id = parts[-1].strip()  #
-                # Check if the device_id has already been encountered
-                if device_id in device_id_counter:
-                    # Increment the count and append it to the device_id
-                    device_id_counter[device_id] += 1
-                    new_device_id = f"{device_id}_{device_id_counter[device_id]}"
-                    parts[-1] = new_device_id + "\n"  # replace with the new_device_id
-                else:
-                    # Initialize the count for this device_id
-                    device_id_counter[device_id] = 0
-                # Reconstruct the line
-                line = ", ".join(parts)
-            # Add the (possibly modified) line to the list of modified lines
-            modified_lines.append(line)
+                    device_id = parts[-1].strip()  #
+                    # Check if the device_id has already been encountered
+                    if device_id in device_id_counter:
+                        # Increment the count and append it to the device_id
+                        device_id_counter[device_id] += 1
+                        new_device_id = f"{device_id}_{device_id_counter[device_id]}"
+                        parts[-1] = new_device_id + "\n"  # replace with the new_device_id
+                        change_record.append([device_id, new_device_id, [parts[0], parts[1]]])
+                    else:
+                        # Initialize the count for this device_id
+                        device_id_counter[device_id] = 0
+                    # Reconstruct the line
+                    line = ", ".join(parts)
+                # Add the (possibly modified) line to the list of modified lines
+                modified_lines.append(line)
+            else:
+                if not line.startswith("%") and not line == '\n':  # ignore comment lines
+                    parts = line.split(", ")
+                    device_id = parts[-1].strip()
+                    errorcheck = 0
+                    for x in range(len(change_record)):
+                        if change_record[x][0] == device_id:
+                            if abs(float(parts[0]) - float(change_record[x][2][0])) <= 600 and abs(float(parts[1]) - float(change_record[x][2][1])) <= 600:
+                                new_device_id = change_record[x][1]
+                                parts[-1] = new_device_id + "\n"
+                                error_check = errorcheck + 1
+                    if errorcheck >= 2:
+                        print('Possible error with electrical pad and optical device renaming, please check to make sure pads associated with and devices labelled {device_id} are correct')
+
+
+                    line = ", ".join(parts)
+                modified_lines.append(line)
 
         # Write the modified lines to the output file
         with open(output_file_path, "w") as file:
