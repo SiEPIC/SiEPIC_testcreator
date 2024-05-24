@@ -29,7 +29,7 @@ import inspect
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import logging
-from yamlcheck import yaml_check
+from siepic_testcreator.yamlcheck import yaml_check
 
 
 def launch():
@@ -42,10 +42,10 @@ def launch():
 class GUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Dream Creator")
+        self.setWindowTitle("SiEPIC TestCreator")
         self.custom_sequences_store = dict()
         self.branch = 'IDA'
-        self.runtime_max = 10000
+        self.runtime_max = 100000
 
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
@@ -1044,7 +1044,6 @@ class GUI(QWidget):
             runtime = (
                 (
                     (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
                 )
                 * smu_constant
                 * (variables["Wavelengths"].count(",") + 1)
@@ -1053,7 +1052,7 @@ class GUI(QWidget):
             runtime = (
                 (
                     (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
+                 / float(variables["Step"])
                 )
                 * smu_constant
                 * (variables["Wavelengths"].count(",") + 1)
@@ -1061,14 +1060,12 @@ class GUI(QWidget):
         elif sequencetypes[4] in sequence or sequencetypes[11] in sequence:
             runtime = (
                 (float(variables["Stop"]) - float(variables["Start"]))
-                / float(variables["Step"])
                 * wavelength_constant
                 * (variables["Voltages"].count(",") + 1)
             )
         elif sequencetypes[3] in sequence or sequencetypes[10] in sequence:
             runtime = (
                 (float(variables["Stop"]) - float(variables["Start"]))
-                / float(variables["Step"])
                 * wavelength_constant
                 * (variables["Currents"].count(",") + 1)
             )
@@ -1085,7 +1082,6 @@ class GUI(QWidget):
         elif sequencetypes[0] in sequence or sequencetypes[7] in sequence:
             runtime = (
                 (float(variables["Stop"]) - float(variables["Start"]))
-                / float(variables["Step"])
                 * wavelength_constant
             )
         else:
@@ -1190,14 +1186,22 @@ class GUI(QWidget):
         """
         # Dictionary to store the created ElectroOpticDevice objects
         devices_dict = {}
-        save_location = dirname(abspath(__file__))
-        save_location = (
-            str(save_location)
-            + "\\"
-            + "File_edits"
-            + "\\"
-            + "coordinate_file_edits.txt"
-        )
+        home_dir = Path.home()
+
+        # Create a directory in the user's home directory (e.g., 'my_package_data')
+        data_dir = home_dir / "my_package_data"
+        os.makedirs(data_dir, exist_ok=True)
+
+        # Save the file within this directory
+        save_location = data_dir / "coordinate_file_edits.txt"
+        # save_location = os.path.dirname(os.path.abspath(__file__))
+        # save_location = (
+        #     str(save_location)
+        #     + "\\"
+        #     + "File_edits"
+        #     + "\\"
+        #     + "coordinate_file_edits.txt"
+        # )
 
         optLines, ElecLines = self.countLines(file_path)
 
@@ -1462,9 +1466,14 @@ class GUI(QWidget):
                 line = line.replace(", comment", "").rstrip() + "\n"
             modified_lines.append(line)
 
+        try:
         # Write the modified lines to the output file
-        with open(output_file_path, "w") as file:
-            file.writelines(modified_lines)
+            with open(output_file_path, "w") as file:
+                file.writelines(modified_lines)
+        except PermissionError:
+            print("Error: Permission denied. Please check write access to the directory.")
+        except Exception as e:  # Catch other potential errors
+            print("An error occurred while writing to the file:", e)
 
         return output_file_path
 

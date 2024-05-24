@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name = "SiEPIC_TestCreator",
-    version = "0.1.2",
+    version = "0.1.5",
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
     package_dir = {"": "app"},
     packages = find_packages(where="app"),
