@@ -4,13 +4,13 @@
 
 A tool for creating YAML files for use across UBC probe stations. This aplication features a UI that allows students and users to link on chip devices to custom test sequences.
 
-## Installation
+## Setup
 
 1. **Prerequisites/Labelling:** Python 3.10 and above
 ![](readme_images/optical_labels.png)
 ![](readme_images/electrical_labels.png)
   
-2. **Instructions:**
+2. **Installation**
 
 ![](readme_images/installation.png)
 
