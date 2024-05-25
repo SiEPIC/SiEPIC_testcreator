@@ -1,6 +1,6 @@
 # Project Title
 
-This package is for use in Dream Photonics or the UBC Photonics edx course, and contains utilities for creating
+This package is for use in the UBC Photonics courses, and contains utilities for creating
 yaml files which act as guides for tests on the probe stations throughout UBC.
 
 ## Description
@@ -13,8 +13,8 @@ This software contains a User Interface that easily allows users to create custo
 
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * ex. Windows 10
-python: 3.11
-Windows: 10 or greater
+python: 3.10 +
+Windows 10 or greater, Linux, or Mac OSX
 
 
 ### Installing
@@ -26,8 +26,8 @@ Windows: 10 or greater
 
 * How to run the program
 ```
-import dreamcreator
-from dreamcreator import sequencecreator as sc
+import siepic_testcreator
+from siepic_testcreator import sequencecreator as sc
 sc.launch()
 ```
 
