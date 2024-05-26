@@ -26,7 +26,8 @@ def test_sequence_runtime_check():
     import os
     filename = 'EBeam_heaters_mustafah_tests.yaml'
     yaml_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), filename)
-    siepic_testcreator.yamlcheck.sequence_runtime_check(yaml_file_path)
+    t = siepic_testcreator.yamlcheck.sequence_runtime_check(yaml_file_path)
+    assert t == 25
 
 if __name__ == "__main__":
 
