@@ -51,6 +51,7 @@ jobs:
       - name: install Python 3.10 packages
         run: |
           pip install pytest pytest-cov
+          pip install -e .
 
       - name: Test with pytest, Python 3.10
         run: pytest --cov=app/siepic_testcreator  --cov-report=xml
