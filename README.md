@@ -1,6 +1,7 @@
 # SiEPIC Test Creator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/SiEPIC/SiEPIC_testcreator/graph/badge.svg?token=8gQqPJ2Vfx)](https://codecov.io/gh/SiEPIC/SiEPIC_testcreator)
 
 A tool for creating YAML files for use across UBC probe stations. This aplication features a UI that allows students and users to link on chip devices to custom test sequences.
 
