@@ -31,7 +31,6 @@ from watchdog.events import FileSystemEventHandler
 import logging
 from siepic_testcreator.yamlcheck import yaml_check
 
-
 def launch():
     app = QApplication([])
     ex = GUI()
