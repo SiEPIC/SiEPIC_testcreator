@@ -19,6 +19,12 @@ A tool for creating YAML files for use across UBC probe stations. This aplicatio
 
 Find here instruction on the work flow of the application
 
+The GUI can be launched using the terminal or via python. For an example using python, see [run_gui.py](examples/run_gui.py). To launch the GUI via the terminal, execute the command below:
+```
+siepic_testcreator --gui
+```
+
+
 ![](readme_images/example_load.png)
 ![](readme_images/extractcoordlabels.png)
 
@@ -28,6 +34,7 @@ Find here instruction on the work flow of the application
 
 ![](readme_images/time_limit.png)
 ![](readme_images/seting_routines.png)
+
 
 ## License
 
