@@ -1250,10 +1250,100 @@ class GUI(QWidget):
         for count, line in enumerate(elec_coords_data):
             # Skip blank lines
             if line:
-                try:
+                # try:
+                #     x, y, device_id = line.split(", ")
+                #     elec_coords = ['G', float(x), float(y)]
+                #     devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                # except:
+                #     print(
+                #         "Error in electrical coordinate line: "
+                #         + str(count + optLines + 3)
+                #         + ": "
+                #         + line
+                #     )
+
+        #device ID may have an _G or _G1, _G2, _S1, _S2, modify it to accept _G or _G1 
+                try:    
                     x, y, device_id = line.split(", ")
-                    elec_coords = ['G', float(x), float(y)]
-                    devices_dict[device_id].add_electrical_coordinates(elec_coords)
+
+
+                    print("device ID is")
+                    print(device_id)
+                    # #"If its clean with no underscores, add pad to device dictonary"
+                    # if("_" not in device_id):
+                    #     elec_coords = ['G', float(x), float(y)]
+                    #     print("we did not find an underscore in the device ID, the device ID we found is")
+                    #     print(device_id)
+                    #     devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                    
+                    # #"If an older convention was used and an underscore was included"
+                    # elif("_" in device_id):
+
+                    #     # #only include pad as a device if it ends with a _G label or _G1 label
+                    #     # if(device_id.endswith("G" ,"G1") ):
+                    #     #     print("we know that it ends with G1")
+
+                    #     #     #first strip away the _G or _G1
+                    #     #     device_id=device_id.split("_")[0]
+
+                    #     #     print(device_id)
+
+                    #     #     elec_coords = ['G', float(x), float(y)]
+                    #     #     devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                    #     #we should reject the other pads 
+                    #     if( ("G2" in device_id) or ("S1" in device_id) or ("S2" in device_id) ):
+                    #         pass
+                    #     elif( ("G" in device_id) or ("G1" in device_id)):
+                    #         print("we did find an underscore in the device ID, the device ID we found is")
+                    #         print(device_id)
+                    #         #first strip away the _G or _G1
+                    #         device_id=device_id.split("_")[0]
+                    #         elec_coords = ['G', float(x), float(y)]
+                    #         print("after stripping away G labels our device id is")
+                    #         print(device_id)
+
+                    #         devices_dict[device_id].add_electrical_coordinates(elec_coords)
+
+                    #The first thing to do is outright reject any devices that have G2S1 or S2 at the end
+                    #If by some horrible coincidence the user decided to actually name their device with S2 or G2 or anything like that at the end of their name 
+                    #hen they will not be able to get their device tested with this method
+                    if(device_id.endswith("_G2") or device_id.endswith("_S1") or device_id.endswith("_S2")):
+                        #We will simply not add pads that end with G2S1 or S2 because those will create multiple electrical coordinates for one device which is wrong
+                        pass
+                    elif(device_id.endswith("_G1")):
+                        #These labels would correspond to the top pad if the user's labeled their device is correctly according to the old convention
+
+                        #We need to strip away the ground label at the end though
+                        device_id = device_id.replace("_G1", "")
+
+                        print("new device ID is")
+                        print(device_id)
+                        #Now we should be fine to add the electrical coordinates To our device dictionary
+                        print("attempting to append device")
+                        elec_coords = ['G', float(x), float(y)]
+                        devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                        print("appended successfully")
+
+                    elif(device_id.endswith("_G")):
+                        device_id = device_id.replace("_G", "")
+
+
+                        print("new device ID is")
+                        print(device_id)
+
+                        print("attempting to append device")
+                        elec_coords = ['G', float(x), float(y)]
+                        devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                        print("appended successfully")
+
+
+                    else: #If there is none of these ground labels then we can just try to add the coordinates and Throw exceptions if there are any other errors
+                        
+                        print("attempting to append device")
+                        elec_coords = ['G', float(x), float(y)]
+                        devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                        print("appended successfully")
+
                 except:
                     print(
                         "Error in electrical coordinate line: "
@@ -1261,6 +1351,7 @@ class GUI(QWidget):
                         + ": "
                         + line
                     )
+
 
         for devicename in devices_dict:
             self.yamldict["Devices"][devices_dict[devicename].device_id] = (
