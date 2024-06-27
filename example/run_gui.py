@@ -1,6 +1,6 @@
 #%%
-import dreamcreator
+import siepic_testcreator
 
 if __name__ == "__main__":
-    dreamcreator.sequencecreator.launch()
+    siepic_testcreator.sequencecreator.launch()
 # %%

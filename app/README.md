@@ -1,6 +1,6 @@
 # Project Title
 
-This package is for use in Dream Photonics or the UBC Photonics edx course, and contains utilities for creating
+This package is for use in the UBC Photonics courses, and contains utilities for creating
 yaml files which act as guides for tests on the probe stations throughout UBC.
 
 ## Description
@@ -13,21 +13,22 @@ This software contains a User Interface that easily allows users to create custo
 
 * Describe any prerequisites, libraries, OS version, etc., needed before installing program.
 * ex. Windows 10
-python: 3.11
-Windows: 10 or greater
+python: 3.10 +
+Windows 10 or greater, Linux, or Mac OSX
 
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+```
+pip install siepic_testcreator
+```
 
 ### Executing program
 
 * How to run the program
 ```
-import dreamcreator
-from dreamcreator import sequencecreator as sc
+import siepic_testcreator
+from siepic_testcreator import sequencecreator as sc
 sc.launch()
 ```
 
@@ -64,3 +65,13 @@ Inspiration, code snippets, etc.
 * [dbader](https://github.com/dbader/readme-template)
 * [zenorocha](https://gist.github.com/zenorocha/4526327)
 * [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+
+## Developers
+
+* Contributions are welcome, via Pull Requests
+* Create a fork, and download it using GitHub Desktop to work on your local copy
+* Install the package as a symbolic link 
+    ```
+    pip install -e $HOME/Documents/GitHub/SiEPIC_testcreator
+    ```
+* Keep your fork and local copy up to date
