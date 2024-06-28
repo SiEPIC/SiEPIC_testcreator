@@ -1,4 +1,4 @@
-from SiEPIC_TestCreator.sequences.core.smu_sweep import SmuSweep
+from siepic_testcreator.sequences.core.smu_sweep import SmuSweep
 import time
 
 class SetWavelengthVoltageSweepIda(SmuSweep):
@@ -12,10 +12,10 @@ class SetWavelengthVoltageSweepIda(SmuSweep):
         self.variables = {
             'Start': 0, 
             'Start_info': 'Please enter start voltage (V)',
-            'Start_bounds': [-100, 100],
+            'Start_bounds': [-50, 50],
             'Stop': 1, 
             'Stop_info': 'Please enter stop voltage (V)',
-            'Stop_bounds': [-100, 100],
+            'Stop_bounds': [-50, 50],
             'Step': 0.1, 
             'Step_info': 'Please enter step voltage (V)',
             'Step_bounds': [0.01, 100],

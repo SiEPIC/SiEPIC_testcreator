@@ -1,4 +1,4 @@
-from SiEPIC_TestCreator.sequences.core.results import Results
+from dreamcreator.sequences.core.results import Results
 
 class Sequence:
 

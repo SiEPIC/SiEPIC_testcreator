@@ -1,7 +1,7 @@
 
 import time
 import numpy as np
-import SiEPIC_TestCreator.sequences.core.sequence as Sequence
+import dreamcreator.sequences.core.sequence as Sequence
 
 
 class LaserSweep(Sequence.Sequence):

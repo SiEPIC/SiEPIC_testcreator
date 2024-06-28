@@ -31,21 +31,18 @@ from watchdog.events import FileSystemEventHandler
 import logging
 from SiEPIC_TestCreator.yamlcheck import yaml_check
 
-
 def launch():
     app = QApplication([])
     ex = GUI()
     ex.show()
     app.exec_()
-
-
 class GUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Yaml Creator")
+        self.setWindowTitle("SiEPIC TestCreator")
         self.custom_sequences_store = dict()
         self.branch = 'IDA'
-        self.runtime_max = 10000
+        self.runtime_max = 100000
 
         self.yamldict = dict()
         self.yamldict = {"Devices": {}, "Sequences": {}}
@@ -1044,7 +1041,6 @@ class GUI(QWidget):
             runtime = (
                 (
                     (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
                 )
                 * smu_constant
                 * (variables["Wavelengths"].count(",") + 1)
@@ -1053,7 +1049,7 @@ class GUI(QWidget):
             runtime = (
                 (
                     (float(variables["Stop"]) - float(variables["Start"]))
-                    / float(variables["Step"])
+                 / float(variables["Step"])
                 )
                 * smu_constant
                 * (variables["Wavelengths"].count(",") + 1)
@@ -1061,14 +1057,12 @@ class GUI(QWidget):
         elif sequencetypes[4] in sequence or sequencetypes[11] in sequence:
             runtime = (
                 (float(variables["Stop"]) - float(variables["Start"]))
-                / float(variables["Step"])
                 * wavelength_constant
                 * (variables["Voltages"].count(",") + 1)
             )
         elif sequencetypes[3] in sequence or sequencetypes[10] in sequence:
             runtime = (
                 (float(variables["Stop"]) - float(variables["Start"]))
-                / float(variables["Step"])
                 * wavelength_constant
                 * (variables["Currents"].count(",") + 1)
             )
@@ -1085,7 +1079,6 @@ class GUI(QWidget):
         elif sequencetypes[0] in sequence or sequencetypes[7] in sequence:
             runtime = (
                 (float(variables["Stop"]) - float(variables["Start"]))
-                / float(variables["Step"])
                 * wavelength_constant
             )
         else:
@@ -1190,14 +1183,22 @@ class GUI(QWidget):
         """
         # Dictionary to store the created ElectroOpticDevice objects
         devices_dict = {}
-        save_location = dirname(abspath(__file__))
-        save_location = (
-            str(save_location)
-            + "\\"
-            + "File_edits"
-            + "\\"
-            + "coordinate_file_edits.txt"
-        )
+        home_dir = Path.home()
+
+        # Create a directory in the user's home directory (e.g., 'my_package_data')
+        data_dir = home_dir / "my_package_data"
+        os.makedirs(data_dir, exist_ok=True)
+
+        # Save the file within this directory
+        save_location = data_dir / "coordinate_file_edits.txt"
+        # save_location = os.path.dirname(os.path.abspath(__file__))
+        # save_location = (
+        #     str(save_location)
+        #     + "\\"
+        #     + "File_edits"
+        #     + "\\"
+        #     + "coordinate_file_edits.txt"
+        # )
 
         optLines, ElecLines = self.countLines(file_path)
 
@@ -1208,10 +1209,10 @@ class GUI(QWidget):
         errors = self.check_number_of_columns_optical(file)
         file = self.elec_pad_underscore_issue(file, save_location)
 
-        if errors != []:
-            print("Issues found in the following lines:")
-            for x in errors:
-                print(x)
+        # if errors != []:
+        #     print("Issues found in the following lines:")
+        #     for x in errors:
+        #         print(x)
 
         with open(file, "r") as f:
             data = f.readlines()
@@ -1247,10 +1248,100 @@ class GUI(QWidget):
         for count, line in enumerate(elec_coords_data):
             # Skip blank lines
             if line:
-                try:
-                    x, y, device_id, pad_name = line.split(", ")
-                    elec_coords = [pad_name, float(x), float(y)]
-                    devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                # try:
+                #     x, y, device_id = line.split(", ")
+                #     elec_coords = ['G', float(x), float(y)]
+                #     devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                # except:
+                #     print(
+                #         "Error in electrical coordinate line: "
+                #         + str(count + optLines + 3)
+                #         + ": "
+                #         + line
+                #     )
+
+        #device ID may have an _G or _G1, _G2, _S1, _S2, modify it to accept _G or _G1 
+                try:    
+                    x, y, device_id = line.split(", ")
+
+
+                    print("device ID is")
+                    print(device_id)
+                    # #"If its clean with no underscores, add pad to device dictonary"
+                    # if("_" not in device_id):
+                    #     elec_coords = ['G', float(x), float(y)]
+                    #     print("we did not find an underscore in the device ID, the device ID we found is")
+                    #     print(device_id)
+                    #     devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                    
+                    # #"If an older convention was used and an underscore was included"
+                    # elif("_" in device_id):
+
+                    #     # #only include pad as a device if it ends with a _G label or _G1 label
+                    #     # if(device_id.endswith("G" ,"G1") ):
+                    #     #     print("we know that it ends with G1")
+
+                    #     #     #first strip away the _G or _G1
+                    #     #     device_id=device_id.split("_")[0]
+
+                    #     #     print(device_id)
+
+                    #     #     elec_coords = ['G', float(x), float(y)]
+                    #     #     devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                    #     #we should reject the other pads 
+                    #     if( ("G2" in device_id) or ("S1" in device_id) or ("S2" in device_id) ):
+                    #         pass
+                    #     elif( ("G" in device_id) or ("G1" in device_id)):
+                    #         print("we did find an underscore in the device ID, the device ID we found is")
+                    #         print(device_id)
+                    #         #first strip away the _G or _G1
+                    #         device_id=device_id.split("_")[0]
+                    #         elec_coords = ['G', float(x), float(y)]
+                    #         print("after stripping away G labels our device id is")
+                    #         print(device_id)
+
+                    #         devices_dict[device_id].add_electrical_coordinates(elec_coords)
+
+                    #The first thing to do is outright reject any devices that have G2S1 or S2 at the end
+                    #If by some horrible coincidence the user decided to actually name their device with S2 or G2 or anything like that at the end of their name 
+                    #hen they will not be able to get their device tested with this method
+                    if(device_id.endswith("_G2") or device_id.endswith("_S1") or device_id.endswith("_S2")):
+                        #We will simply not add pads that end with G2S1 or S2 because those will create multiple electrical coordinates for one device which is wrong
+                        pass
+                    elif(device_id.endswith("_G1")):
+                        #These labels would correspond to the top pad if the user's labeled their device is correctly according to the old convention
+
+                        #We need to strip away the ground label at the end though
+                        device_id = device_id.replace("_G1", "")
+
+                        print("new device ID is")
+                        print(device_id)
+                        #Now we should be fine to add the electrical coordinates To our device dictionary
+                        print("attempting to append device")
+                        elec_coords = ['G', float(x), float(y)]
+                        devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                        print("appended successfully")
+
+                    elif(device_id.endswith("_G")):
+                        device_id = device_id.replace("_G", "")
+
+
+                        print("new device ID is")
+                        print(device_id)
+
+                        print("attempting to append device")
+                        elec_coords = ['G', float(x), float(y)]
+                        devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                        print("appended successfully")
+
+
+                    else: #If there is none of these ground labels then we can just try to add the coordinates and Throw exceptions if there are any other errors
+                        
+                        print("attempting to append device")
+                        elec_coords = ['G', float(x), float(y)]
+                        devices_dict[device_id].add_electrical_coordinates(elec_coords)
+                        print("appended successfully")
+
                 except:
                     print(
                         "Error in electrical coordinate line: "
@@ -1258,6 +1349,7 @@ class GUI(QWidget):
                         + ": "
                         + line
                     )
+
 
         for devicename in devices_dict:
             self.yamldict["Devices"][devices_dict[devicename].device_id] = (
@@ -1325,10 +1417,10 @@ class GUI(QWidget):
             errors = self.check_number_of_columns_optical(file)
             file = self.elec_pad_underscore_issue(file, save_location)
 
-            if errors != []:
-                print("Issues found in the following lines:")
-                for x in errors:
-                    print(x)
+            # if errors != []:
+            #     print("Issues found in the following lines:")
+            #     for x in errors:
+            #         print(x)
 
     def elec_pad_underscore_issue(self, input_file_path, output_file_path):
         modified_lines = []
@@ -1364,16 +1456,16 @@ class GUI(QWidget):
 
     def account_for_underscores(self, input_file_path, output_file_path):
         modified_lines = []
-        process_line = True  # Flag to indicate if the line should be processed
+        process_line_optical = True  # Flag to indicate if the line should be processed
 
         with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
             if line == "\n":  # Check for the line with just '\n'
-                process_line = False
+                process_line_optical = False
 
-            if process_line:
+            if process_line_optical:
                 if line.strip().startswith("%"):
                     modified_lines.append(line)
                     continue
@@ -1384,6 +1476,13 @@ class GUI(QWidget):
                 modified_lines.append(line)
             else:
                 # Simply append the line as is, without modification
+                if line.strip().startswith("%"):
+                    modified_lines.append(line)
+                    continue
+                elements = line.strip().split(", ")
+                if len(elements) > 3:
+                    elements[2:] = ["_".join(elements[2:])]
+                line = ", ".join(elements) + "\n"
                 modified_lines.append(line)
 
         with open(output_file_path, "w") as file:
@@ -1455,37 +1554,67 @@ class GUI(QWidget):
                 line = line.replace(", comment", "").rstrip() + "\n"
             modified_lines.append(line)
 
+        try:
         # Write the modified lines to the output file
-        with open(output_file_path, "w") as file:
-            file.writelines(modified_lines)
+            with open(output_file_path, "w") as file:
+                file.writelines(modified_lines)
+        except PermissionError:
+            print("Error: Permission denied. Please check write access to the directory.")
+        except Exception as e:  # Catch other potential errors
+            print("An error occurred while writing to the file:", e)
 
         return output_file_path
 
     def append_number_to_duplicate_device_ids(self, input_file_path, output_file_path):
         device_id_counter = {}
         modified_lines = []
+        optical_lines = True
+        change_record = []
+        errorcheck = 0
 
         with open(input_file_path, "r") as file:
             lines = file.readlines()
 
         for line in lines:
-            if not line.startswith("%"):  # ignore comment lines
-                parts = line.split(", ")
+            
+            if line == "\n":  # Check for the line with just '\n'
+                optical_lines = False 
+            if optical_lines:
+                if not line.startswith("%"):  # ignore comment lines
+                    parts = line.split(", ")
 
-                device_id = parts[-1].strip()  #
-                # Check if the device_id has already been encountered
-                if device_id in device_id_counter:
-                    # Increment the count and append it to the device_id
-                    device_id_counter[device_id] += 1
-                    new_device_id = f"{device_id}_{device_id_counter[device_id]}"
-                    parts[-1] = new_device_id + "\n"  # replace with the new_device_id
-                else:
-                    # Initialize the count for this device_id
-                    device_id_counter[device_id] = 0
-                # Reconstruct the line
-                line = ", ".join(parts)
-            # Add the (possibly modified) line to the list of modified lines
-            modified_lines.append(line)
+                    device_id = parts[-1].strip()  #
+                    # Check if the device_id has already been encountered
+                    if device_id in device_id_counter:
+                        # Increment the count and append it to the device_id
+                        device_id_counter[device_id] += 1
+                        new_device_id = f"{device_id}_{device_id_counter[device_id]}"
+                        parts[-1] = new_device_id + "\n"  # replace with the new_device_id
+                        change_record.append([device_id, new_device_id, [parts[0], parts[1]]])
+                    else:
+                        # Initialize the count for this device_id
+                        device_id_counter[device_id] = 0
+                    # Reconstruct the line
+                    line = ", ".join(parts)
+                # Add the (possibly modified) line to the list of modified lines
+                modified_lines.append(line)
+            else:
+                if not line.startswith("%") and not line == '\n':  # ignore comment lines
+                    parts = line.split(", ")
+                    device_id = parts[-1].strip()
+                    errorcheck = 0
+                    for x in range(len(change_record)):
+                        if change_record[x][0] == device_id:
+                            if abs(float(parts[0]) - float(change_record[x][2][0])) <= 600 and abs(float(parts[1]) - float(change_record[x][2][1])) <= 600:
+                                new_device_id = change_record[x][1]
+                                parts[-1] = new_device_id + "\n"
+                                error_check = errorcheck + 1
+                    if errorcheck >= 2:
+                        print('Possible error with electrical pad and optical device renaming, please check to make sure pads associated with and devices labelled {device_id} are correct')
+
+
+                    line = ", ".join(parts)
+                modified_lines.append(line)
 
         # Write the modified lines to the output file
         with open(output_file_path, "w") as file:

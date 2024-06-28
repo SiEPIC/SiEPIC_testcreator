@@ -29,15 +29,13 @@ import inspect
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import logging
-from siepic_testcreator.yamlcheck import yaml_check
+from SiEPIC_TestCreator.yamlcheck import yaml_check
 
 def launch():
     app = QApplication([])
     ex = GUI()
     ex.show()
     app.exec_()
-
-
 class GUI(QWidget):
     def __init__(self):
         super().__init__()

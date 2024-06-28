@@ -60,9 +60,9 @@ def yaml_check(yaml_file_path):
     # check for sequence runtime errors
     runtime = sequence_runtime_check(yaml_dict, True)
     print("Sequence runtime: ", runtime)
+    return runtime
 
-
-def sequence_runtime_check(yaml_file_path, dict=None):
+def sequence_runtime_check(yaml_file_path, dict=None, debug=False):
     """
     Checks the runtime of a sequence.
     """
@@ -81,8 +81,8 @@ def sequence_runtime_check(yaml_file_path, dict=None):
     sequences = yaml_dict["Sequences"]
     # calculate wavlength sweep runtime
 
-    wavelength_constant = 10
-    smu_constant = 10
+    wavelength_constant = 0.25
+    smu_constant = 0.5
 
     sequencetypes = [
         "wavelength_sweep",
@@ -92,64 +92,74 @@ def sequence_runtime_check(yaml_file_path, dict=None):
         "set_voltage_wavelength_sweep",
         "set_wavelength_current_sweep",
         "set_wavelength_voltage_sweep",
+        "wavelength_sweep_ida",
+        "current_sweep_ida",
+        "voltage_sweep_ida",
+        "set_current_wavelength_sweep_ida",
+        "set_voltage_wavelength_sweep_ida",
+        "set_wavelength_current_sweep_ida",
+        "set_wavelength_voltage_sweep_ida",
     ]
 
+    runtime = 0
+    
+    if debug:
+        print("Sequences: %s" %sequences)
+    
     for sequence in sequences:
+        if debug:
+            print("Sequence: %s" %sequence)
+            print("  details: %s" % sequences[sequence])
+        variables = sequences[sequence]["variables"]
+        if sequencetypes[6] in sequence or sequencetypes[13] in sequence:
 
-        seq = sequences[sequence]
-        variables = seq["variables"]
-        # print(variables)
-        if sequencetypes[6] in sequence:
-            runtime = (
+            runtime += (
                 (
-                    (float(variables["stop"]) - float(variables["start"]))
-                    / float(variables["step"])
+                    (float(variables["Stop"]) - float(variables["Start"]))
                 )
                 * smu_constant
-                * (variables["wavelengths"].count(",") + 1)
+                * (variables["Wavelengths"].count(",") + 1)
             )
-        elif sequencetypes[5] in sequence:
-            runtime = (
+        elif sequencetypes[5] in sequence or sequencetypes[12] in sequence:
+            runtime += (
                 (
-                    (float(variables["stop"]) - float(variables["start"]))
-                    / float(variables["step"])
+                    (float(variables["Stop"]) - float(variables["Start"]))
+                    / float(variables["Step"])
                 )
                 * smu_constant
-                * (variables["wavelengths"].count(",") + 1)
+                * (variables["Wavelengths"].count(",") + 1)
             )
-        elif sequencetypes[4] in sequence:
-            runtime = (
-                float(variables["sweep_speed"])
-                * float(variables["wavl_pts"])
+        elif sequencetypes[4] in sequence or sequencetypes[11] in sequence:
+            runtime += (
+                (float(variables["Stop"]) - float(variables["Start"]))
                 * wavelength_constant
-                * (variables["voltages"].count(",") + 1)
+                * (variables["Voltages"].count(",") + 1)
             )
-        elif sequencetypes[3] in sequence:
-            runtime = (
-                float(variables["sweep_speed"])
-                * float(variables["wavl_pts"])
+        elif sequencetypes[3] in sequence or sequencetypes[10] in sequence:
+            runtime += (
+                (float(variables["Stop"]) - float(variables["Start"]))
                 * wavelength_constant
-                * (variables["currents"].count(",") + 1)
+                * (variables["Currents"].count(",") + 1)
             )
-        elif sequencetypes[2] in sequence:
-            runtime = (
-                (float(variables["stop"]) - float(variables["start"]))
-                / float(variables["step"])
+        elif sequencetypes[2] in sequence or sequencetypes[9] in sequence:
+            runtime += (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
             ) * smu_constant
-        elif sequencetypes[1] in sequence:
-            runtime = (
-                (float(variables["stop"]) - float(variables["start"]))
-                / float(variables["step"])
+        elif sequencetypes[1] in sequence or sequencetypes[8] in sequence:
+            runtime += (
+                (float(variables["Stop"]) - float(variables["Start"]))
+                / float(variables["Step"])
             ) * smu_constant
-        elif sequencetypes[0] in sequence:
-            runtime = (
-                float(variables["sweep_speed"])
-                * float(variables["wavl_pts"])
+        elif sequencetypes[0] in sequence or sequencetypes[7] in sequence:
+            runtime += (
+                (float(variables["Stop"]) - float(variables["Start"]))
                 * wavelength_constant
             )
         else:
-            print("Error in YAML file sequences portion")
+            print("Error in predicting runtime. Please check sequence type and parameters.")
             return None
+
         return runtime
 
 

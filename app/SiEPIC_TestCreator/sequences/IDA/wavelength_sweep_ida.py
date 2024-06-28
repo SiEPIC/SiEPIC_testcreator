@@ -1,4 +1,4 @@
-from SiEPIC_TestCreator.sequences.core.laser_sweep import LaserSweep
+from siepic_testcreator.sequences.core.laser_sweep import LaserSweep
 
 class WavelengthSweepIda(LaserSweep):
     """
