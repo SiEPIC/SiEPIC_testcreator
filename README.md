@@ -34,8 +34,7 @@ SiEPIC_TestCreator --gui
 
 ![](readme_images/upload_file.png)
 ![](readme_images/create_sequences.png)
-![](readme_images/general_design.png)
-
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/a67420ec-2395-4cd2-9aec-26c3e7694928)
 
 
 
