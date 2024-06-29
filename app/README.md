@@ -20,15 +20,15 @@ Windows 10 or greater, Linux, or Mac OSX
 ### Installing
 
 ```
-pip install SiEPIC_TestCreator
+pip install SiEPIC_testcreator
 ```
 
 ### Executing program
 
 * How to run the program, note imports are case sensitive
 ```
-import SiEPIC_TestCreator
-from SiEPIC_TestCreator import sequencecreator as sc
+import SiEPIC_testcreator
+from SiEPIC_testcreator import sequencecreator as sc
 sc.launch()
 ```
 
