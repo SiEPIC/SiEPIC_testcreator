@@ -8,9 +8,10 @@ A tool for creating YAML files for use across UBC probe stations. This aplicatio
 ## Setup
 
 1. **Prerequisites/Labelling:** Python 3.10 and above
-![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/6011da62-b5fe-468a-8eeb-8d8f1218cc6b)
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/12854132-ae9a-4b37-8059-e10656113491)
 
-![](readme_images/optical_labels.png)
+
+
 ![](readme_images/electrical_labels.png)
   
 2. **Installation**
