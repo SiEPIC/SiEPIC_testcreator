@@ -25,10 +25,10 @@ pip install siepic_testcreator
 
 ### Executing program
 
-* How to run the program
+* How to run the program, note imports are case sensitive
 ```
-import siepic_testcreator
-from siepic_testcreator import sequencecreator as sc
+import SiEPIC_TestCreator
+from SiEPIC_TestCreator import sequencecreator as sc
 sc.launch()
 ```
 
