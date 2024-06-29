@@ -1,7 +1,0 @@
-% X-coord, Y-coord, Polarization, wavelength, type, deviceID, params 
-84, 333, TE, 1550, device, mustafahspiral
-84, 142, TE, 1550, device, mustafah_mzi
-
-% X-coord, Y-coord, deviceID, padName, params 
-393, 419, mustafahspiral
-393, 168, mustafah_mzi
