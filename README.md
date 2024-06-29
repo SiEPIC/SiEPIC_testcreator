@@ -38,7 +38,8 @@ SiEPIC_TestCreator --gui
 ![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/23e26d8a-e3b8-4e61-9ce4-1fb9421dcc4b)
 
 
-![](readme_images/seting_routines.png)
+
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/406d5bde-5b99-4e24-be7b-ed83b0c7522f)
 
 
 ## License
