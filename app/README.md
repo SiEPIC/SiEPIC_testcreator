@@ -20,7 +20,7 @@ Windows 10 or greater, Linux, or Mac OSX
 ### Installing
 
 ```
-pip install siepic_testcreator
+pip install SiEPIC_TestCreator
 ```
 
 ### Executing program
