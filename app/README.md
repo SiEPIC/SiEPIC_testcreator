@@ -27,7 +27,6 @@ pip install SiEPIC_TestCreator
 
 * How to run the program, note imports are case sensitive
 ```
-
 from SiEPIC_TestCreator import sequencecreator as sc
 sc.launch()
 ```
