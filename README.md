@@ -16,7 +16,8 @@ A tool for creating YAML files for use across UBC probe stations. This aplicatio
   
 2. **Installation**
 
-![](readme_images/installation.png)
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/381ae711-785b-4e66-b2dd-03c5bfe6c2e6)
+
 
 ## Usage
 
