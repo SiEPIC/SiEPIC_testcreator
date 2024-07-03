@@ -3,7 +3,7 @@ unit tests for the package.
 needs better testing to test each module, method, and class.
 """
 
-import siepic_testcreator
+import SiEPIC_TestCreator
 
 '''
 def test_gui():
@@ -20,13 +20,13 @@ def test_yaml_check():
     import os
     filename = 'EBeam_heaters_mustafah_tests.yaml'
     yaml_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), filename)
-    siepic_testcreator.yamlcheck.yaml_check(yaml_file_path)
+    SiEPIC_TestCreator.yamlcheck.yaml_check(yaml_file_path)
 
 def test_sequence_runtime_check():
     import os
     filename = 'EBeam_heaters_mustafah_tests.yaml'
     yaml_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), filename)
-    t = siepic_testcreator.yamlcheck.sequence_runtime_check(yaml_file_path)
+    t = SiEPIC_TestCreator.yamlcheck.sequence_runtime_check(yaml_file_path)
     assert t == 25
 
 if __name__ == "__main__":
