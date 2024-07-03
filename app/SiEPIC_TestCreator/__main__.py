@@ -1,5 +1,5 @@
 import sys
-from siepic_testcreator.sequencecreator import launch
+from SiEPIC_TestCreator.sequencecreator import launch
 
 def main():
     if '--gui' in sys.argv:

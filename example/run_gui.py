@@ -1,6 +1,6 @@
 #%%
-import siepic_testcreator
+import SiEPIC_TestCreator
 
 if __name__ == "__main__":
-    siepic_testcreator.sequencecreator.launch()
+    SiEPIC_TestCreator.sequencecreator.launch()
 # %%

@@ -8,12 +8,16 @@ A tool for creating YAML files for use across UBC probe stations. This aplicatio
 ## Setup
 
 1. **Prerequisites/Labelling:** Python 3.10 and above
-![](readme_images/optical_labels.png)
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/12854132-ae9a-4b37-8059-e10656113491)
+
+
+
 ![](readme_images/electrical_labels.png)
   
 2. **Installation**
 
-![](readme_images/installation.png)
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/381ae711-785b-4e66-b2dd-03c5bfe6c2e6)
+
 
 ## Usage
 
@@ -21,7 +25,7 @@ Find here instruction on the work flow of the application
 
 The GUI can be launched using the terminal or via python. For an example using python, see [run_gui.py](example/run_gui.py). To launch the GUI via the terminal, execute the command below:
 ```
-siepic_testcreator --gui
+SiEPIC_TestCreator --gui
 ```
 
 
@@ -30,10 +34,11 @@ siepic_testcreator --gui
 
 ![](readme_images/upload_file.png)
 ![](readme_images/create_sequences.png)
-![](readme_images/general_design.png)
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/a67420ec-2395-4cd2-9aec-26c3e7694928)
 
-![](readme_images/time_limit.png)
-![](readme_images/seting_routines.png)
+
+
+![image](https://github.com/PetervandenDoel/SiEPIC_testcreator/assets/73015873/406d5bde-5b99-4e24-be7b-ed83b0c7522f)
 
 
 ## License

@@ -35,7 +35,7 @@ jobs:
           pip install -e .
 
       - name: Test with pytest, Python 3.11
-        run: pytest app/siepic_testcreator
+        run: pytest app/SiEPIC_TestCreator
           
 
 
@@ -54,7 +54,7 @@ jobs:
           pip install -e .
 
       - name: Test with pytest, Python 3.10
-        run: pytest --cov=app/siepic_testcreator  --cov-report=xml
+        run: pytest --cov=app/SiEPIC_TestCreator  --cov-report=xml
   
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4

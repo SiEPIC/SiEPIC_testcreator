@@ -1265,8 +1265,8 @@ class GUI(QWidget):
                     x, y, device_id = line.split(", ")
 
 
-                    print("device ID is")
-                    print(device_id)
+                    #print("device ID is")
+                    #print(device_id)
                     # #"If its clean with no underscores, add pad to device dictonary"
                     # if("_" not in device_id):
                     #     elec_coords = ['G', float(x), float(y)]
@@ -1314,33 +1314,33 @@ class GUI(QWidget):
                         #We need to strip away the ground label at the end though
                         device_id = device_id.replace("_G1", "")
 
-                        print("new device ID is")
-                        print(device_id)
+                        #print("new device ID is")
+                        #print(device_id)
                         #Now we should be fine to add the electrical coordinates To our device dictionary
-                        print("attempting to append device")
+                        #print("attempting to append device")
                         elec_coords = ['G', float(x), float(y)]
                         devices_dict[device_id].add_electrical_coordinates(elec_coords)
-                        print("appended successfully")
+                        #print("appended successfully")
 
                     elif(device_id.endswith("_G")):
                         device_id = device_id.replace("_G", "")
 
 
-                        print("new device ID is")
-                        print(device_id)
+                        #print("new device ID is")
+                        #print(device_id)
 
-                        print("attempting to append device")
+                        #print("attempting to append device")
                         elec_coords = ['G', float(x), float(y)]
                         devices_dict[device_id].add_electrical_coordinates(elec_coords)
-                        print("appended successfully")
+                        #print("appended successfully")
 
 
                     else: #If there is none of these ground labels then we can just try to add the coordinates and Throw exceptions if there are any other errors
                         
-                        print("attempting to append device")
+                        #print("attempting to append device")
                         elec_coords = ['G', float(x), float(y)]
                         devices_dict[device_id].add_electrical_coordinates(elec_coords)
-                        print("appended successfully")
+                        #print("appended successfully")
 
                 except:
                     print(
