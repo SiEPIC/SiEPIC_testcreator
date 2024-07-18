@@ -1,5 +1,5 @@
 
-import dreamcreator.sequences.core.sequence as Sequence
+import SiEPIC_TestCreator.sequences.core.sequence as Sequence
 import time
 
 class SmuSweep(Sequence.Sequence):

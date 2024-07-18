@@ -160,7 +160,7 @@ def sequence_runtime_check(yaml_file_path, dict=None, debug=False):
             print("Error in predicting runtime. Please check sequence type and parameters.")
             return None
 
-        return runtime
+    return runtime
 
 
 # Example usage
