@@ -1,4 +1,4 @@
-from siepic_testcreator.sequences.core.smu_sweep import SmuSweep
+from SiEPIC_TestCreator.sequences.core.smu_sweep import SmuSweep
 import time
 
 class SetWavelengthVoltageSweep(SmuSweep):

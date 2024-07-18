@@ -15,6 +15,8 @@ from PyQt5.QtWidgets import (
     QMessageBox,
     QCheckBox,
     QComboBox,
+    QSpacerItem,
+    QSizePolicy
 )
 from PyQt5.QtCore import Qt, pyqtSignal, QObject
 from PyQt5.QtWidgets import QLabel, QLineEdit, QVBoxLayout, QWidget, QFormLayout
@@ -30,6 +32,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import logging
 from SiEPIC_TestCreator.yamlcheck import yaml_check
+from SiEPIC_TestCreator.config import MYAPP
 
 def launch():
     app = QApplication([])
@@ -39,7 +42,7 @@ def launch():
 class GUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("SiEPIC TestCreator")
+        self.setWindowTitle("SiEPIC TestCreator" + ' (' + str(MYAPP.version) + ')')
         self.custom_sequences_store = dict()
         self.branch = 'IDA'
         self.runtime_max = 100000
@@ -71,8 +74,15 @@ class GUI(QWidget):
 
     def setup_outputlog(self):
         # Set up the output log
+        horlayout = QHBoxLayout()
         self.outputtitle = QLabel("Output Log")
-        self.layout.addWidget(self.outputtitle)
+        self.clear_output_btn = QPushButton("Clear Output Log")
+
+        horlayout.addWidget(self.outputtitle)
+        horlayout.addItem(QSpacerItem(20, 40, QSizePolicy.Expanding, QSizePolicy.Minimum))
+        horlayout.addWidget(self.clear_output_btn)
+
+        self.layout.addLayout(horlayout)
 
         # Log Viewer
 
@@ -105,6 +115,15 @@ class GUI(QWidget):
         # sys.stderr = StreamRedirector(self.textEdit)
 
         # self.layout.addWidget(self.textEdit)
+
+        self.clear_output_btn.clicked.connect(self.clear_output_log)
+
+    def clear_output_log(self):
+        # Get the underlying QTextEdit widget from the QTextEditLogger
+        log_text_edit = self.logTextBox.widget
+        
+        # Clear the contents of the QTextEdit
+        log_text_edit.clear()
 
     def setup_file_selection(self):
         self.file_title = QLabel("Upload coordinates file or Yaml file")

@@ -1,4 +1,5 @@
 from setuptools import find_packages, setup
+from app.SiEPIC_TestCreator.config import MYAPP
 
 with open("app/README.md", "r") as f:
     long_description = f.read()
@@ -6,13 +7,13 @@ with open("app/README.md", "r") as f:
 
 setup(
     name = "SiEPIC_TestCreator",
-    version = "0.1.8",
+    version = MYAPP.version,
     description = "A tool for creating YAML files for use in Dream Photonics and edx course",
     package_dir = {"": "app"},
     packages = find_packages(where="app"),
     entry_points={
             'console_scripts': [
-                'siepic_testcreator=siepic_testcreator.__main__:main'
+                'siepic_testcreator=SiEPIC_TestCreator.__main__:main'
             ]
         },
     long_description = long_description,
