@@ -1353,7 +1353,6 @@ class GUI(QWidget):
                         devices_dict[device_id].add_electrical_coordinates(elec_coords)
                         #print("appended successfully")
 
-
                     else: #If there is none of these ground labels then we can just try to add the coordinates and Throw exceptions if there are any other errors
                         
                         #print("attempting to append device")
@@ -1362,6 +1361,9 @@ class GUI(QWidget):
                         #print("appended successfully")
 
                 except:
+                    if line == '% X-coord, Y-coord, recipeID, params':
+                        break
+
                     print(
                         "Error in electrical coordinate line: "
                         + str(count + optLines + 3)
