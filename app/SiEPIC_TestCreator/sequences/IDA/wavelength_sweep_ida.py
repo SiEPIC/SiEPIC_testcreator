@@ -21,6 +21,9 @@ class WavelengthSweepIda(LaserSweep):
             'Power': 1,
             'Power_info': 'unit dBm',
             'Power_bounds': [-70, 10],
+            'Power Unit': 'dBm',
+            'Power Unit_info': 'choose between dBm and mW',
+            'Power Unit_options': ['dBm', 'mW'],
             'Sweep Speed': 'auto',
             'Sweep Speed_info': 'controls the speed of the sweep, if yaml fails time execution test increase this, options are 20nm, 10nm, auto',
             'Sweep Speed_options': ['20nm', '10nm', 'auto'],
@@ -35,7 +38,13 @@ class WavelengthSweepIda(LaserSweep):
             'RangeDec_bounds': [-100, 100],
             'Initialrange': '-20',
             'Initialrange_info': 'default -20',
-            'Initialrange_bounds': [-100, 100]
+            'Initialrange_bounds': [-100, 100],
+            'Upper Limit': 0,
+            'Upper Limit_info': 'set to 0',
+            'Upper Limit_bounds': [-30, 0],
+            'Mode': 'CONT',
+            'Mode_info': 'Set Mode of laser, default is CONT',
+            'Mode_options': ['CONT', 'STEP'],
         }
 
         self.results_info = {
